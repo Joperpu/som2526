@@ -33,12 +33,18 @@ El módulo busca que el alumnado alance los siguientes objetivos expresados como
 
 ## Sesiones
 
+- Miércoles de 13:00 a 15:00 horas.
+- Jueves de 12:00 a 15:00 horas.
 
 ## Contenidos
 
-Los contenidos exigidos al módulo se van a trabajar a través de 5 unidades didácticas a lo largo del curso:
+Los contenidos exigidos al módulo se van a trabajar a través de 6 unidades didácticas a lo largo del curso:
 
-
+| Trimestre | Unidad Didáctica |
+|:-------------: | ---------------------- |
+| **Primer Trimestre** | 1. Introducción a los sistemas operativos<br>2. Instalación y máquinas virtuales con Windows y Linux<b>3. Configuración y administración de sistemas operativos basados en Linux |
+| **Segundo Trimestre**| 4. Configuración y administración de sistemas operativos Windows |
+| **Tercer Trimestre**| 5. Programación en Bash<br>6. Resolución de problemas en un PC |
 
 
 ## Metodología
@@ -60,3 +66,5 @@ Los instrumentos que se usarán para evaluar serán los siguientes:
 A través del correo electrónico corporativo o de la plataforma Moodle centros.
 
 ## Evaluación inicial
+
+Puedes encontrar la evaluación inicial del módulo en el [siguiente enlace](https://forms.gle/8Jv3vzQXFwgGCVKP9).
