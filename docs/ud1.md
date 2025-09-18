@@ -104,7 +104,7 @@ Enteros con signo (complemento a 2). Es el estándar actual porque simplifica la
 - Cómo obtener el negativo de un número en binario (complemento a 2):
     - Invierte los bits (complemento a 1). 2) Suma 1. Ejemplo: +5 en 8 bits es 0000 0101. Invertir → 1111 1010. +1 → 1111 1011 (esto es −5).
 
-Reales (idea básica de IEEE 754). Un número real se guarda como signo, mantisa y exponente en base 2. Esto permite representar valores muy grandes o muy pequeños, pero no todos exactamente (hay redondeo). Por eso aparecerán resultados como 0,1 + 0,2 ≈ 0,30000000000000004 en ciertos lenguajes. Para SMR, basta con saber que hay error de representación y que el almacenamiento de reales es distinto al de enteros.
+Reales (idea básica de IEEE 754). Un número real se guarda como signo, mantisa y exponente en base 2. Esto permite representar valores muy grandes o muy pequeños, pero no todos exactamente (hay redondeo). Por eso aparecerán resultados como 0,1 + 0,2 ≈ 0,30000000000000004 en ciertos lenguajes.
 
 ### Codificación de texto: de ASCII a Unicode (UTF-8)
 

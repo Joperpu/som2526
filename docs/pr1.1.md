@@ -19,7 +19,7 @@
 12.	Dibuja un mini-árbol con una carpeta Curso y dentro Apuntes, Practicas y el archivo indice.txt.
 13.	Completa: 1 byte = __ bits.
 14.	Convierte 1101₂ a decimal (muestra el cálculo con potencias de 2).
-15. Pasa 0xA (hex) a binario.
+15. Pasa A (hex) a binario.
 16.	¿Por qué UTF-8 es mejor opción que ASCII para textos con tildes y “ñ”?
 17.	Tu conexión dice 100 Mb/s. ¿A cuántos MB/s equivale aproximadamente? (pista: 8 bits = 1 byte)
 18.	Señala la unidad correcta para capacidad y para velocidad (elige):<br>
