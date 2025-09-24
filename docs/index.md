@@ -1,5 +1,8 @@
 # Sistemas operativos monopuesto - Curso 25/26
 
+!!! info "Créditos y licencia"
+    Estos apuntes se han elaborado en parte a partir de los materiales de Rafael Lozano, disponibles bajo licencia CC BY-NC-SA 4.0. Los presentes apuntes se comparten bajo la misma licencia CC BY-NC-SA 4.0.
+
 ## Introducción
 
 Bienvenido a los apuntes del módulo profesional de **Sistemas operativos monopuesto** que se imparte en el primer curso del *Ciclo formativo de Grado Medio de Sistemas Microinformáticos y Redes*.
@@ -42,7 +45,7 @@ Los contenidos exigidos al módulo se van a trabajar a través de 6 unidades did
 
 | Trimestre | Unidad Didáctica |
 |:-------------: | ---------------------- |
-| **Primer Trimestre** | 1. Introducción a los sistemas operativos<br>2. Instalación y máquinas virtuales con Windows y Linux<b>3. Configuración y administración de sistemas operativos basados en Linux |
+| **Primer Trimestre** | 1. Introducción a los sistemas operativos<br>2. Instalación y máquinas virtuales con Windows y Linux<br>3. Configuración y administración de sistemas operativos basados en Linux |
 | **Segundo Trimestre**| 4. Configuración y administración de sistemas operativos Windows |
 | **Tercer Trimestre**| 5. Programación en Bash<br>6. Resolución de problemas en un PC |
 
