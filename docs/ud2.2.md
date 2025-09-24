@@ -129,3 +129,19 @@ A continuación, una vez finalizada la configuración automática anterior, el a
 Llegados a este punto, la configuración inicial finalizará y se nos mostrará el escritorio de nuestro sistema operativo con la sesión iniciada del usuario que hemos introducido anteriormente.
 
 ![Escritorio](assets/images/ud2/img31.png)
+
+## Actualización de Windows
+
+Una buena práctica tras la instalación del sistema operativo es la actualización de este. Para realizarla hacemos clic en el botón *Inicio* (icono de Windows), después en *Configuración*, y en el menú de la izquierda en *Windows Update*.
+
+![Inicio](assets/images/ud2/img32.png)
+
+![Configuración](assets/images/ud2/img33.png)
+
+En este punto deberían aparecernos algunas instalaciones ya encontradas. Para instalarlas hacemos clic en el botón *Descargar e instalar todo*. Si no nos aparece ninguna actualización disponible podemos buscarlas con el botón *Buscar actualizaciones*.
+
+El proceso de instalación suele ser lento y en bastantes ocasiones nos solicitará reiniciar el sistema para finalizar.
+
+![Actualizaciones](assets/images/ud2/img34.png) 
+
+Hoy en día, Windows Update ofrece controladores de la mayoría del hardware común (tarjetas de red, sonido, gráficas básicas, periféricos…). Eso significa que un equipo recién instalado suele funcionar de forma aceptable sin necesidad de buscarlos manualmente, aunque no siempre son los más recientes ni los más completos.
