@@ -1,5 +1,7 @@
 # Unidad 2 - Instalación de Windows 11
 
+## Proceso de instalación
+
 En este punto comenzaremos con la instalación de Windows 11 en nuestro PC o máquina virtual. Una vez cargado el medio de instalación de Windows nos aparecerá la pantalla para seleccionar el idioma de configuración y el formato de hora y moneda. Seleccionaremos *Español (España, internacional)* en ambos casos y haremos clic en el botón *Siguiente*.
 
 ![Idioma](assets/images/ud2/img05.png)
