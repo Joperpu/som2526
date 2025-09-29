@@ -147,3 +147,77 @@ El proceso de instalación suele ser lento y en bastantes ocasiones nos solicita
 ![Actualizaciones](assets/images/ud2/img34.png) 
 
 Hoy en día, Windows Update ofrece controladores de la mayoría del hardware común (tarjetas de red, sonido, gráficas básicas, periféricos…). Eso significa que un equipo recién instalado suele funcionar de forma aceptable sin necesidad de buscarlos manualmente, aunque no siempre son los más recientes ni los más completos.
+
+## Desactivar actualizaciones automáticas
+
+En el uso de máquinas virtuales, resulta conveniente desactivar las actualizaciones automáticas de Windows 11 porque estas consumen recursos adicionales de CPU, memoria y disco, lo que puede ralentizar el rendimiento de la máquina virtual. Además, las actualizaciones pueden modificar configuraciones o instalar cambios que afecten a la estabilidad del sistema virtualizado, dificultando la práctica y el aprendizaje en un entorno controlado.
+
+Para desactivar las actualizaciones automáticas en Windows 11 podemos hacer lo siguiente:
+
+1. Pulsa Win + R, escribe services.msc y presiona Enter.
+2. Busca Windows Update en la lista.
+3. Haz doble clic → en Tipo de inicio, selecciona Deshabilitado.
+4. Pulsa Detener y luego Aplicar.
+
+![Actualizaciones desactivadas](assets/images/ud2/img58.png){width=500}
+
+![Actualizaciones desactivadas](assets/images/ud2/img59.png) 
+
+
+
+## Creación de una carpeta compartida entre el anfitrión y el huésped
+
+Cuando trabajamos con máquinas virtuales, a menudo necesitamos intercambiar archivos entre el sistema host (el ordenador físico) y el sistema guest (la máquina virtual). Aunque es posible hacerlo mediante memorias USB o enviando archivos por la red, estas opciones son menos prácticas y más lentas.
+
+Las carpetas compartidas de VirtualBox ofrecen una solución más sencilla y eficiente: permiten que una carpeta del host sea accesible directamente desde el guest, como si formara parte de sus propias unidades de almacenamiento. De esta forma, se pueden transferir documentos, programas o configuraciones sin necesidad de recurrir a dispositivos externos ni configuraciones de red complejas.
+
+En resumen, las carpetas compartidas facilitan el trabajo en entornos virtualizados porque agilizan el flujo de archivos, ahorran tiempo y mejoran la integración entre el host y la máquina virtual.
+
+Lo primero que deberemos realizar es crear la carpeta compartida en nuestro host (máquina real), por ejemplo, en el escritorio.
+
+![Carpeta compartida](assets/images/ud2/img53.png) 
+
+A continuación, nos dirigimos a VirtualBox, seleccionamos la máquina virtual huésped donde queremos compartir los archivos y entramos en **Configuración -> Carpetas compartidas**.
+
+![Carpeta compartida](assets/images/ud2/img54.png) 
+
+Hacemos clic en el botón **+** (Agregar nueva carpeta compartida) e incluimos:
+
+- **Ruta de la carpeta**: introducimos la ruta de la carpeta que creamos en el host.
+- **Nombre de la carpeta**: nombre identificativo.
+- Marcamos las casillas de:
+    - Automontar.
+
+Guardamos los cambios.
+
+![Carpeta compartida](assets/images/ud2/img55.png) 
+
+![Carpeta compartida](assets/images/ud2/img56.png) 
+
+Desde este momento, al iniciar nuestro sistema huésped tendremos la carpeta compartida funcionando. Para acceder a ella desde nuestra máquina virtual, debemos ir a *Este Equipo*, y podremos verla en *Ubicaciones de red*.
+
+![Carpeta compartida](assets/images/ud2/img57.png)
+
+## Acceder a un dispositivo de almacenamiento externo USB desde la máquina virtual en VirtualBox
+
+Si conectamos un *pendrive* u otro dispositivo de almacenamiento externo a nuestra máquina real (host) a través de un puerto USB, este no *se verá* desde la máquina huésped. Para poder acceder desde esta última deberemos realizar los siguientes pasos.
+
+Comenzaremos descargando e instalando el [Oracle VirtualBox Extension Pack](https://download.virtualbox.org/virtualbox/7.2.2/Oracle_VirtualBox_Extension_Pack-7.2.2.vbox-extpack). Si hacemos doble clic en el archivo descargado seremos preguntados acerca de instalar este paquete de instalación. Pulsamos en el botón *Instalar*. Aceptamos las condiciones y esperamos que finalice.
+
+A continuación, con la máquina virtual apagada, nos dirigimos a la configuración de la misma, desde **Configuración -> Puertos USB**. Marcamos la opción de Controlador USB 3.0 (xHCI) (si no lo estaba anteriormente).
+
+![Pendrive](assets/images/ud2/img60.png)
+
+Seguidamente, hacemos clic en el icono de **+ (Agregar nuevo filtro USB)**, seleccionamos el dispositivo de la lista (por nombre y fabricante) y este se añadirá como filtro para que el anfitrión lo pueda capturar.
+
+![Pendrive](assets/images/ud2/img61.png)
+
+![Pendrive](assets/images/ud2/img62.png)
+
+Iniciamos la máquina virtual, insertamos el pendrive en la máquina host (si lo habíamos retirado) y en la barra superior de VirtualBox nos dirigimos a **Dispositivos -> USB -> [Nombre del pendrive]**. En este punto, lo seleccionamos si no aparece seleccionado.
+
+![Pendrive](assets/images/ud2/img63.png)
+
+En nuestra máquina virtual nos dirigimos al explorador de archivos, accedemos a *Este Equipo* y podremos ver como el dispositivo de almacenamiento USB está disponible para acceder a él como una unidad extraíble normal.
+
+![Pendrive](assets/images/ud2/img64.png)
