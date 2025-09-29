@@ -115,7 +115,7 @@ Algunas claves de Lubuntu:
 
 ### Instalación de Lubuntu
 
-En este punto vamos a comenzar la instalación de Lubuntu 24.04 en nuestro PC o máquina virtual. Una vez cargado el medio de instalación nos aparecerá el menú de Grub, donde deberemos seleccionar la opción *Try or install Lubuntu* y pulsar *Enter*.
+En este punto vamos a comenzar la instalación de Lubuntu 24.04 en nuestro PC o máquina virtual. Podemos descargar la ISO necesaria desde el [siguiente enlace](https://cdimage.ubuntu.com/lubuntu/releases/noble/release/lubuntu-24.04.3-desktop-amd64.iso). Una vez cargado el medio de instalación nos aparecerá el menú de Grub, donde deberemos seleccionar la opción *Try or install Lubuntu* y pulsar *Enter*.
 
 ![Grub](assets/images/ud2/img35.png)
 
