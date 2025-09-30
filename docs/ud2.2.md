@@ -173,6 +173,9 @@ Las carpetas compartidas de VirtualBox ofrecen una solución más sencilla y efi
 
 En resumen, las carpetas compartidas facilitan el trabajo en entornos virtualizados porque agilizan el flujo de archivos, ahorran tiempo y mejoran la integración entre el host y la máquina virtual.
 
+!!! info
+    Para que esta guía funcione es necesario tener previamente instalados los VirtualBox Guest Additions.
+
 Lo primero que deberemos realizar es crear la carpeta compartida en nuestro host (máquina real), por ejemplo, en el escritorio.
 
 ![Carpeta compartida](assets/images/ud2/img53.png) 
