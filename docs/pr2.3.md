@@ -1,14 +1,14 @@
-# Práctica 2.2 - Instalación de una máquina virtual con Lubuntu
+# Práctica 2.3 - Instalación de una máquina virtual dual
 
 ## Descripción de la tarea
 
-Documenta todo el proceso de instalación de una máquina virtual con Lubuntu 24.04 en VirtualBox, siguiendo los [pasos de los apuntes](https://joperpu.github.io/som2526/ud2.3/).
+Documenta todo el proceso de instalación de una máquina virtual dual con Windows 11 y Ubuntu 24.04 en VirtualBox, siguiendo los [pasos de los apuntes](https://joperpu.github.io/som2526/ud2.4/).
 
 ## Entrega
 
 Crea un documento PDF, a partir de un Word o Google Docs, con las siguientes consideraciones:
 
-- El nombre del archivo a entregar en la plataforma Moodle Centros debe tener el siguiente formato: `Apellido1Apellido2_Nombre_SOM_UD2_P2.pdf`.
+- El nombre del archivo a entregar en la plataforma Moodle Centros debe tener el siguiente formato: `Apellido1Apellido2_Nombre_SOM_UD2_P3.pdf`.
 - Portada con imagen, nombre del alumno, título y curso.
 - Encabezado con nombre de la práctica y materia.
 - Pie de página con nombre, número de página insertado, curso, año escolar, instituto.

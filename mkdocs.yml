@@ -29,8 +29,10 @@ nav:
     - Teoría UD2 - Sistemas operativos y VirtualBox: ud2.1.md
     - Teoría UD2 - Instalación de Windows 11: ud2.2.md
     - Teoría UD2 - Instalación de GNU/Linux: ud2.3.md
+    - Teoría UD3 - Instalación de Windows-Linux dual: ud2.4.md
     - Práctica 2.1: pr2.1.md
-    #- Práctica 2.2: pr2.2.md
+    - Práctica 2.2: pr2.2.md
+    #- Práctica 2.3: pr2.3.md
   
 
 copyright: "2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
