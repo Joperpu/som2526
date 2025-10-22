@@ -44,7 +44,7 @@ manage-bde -status
 
 ![Powershell](assets/images/ud2/img82.png)
 
-Una vez finalizado este proceso procedemos a apagar la máquina virtual y accedemos a la configuración de esta. Nos dirigimos a *Almacenamiento*, seleccionamos la unidad óptica y hacemos clic en el disco azul para seleccionar la imagen de Ubuntu.
+Una vez finalizado este proceso procedemos a apagar la máquina virtual y accedemos a la configuración de esta. Nos dirigimos a *Almacenamiento*, seleccionamos la unidad óptica y hacemos clic en el disco azul para seleccionar la imagen de Ubuntu. Si no la tenemos descargada previamente lo podemos hacer desde su [página oficial de descargas](https://ubuntu.com/download/desktop).
 
 ![Dual](assets/images/ud2/img83.png)
 
