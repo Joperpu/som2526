@@ -1,8 +1,8 @@
-# Práctica 2.3 - Instalación de una máquina virtual dual
+# Práctica 2.3 - Creación de una unidad USB booteable con Rufus y Ventoy
 
 ## Descripción de la tarea
 
-Documenta todo el proceso de instalación de una máquina virtual dual con Windows 11 y Ubuntu 24.04 en VirtualBox, siguiendo los [pasos de los apuntes](https://joperpu.github.io/som2526/ud2.4/).
+Documenta todo el proceso de creación de una unidad USB booteable con Rufus (con Ubuntu 24.04 LTS) y Ventoy (incluye al menos 3 ISOs de sistemas operativos distintos), siguiendo los [pasos de los apuntes](https://joperpu.github.io/som2526/ud2.5/).
 
 ## Entrega
 

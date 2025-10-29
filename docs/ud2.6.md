@@ -1,0 +1,29 @@
+# Unidad 2 - Creación y restauración de imágenes
+
+Una imagen de sistema es una instantánea bit a bit de un disco o partición que captura todo: sistema operativo, controladores, configuración, aplicaciones y datos. Al restaurarla, el equipo queda exactamente como estaba cuando se creó. A diferencia de una copia “por archivos”, que solo guarda carpetas y documentos, la imagen incluye también el arranque y te evita reinstalar ni reconfigurar nada.
+
+Hacer copias de seguridad en forma de imagen tiene sentido porque los fallos ocurren: discos que mueren, errores humanos, malware o ransomware. La ventaja clave es el tiempo: con una imagen puedes realizar una restauración bare-metal y volver a estar operativo en minutos u horas, en lugar de pasar medio día reinstalando sistema, drivers y software. Si piensas en objetivos de continuidad, reduces tanto el RTO (tiempo para volver a funcionar) como el RPO (cuánta información estás dispuesto a perder desde la última copia).
+
+Hay varios enfoques. El backup completo genera una única imagen con todo el contenido; ocupa más y tarda más en crearse, pero su restauración es la más simple porque no depende de nada más. El diferencial guarda solo lo que ha cambiado desde el último completo; con el paso de los días crece, pero restaurar es directo (imagen completa más el último diferencial), por eso es una buena combinación con un completo semanal. El incremental registra los cambios desde la copia inmediatamente anterior, sea completa o incremental; crea ficheros pequeños y rápidos de generar, ahorra espacio, pero para restaurar necesitas la cadena entera (completo + todos los incrementales hasta la fecha), así que conviene gestionarlo con políticas de retención o consolidación para evitar cadenas demasiado largas. Por su parte, el clonado copia 1:1 a otro disco arrancable; es ideal para migrar de HDD a SSD o sustituir un disco, pero no te da histórico de versiones: lo que hay en origen pasa tal cual a destino.
+
+Elegir depende del objetivo: en aulas o entornos de práctica suele funcionar muy bien una imagen base recién configurada y, si el equipo cambia poco, recrearla tras cada hito importante; si hay modificaciones frecuentes, añade diferenciales (restauración más sencilla) o incrementales (más eficientes en espacio). Para migraciones de hardware, clonar es lo más ágil. En cualquier caso, la copia por archivos sigue siendo el complemento adecuado para documentos que cambian a diario.
+
+Hay detalles prácticos que conviene tener presentes. En Windows, las herramientas “en caliente” usan VSS para asegurar consistencia; en Linux, crear la imagen “en frío” desde un medio live (como Clonezilla) simplifica la captura de particiones en uso. Si el disco está cifrado (BitLocker o LUKS), suspende temporalmente el cifrado o asegúrate de tener las claves de recuperación antes de hacer y restaurar la imagen. Para que el sistema arranque tras una restauración, no olvides incluir las particiones de arranque (ESP/EFI, MSR/Recovery en Windows; EFI y/o /boot en GNU/Linux). Y, por seguridad y espacio, aprovecha opciones como compresión, verificación de integridad y cifrado de la imagen con contraseña.
+
+Con esta base, en las siguientes secciones veremos cómo crear y restaurar imágenes con AOMEI, Acronis y Clonezilla, destacando qué elegir en cada caso y qué ajustes marcan la diferencia.
+
+## AOMEI Backupper
+
+AOMEI Backupper es una suite de copia de seguridad e imagen de disco para Windows (7/8/10/11 y ediciones Server) orientada a crear y restaurar imágenes completas de sistema, disco o particiones, además de copias por archivos. Está pensada para reducir tiempos de recuperación (bare-metal restore) y facilitar tareas como migrar a SSD mediante clonación.
+
+Trabaja “en caliente” gracias a VSS (no necesitas cerrar aplicaciones) y permite backups completos, diferenciales e incrementales, con planificaciones, compresión, cifrado y verificación de integridad. Las imágenes pueden guardarse en discos externos/USB, NAS o recursos de red, y es posible crear un medio de arranque WinPE para restaurar aunque Windows no inicie (compatible con UEFI/GPT y MBR/Legacy).
+
+Además de la copia/restore ofrece clon de disco/partición y, en ediciones de pago, opciones como Universal Restore (restaurar a hardware distinto) y esquemas de retención para purgar incrementales antiguos. Existe una edición gratuita (Standard) con funciones básicas y ediciones Professional/Workstation/Server/Technician con capacidades avanzadas.
+
+## Acronis
+
+Acronis —antes conocido como True Image— es una suite de copia de seguridad e imagen de disco orientada a usuarios domésticos y profesionales que necesitan proteger equipos Windows y macOS con opciones locales y en nube. Permite crear imágenes completas de sistema/disco, respaldos por archivos y carpetas, versionado, programaciones y validación de copias. Trabaja “en caliente” (VSS en Windows), ofrece clonado de discos para migrar a SSD y genera medios de arranque (WinPE/macOS) para bare-metal restore cuando el sistema no inicia. En ediciones superiores integra protección antiransomware/antimalware y funciones avanzadas de gestión. Soporta UEFI/GPT y escenarios híbridos (disco externo, NAS y nube), buscando un equilibrio entre rapidez de recuperación y facilidad de uso.
+
+## Clonezilla
+
+Clonezilla es una herramienta libre y multiplataforma de clonado e imagen que se ejecuta en modo live desde USB/ISO (sin depender del sistema instalado). Está pensada para capturar y restaurar discos o particiones a nivel de bloque de forma muy rápida (usa partclone para copiar solo bloques usados), con compresión, verificación y soporte de MBR/GPT y UEFI. Es ideal en aulas y laboratorios: la edición SE (Server Edition) permite clonado masivo por red (multicast). Su interfaz es textual y no ofrece backups incrementales ni por archivo: brilla cuando se necesita una instantánea exacta del sistema o desplegar la misma imagen en muchos equipos.

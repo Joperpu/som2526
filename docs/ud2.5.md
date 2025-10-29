@@ -1,4 +1,4 @@
-# Unidad 2 - Creación de un pendrive de arranque con Rufus
+# Unidad 2 - Creación de un pendrive booteable
 
 Un pendrive booteable es un USB preparado para que el firmware del equipo (UEFI o BIOS) pueda arrancar desde él y cargar un gestor de arranque que, a su vez, inicia un instalador o un sistema “Live” (arranca sin instalar, típico en GNU/Linux).
 
@@ -29,8 +29,6 @@ Cuándo usar Rufus:
 - Poner en marcha equipos sin sistema operativo, iniciando directamente un instalador o un sistema Live de Linux.
 - Ejecutar utilidades de bajo nivel (diagnóstico, clonado, antivirus offline, gestores de particiones, MemTest, etc.).
 - Actualizar firmware/BIOS desde DOS (FreeDOS) cuando el fabricante lo exige en equipos antiguos o herramientas legadas.
-
-### Creación de un USB booteable de Windows 11
 
 #### Con Rufus
 
@@ -67,3 +65,31 @@ De la misma forma que hicimos con la ISO de Windows 11 seleccionamos la de Ubunt
 
 ## Ventoy
 
+Ventoy es una herramienta de código abierto que permite crear unidades USB de arranque (bootables) de manera rápida, sencilla y muy flexible. A diferencia de los métodos tradicionales, en los que es necesario formatear la memoria USB y grabar una imagen ISO cada vez que se desea cambiar de sistema operativo o herramienta, Ventoy permite copiar múltiples archivos ISO directamente al dispositivo USB y elegir cuál arrancar desde un menú interactivo al iniciar el ordenador.
+
+Esto significa que con una sola memoria USB se pueden almacenar y utilizar varias distribuciones de Linux, instaladores de Windows, utilidades de rescate, herramientas de diagnóstico, antivirus o cualquier otro sistema arrancable. Ventoy crea un entorno de arranque compatible con BIOS y UEFI, e incluso soporta el modo Secure Boot.
+
+Gracias a su diseño, el proceso de actualización es muy sencillo: no es necesario volver a formatear el dispositivo ni reinstalar las imágenes, ya que basta con copiar nuevas ISOs o eliminar las que ya no se necesiten. Por su versatilidad y facilidad de uso, Ventoy se ha convertido en una de las herramientas más populares entre administradores de sistemas, técnicos informáticos y usuarios avanzados que trabajan con distintos sistemas operativos o entornos de recuperación.
+
+### Creación de un USB booteable con Ventoy
+
+En primer lugar, nos dirigimos al apartado de descargas de su [web oficial](https://www.ventoy.net/en/download.html) y descargamos el paquete adecuado a nuestro sistema operativo.
+
+![Ventoy](assets/images/ud2/img116.png)
+
+Descomprimimos el archivo ZIP y accedemos a los archivos que contiene. Hacemos clic derecho en el archivo *Ventoy2Disk.exe* y lo ejecutamos como administrador.
+
+![Ventoy](assets/images/ud2/img117.png)
+
+Una vez abierta la aplicación, seleccionamos nuestra unidad de almacenamiento USB en el desplegable *Device* y hacemos clic en el botón *Install*. En ese punto seremos preguntados dos veces sobre que esta acción provocará el borrado de todos los datos que tengamos en el pendrive. Hacemos clic en *Sí* y la instalación continuará.
+
+![Ventoy](assets/images/ud2/img118.png)
+![Ventoy](assets/images/ud2/img119.png)
+
+Una vez finalice nuestro pendrive tendrá como nombre Ventoy y aparentemente se encontrará vacío (aunque realmente hay una partición donde se encuentran los archivo de Ventoy).
+
+![Ventoy](assets/images/ud2/img120.png)
+
+Dentro de la unidad podremos copiar tantas imágenes ISOs de sistemas operativos como queremos arrancar desde nuestro pendrive booteable.
+
+![Ventoy](assets/images/ud2/img121.png)
