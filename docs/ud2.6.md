@@ -10,8 +10,6 @@ Elegir depende del objetivo: en aulas o entornos de práctica suele funcionar mu
 
 Hay detalles prácticos que conviene tener presentes. En Windows, las herramientas “en caliente” usan VSS para asegurar consistencia; en Linux, crear la imagen “en frío” desde un medio live (como Clonezilla) simplifica la captura de particiones en uso. Si el disco está cifrado (BitLocker o LUKS), suspende temporalmente el cifrado o asegúrate de tener las claves de recuperación antes de hacer y restaurar la imagen. Para que el sistema arranque tras una restauración, no olvides incluir las particiones de arranque (ESP/EFI, MSR/Recovery en Windows; EFI y/o /boot en GNU/Linux). Y, por seguridad y espacio, aprovecha opciones como compresión, verificación de integridad y cifrado de la imagen con contraseña.
 
-Con esta base, en las siguientes secciones veremos cómo crear y restaurar imágenes con AOMEI, Acronis y Clonezilla, destacando qué elegir en cada caso y qué ajustes marcan la diferencia.
-
 ## AOMEI Backupper
 
 AOMEI Backupper es una suite de copia de seguridad e imagen de disco para Windows (7/8/10/11 y ediciones Server) orientada a crear y restaurar imágenes completas de sistema, disco o particiones, además de copias por archivos. Está pensada para reducir tiempos de recuperación (bare-metal restore) y facilitar tareas como migrar a SSD mediante clonación.
@@ -20,10 +18,18 @@ Trabaja “en caliente” gracias a VSS (no necesitas cerrar aplicaciones) y per
 
 Además de la copia/restore ofrece clon de disco/partición y, en ediciones de pago, opciones como Universal Restore (restaurar a hardware distinto) y esquemas de retención para purgar incrementales antiguos. Existe una edición gratuita (Standard) con funciones básicas y ediciones Professional/Workstation/Server/Technician con capacidades avanzadas.
 
-## Acronis
+Tutoriales de uso de AOMEI:
 
-Acronis —antes conocido como True Image— es una suite de copia de seguridad e imagen de disco orientada a usuarios domésticos y profesionales que necesitan proteger equipos Windows y macOS con opciones locales y en nube. Permite crear imágenes completas de sistema/disco, respaldos por archivos y carpetas, versionado, programaciones y validación de copias. Trabaja “en caliente” (VSS en Windows), ofrece clonado de discos para migrar a SSD y genera medios de arranque (WinPE/macOS) para bare-metal restore cuando el sistema no inicia. En ediciones superiores integra protección antiransomware/antimalware y funciones avanzadas de gestión. Soporta UEFI/GPT y escenarios híbridos (disco externo, NAS y nube), buscando un equilibrio entre rapidez de recuperación y facilidad de uso.
+- [Vídeos de la web oficial](https://www.ubackup.com/es/videos.html).
+- [Documentación ofidial de AMOEI](https://www.ubackup.com/es/videos.html).
 
 ## Clonezilla
 
 Clonezilla es una herramienta libre y multiplataforma de clonado e imagen que se ejecuta en modo live desde USB/ISO (sin depender del sistema instalado). Está pensada para capturar y restaurar discos o particiones a nivel de bloque de forma muy rápida (usa partclone para copiar solo bloques usados), con compresión, verificación y soporte de MBR/GPT y UEFI. Es ideal en aulas y laboratorios: la edición SE (Server Edition) permite clonado masivo por red (multicast). Su interfaz es textual y no ofrece backups incrementales ni por archivo: brilla cuando se necesita una instantánea exacta del sistema o desplegar la misma imagen en muchos equipos.
+
+Tutoriales de uso de Clonezilla:
+
+- [Creación de una imagen de un equipo paso a paso](https://somebooks.es/clonezilla-crear-una-imagen-del-equipo-paso-paso/).
+- [Videotutorial de la creación de un USB booteable con Clonezilla](https://www.youtube.com/watch?v=A52PloXVzPc).
+- [Videotutorial de la creación de una imagen con Clonezilla](https://www.youtube.com/watch?v=lway89rHXdw).
+- [Videotutorial de la restauración de una imagen con Clonezilla](https://www.youtube.com/watch?v=yvD-x9NtLGQ).

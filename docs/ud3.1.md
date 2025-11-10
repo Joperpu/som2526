@@ -86,7 +86,7 @@ El panel de LXQt muestra tus lanzadores junto al gestor de tareas y a la bandeja
 - Los lanzadores abren la aplicación asociada; si arrastras un archivo a la ventana de una app, se abre con esa app (el arrastre al lanzador puede variar según el plugin: lo habitual es lanzar la app, no “soltar” archivos sobre el botón).
 - Incluye accesos típicos: gestor de archivos (PCManFM-Qt), navegador, ofimática, papelera, etc. Puedes añadir/quitar elementos desde Configuración del panel.
 
-#### Menú de aplicaciones (equivalente al “tablero”)
+#### Menú de aplicaciones 
 
 En Lubuntu no existe el “Tablero” de Unity; su equivalente práctico es el Menú de aplicaciones de LXQt y el ejecutor (Runner).
 
