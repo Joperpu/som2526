@@ -58,3 +58,4 @@ Crea un documento PDF, a partir de un Word o Google Docs, con las siguientes con
 - Para las capturas de pantalla de las máquinas virtuales:
     - Se captura todo el escritorio de la máquina virtual donde se pueda leer el nombre de la máquina, con el fondo de su plataforma Moodle, donde se pueda ver imagen de perfil. Toda aquella práctica que no cumpla este requisito no será evaluada.
     - Al igual que en los Títulos de las fotos, en el Título de la captura de pantalla irá referenciado el apartado y ejercicio al que corresponde.
+

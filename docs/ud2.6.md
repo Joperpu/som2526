@@ -27,6 +27,8 @@ Tutoriales de uso de AOMEI:
 
 Clonezilla es una herramienta libre y multiplataforma de clonado e imagen que se ejecuta en modo live desde USB/ISO (sin depender del sistema instalado). Está pensada para capturar y restaurar discos o particiones a nivel de bloque de forma muy rápida (usa partclone para copiar solo bloques usados), con compresión, verificación y soporte de MBR/GPT y UEFI. Es ideal en aulas y laboratorios: la edición SE (Server Edition) permite clonado masivo por red (multicast). Su interfaz es textual y no ofrece backups incrementales ni por archivo: brilla cuando se necesita una instantánea exacta del sistema o desplegar la misma imagen en muchos equipos.
 
+Puedes descargar la ISO de Clonezilla desde el [siguiente enlace](https://clonezilla.org/downloads.php).
+
 Tutoriales de uso de Clonezilla:
 
 - [Creación de una imagen de un equipo paso a paso](https://somebooks.es/clonezilla-crear-una-imagen-del-equipo-paso-paso/).

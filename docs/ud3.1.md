@@ -1,25 +1,5 @@
 # Unidad 3 - Configuración y administración de sistemas basados en Linux
 
-Esquema
-
-- Introducción a Lubuntu
-    - Interfaz
-    - Escritorio
-- Introducción al uso de comandos
-    - Comandos iniciales 
-
-- Gestión de archivos
-- Montaje de dispositivos de almacenamiento
-- Gestión de archivos y directorios en CLI
-
-- Usuarios y grupos
-- Permisos de archivo
-- Dispositivos hardware y controladores
-- Instalación de aplicaciones
-- Red
-- Discos y particiones
-- Procesos
-- Administrador de impresión
 
 ## Introducción a Lubuntu
 
