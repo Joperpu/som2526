@@ -36,10 +36,10 @@ nav:
     - Práctica 2.2: pr2.2.md
     - Práctica 2.3: pr2.3.md
     - Práctica 2.4: pr2.4.md
-  #- Unidad 3 - Configuración y administración de sistemas operativos basados en GNU/Linux:
-    #- Teoría UD3 - Introducción a Lubuntu y comandos iniciales: ud3.1.md
+  - Unidad 3 - Configuración y administración de sistemas operativos basados en GNU/Linux:
+    - Teoría UD3 - Introducción a Lubuntu y comandos iniciales: ud3.1.md
     #- Teoría UD3 - Gestión de archivos en Lubuntu: ud3.2.md
-    #- Práctica 3.1: pr3.1.md
+    - Práctica 3.1: pr3.1.md
     #- Práctica 3.2: pr3.2.md
 
 copyright: "2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
