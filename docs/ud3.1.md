@@ -497,3 +497,121 @@ Autocompletado (Tab):
 Ver el listado (recordatorio):
 
 - history → muestra el histórico (más detalles en el apartado específico).
+
+#### Listar procesos: ps
+
+Listar procesos: ps
+
+Sintaxis
+
+```bash
+ps aux                     # estilo BSD
+ps -ef                     # estilo UNIX
+```
+
+Filtros y formato
+
+	•	-u <usuario>  Por usuario.
+	•	-C <comando>  Por nombre de comando.
+	•	-o <campos>   Seleccionar columnas, ej.: pid,ppid,comm,%cpu,%mem,etime.
+	•	--sort=<clave> Ordenar (ej.: --sort=-%cpu,-%mem).
+	•	--forest      Dibuja árbol por jerarquía.
+
+Ejemplos
+
+```bash
+ps -u "$USER" -o pid,comm,%cpu,%mem --sort=-%cpu | head
+ps -ef --forest | less
+ps aux | grep -E "[s]shd"                    # localizar proceso
+ps -C firefox -o pid,etimes,pcpu,pmem
+```
+
+#### Señales y finalización de procesos: kill, pkill, killall
+
+kill envía señales a procesos. Por defecto es SIGTERM (15). SIGKILL (9) forza la terminación; úsalo solo si SIGTERM no funciona. Señales útiles: SIGHUP (1) recargar, SIGSTOP (19) parar, SIGCONT (18) reanudar.
+
+Sintaxis
+
+```bash
+kill [-SIGNAL] PID ...
+kill -l                        # lista señales
+pkill [-SIGNAL] patrón         # por nombre/patrón
+killall [-SIGNAL] nombre       # por nombre exacto
+```
+
+Ejemplos
+
+```bash
+kill 1234                      # SIGTERM al PID 1234
+kill -9 1234                   # SIGKILL (último recurso)
+pkill -HUP nginx               # recargar nginx por nombre
+killall firefox                # terminar todos los 'firefox'
+kill -STOP 2222; kill -CONT 2222
+```
+
+#### Apagar y reiniciar: shutdown, reboot, poweroff (y systemctl)
+
+Requieren privilegios (normalmente sudo). shutdown programa apagados/reinicios y avisa a los usuarios conectados.
+
+Sintaxis
+
+```bash
+sudo shutdown -h now                # apagar ahora
+sudo shutdown -r now                # reiniciar ahora
+sudo shutdown -h +10 				# "Apagado en 10 min"
+sudo shutdown -c                    # cancelar programado
+```
+
+Atajos equivalentes
+
+```bash
+sudo reboot
+sudo poweroff
+```
+
+#### Gestión de paquetes con APT: apt-get (y apt, apt-cache, apt-mark)
+
+APT gestiona instalación/actualización de software en Debian/Ubuntu/Lubuntu. apt es la interfaz “amigable” para usuarios; apt-get/apt-cache siguen siendo válidos y scriptables.
+
+Actualizar índices y sistema
+
+```bash
+sudo apt-get update                      # refresca índices
+sudo apt-get upgrade                     # actualiza paquetes (sin cambios de dependencias mayores)
+sudo apt-get full-upgrade                # resuelve cambios de dependencias (antes: dist-upgrade)
+```
+
+Instalar/eliminar
+
+```bash
+sudo apt-get install paquete1 paquete2   # instalar
+sudo apt-get remove paquete              # elimina binarios (conserva configs)
+sudo apt-get purge paquete               # elimina binarios y configuraciones
+sudo apt-get autoremove                  # limpia dependencias huérfanas
+```
+
+Limpieza de caché
+
+```bash
+sudo apt-get autoclean                   # borra .deb antiguos
+sudo apt-get clean                       # borra toda la caché .deb
+```
+
+Buscar e información
+
+```bash
+apt search término                       # buscar (interfaz moderna)
+apt show paquete                         # info de un paquete
+apt-cache policy paquete                 # origen/prioridades/versión instalada y candidatas
+```
+
+Otras utilidades
+
+```bash
+sudo apt-get -f install                  # intenta reparar deps rotas
+sudo apt-get install -y paquete          # asume “sí” a las preguntas (con cuidado)
+sudo apt-get install -s paquete          # simulación (no cambia nada)
+apt list --installed | grep -i nombre    # listar instalados y filtrar
+sudo apt-mark hold paquete               # congelar versión
+sudo apt-mark unhold paquete             # descongelar
+```

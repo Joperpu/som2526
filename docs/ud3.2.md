@@ -684,3 +684,153 @@ Comportamiento según operación
 - Borrar (rm enlace): elimina el enlace. El archivo real se borra solo cuando desaparece su último enlace duro (último nombre).
 
 Para inspeccionar enlaces, usa ls -l (los symlinks muestran enlace -> objetivo).
+
+### Crear archivos y actualizar marcas de tiempo: touch
+
+El comando touch crea archivos vacíos y/o actualiza sus marcas de tiempo (acceso y modificación).
+
+Sintaxis
+
+```bash
+touch [opciones] archivo ...
+```
+
+Parámetros
+
+	•	archivo ...  Uno o varios archivos. Si no existen, se crean (salvo -c).
+
+Opciones
+
+	•	-c  No crea archivos nuevos; solo actualiza marcas si existen.
+	•	-a  Actualiza acceso (atime).
+	•	-m  Actualiza modificación (mtime).
+	•	-d "FECHA"  Establece fecha/hora con texto (ej.: "2025-09-01 08:30").
+	•	-t [[CC]YY]MMDDhhmm[.ss]  Fecha/hora en formato numérico.
+	•	-r <ref>  Copia marcas de tiempo de <ref>.
+
+Ejemplos
+
+```bash
+touch notas.txt                                # crea/actualiza
+touch -c inexistente.txt                       # no crea (silencio)
+touch -a -d "2025-01-01 12:00" informe.log     # solo atime
+touch -t 202512311159.59 cierre.log            # 2025-12-31 11:59:59
+```
+
+### Permisos de archivos y directorios: chmod
+
+chmod cambia los permisos. En Linux hay tres clases (usuario, grupo, otros) y tres permisos (r lectura, w escritura, x ejecución). En directorios, x permite entrar/listar (con r).
+
+Sintaxis
+
+```bash
+chmod [opciones] modo archivo ...
+```
+
+Modos
+
+	•	Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).
+	•	Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).
+
+Opciones
+
+	•	-R  Recursivo.
+	•	-v  Verboroso.
+
+Bits especiales (avanzado)
+
+	•	setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.
+
+Ejemplos
+
+```bash
+chmod 644 documento.txt                        # rw-r--r--
+chmod u+x script.sh                            # añade ejecución al dueño
+chmod -R u=rwX,g=rX,o= proyecto/               # permisos limpios por árbol
+chmod 1777 /tmp                                # sticky bit (solo dueño borra)
+```
+
+### Propietario y grupo: chown (y chgrp)
+
+chown cambia propietario y/o grupo. En FS sin permisos POSIX (FAT/exFAT/NTFS montados sin mapeo) puede no tener efecto real.
+
+Sintaxis
+
+```bash
+chown [opciones] [--] usuario[:grupo] archivo ...
+chown [opciones] [--] :grupo archivo ...       # solo grupo
+```
+
+Opciones
+
+	•	-R  Recursivo.
+	•	-h  No seguir symlinks (actuar sobre el enlace).
+	•	--from=usr:grp  Solo si coincide el dueño/grupo actual.
+
+Ejemplos
+
+```bash
+sudo chown usuario:usuario ~/proyecto -R
+sudo chown :www-data /var/www/html -R
+sudo chgrp docentes /compartida
+```
+
+### Buscar texto en archivos: grep
+
+grep busca patrones (expresiones regulares) en texto.
+
+Sintaxis
+
+```bash
+grep [opciones] patrón [archivo ...]
+```
+
+Opciones útiles
+	•	-i  Ignora mayúsculas.
+	•	-n  Muestra número de línea.
+	•	-r/-R  Recursivo.
+	•	-w  Coincidencia de palabra completa.
+	•	-v  Invierte (muestra lo que no coincide).
+	•	-c  Cuenta coincidencias.
+	•	-l/-L  Muestra archivos que sí / no contienen el patrón.
+	•	-E  ER extendidas (|, +, ?, () sin escapes).
+	•	-F  Cadena fija (sin regex, más rápido).
+	•	-A N / -B N / -C N  Contexto después, antes, ambos.
+	•	--color=auto  Resalta coincidencias.
+
+Ejemplos
+
+```bash
+grep -R "ERROR" /var/log
+grep -niw "usuario" *.txt
+grep -E "^(INFO|WARN)" app.log
+dmesg | grep -i usb
+ps aux | grep -E "[f]irefox"                  # evita listar el propio grep
+tail -F /var/log/syslog | grep --line-buffered -i "network"
+```
+
+### Ver final de archivos y seguir cambios: tail
+
+tail muestra el final de un archivo; con -f sigue anexos (logs). -F reabre si el archivo se rota.
+
+Sintaxis
+
+```bash
+tail [opciones] [archivo ...]
+```
+
+Opciones
+
+	•	-n N  Muestra las N últimas líneas (por defecto 10).
+	•	-f    Sigue el crecimiento en tiempo real.
+	•	-F    Como -f, pero maneja logrotate.
+	•	-c N  Lee los últimos N bytes.
+	•	-q    Silencioso (no imprime cabeceras con múltiples archivos).
+
+Ejemplos
+
+```bash
+tail -n 50 /var/log/syslog
+tail -F /var/log/auth.log
+tail -f app.log | grep -i error
+```
