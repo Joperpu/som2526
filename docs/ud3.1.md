@@ -511,11 +511,11 @@ ps -ef                     # estilo UNIX
 
 Filtros y formato
 
-	•	-u <usuario>  Por usuario.
-	•	-C <comando>  Por nombre de comando.
-	•	-o <campos>   Seleccionar columnas, ej.: pid,ppid,comm,%cpu,%mem,etime.
-	•	--sort=<clave> Ordenar (ej.: --sort=-%cpu,-%mem).
-	•	--forest      Dibuja árbol por jerarquía.
+- -u <usuario>  Por usuario.
+- -C <comando>  Por nombre de comando.
+- -o <campos>   Seleccionar columnas, ej.: pid,ppid,comm,%cpu,%mem,etime.
+- --sort=<clave> Ordenar (ej.: --sort=-%cpu,-%mem).
+- --forest      Dibuja árbol por jerarquía.
 
 Ejemplos
 

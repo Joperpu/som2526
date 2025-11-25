@@ -697,16 +697,16 @@ touch [opciones] archivo ...
 
 Parámetros
 
-	•	archivo ...  Uno o varios archivos. Si no existen, se crean (salvo -c).
+- archivo ...  Uno o varios archivos. Si no existen, se crean (salvo -c).
 
 Opciones
 
-	•	-c  No crea archivos nuevos; solo actualiza marcas si existen.
-	•	-a  Actualiza acceso (atime).
-	•	-m  Actualiza modificación (mtime).
-	•	-d "FECHA"  Establece fecha/hora con texto (ej.: "2025-09-01 08:30").
-	•	-t [[CC]YY]MMDDhhmm[.ss]  Fecha/hora en formato numérico.
-	•	-r <ref>  Copia marcas de tiempo de <ref>.
+- -c  No crea archivos nuevos; solo actualiza marcas si existen.
+- -a  Actualiza acceso (atime).
+- -m  Actualiza modificación (mtime).
+- -d "FECHA"  Establece fecha/hora con texto (ej.: "2025-09-01 08:30").
+- -t [[CC]YY]MMDDhhmm[.ss]  Fecha/hora en formato numérico.
+- -r <ref>  Copia marcas de tiempo de <ref>.
 
 Ejemplos
 
@@ -729,17 +729,17 @@ chmod [opciones] modo archivo ...
 
 Modos
 
-	•	Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).
-	•	Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).
+- Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).
+- Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).
 
 Opciones
 
-	•	-R  Recursivo.
-	•	-v  Verboroso.
+- -R  Recursivo.
+- -v  Verboroso.
 
 Bits especiales (avanzado)
 
-	•	setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.
+- setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.
 
 Ejemplos
 
@@ -763,9 +763,9 @@ chown [opciones] [--] :grupo archivo ...       # solo grupo
 
 Opciones
 
-	•	-R  Recursivo.
-	•	-h  No seguir symlinks (actuar sobre el enlace).
-	•	--from=usr:grp  Solo si coincide el dueño/grupo actual.
+- -R  Recursivo.
+- -h  No seguir symlinks (actuar sobre el enlace).
+- --from=usr:grp  Solo si coincide el dueño/grupo actual.
 
 Ejemplos
 
@@ -786,17 +786,17 @@ grep [opciones] patrón [archivo ...]
 ```
 
 Opciones útiles
-	•	-i  Ignora mayúsculas.
-	•	-n  Muestra número de línea.
-	•	-r/-R  Recursivo.
-	•	-w  Coincidencia de palabra completa.
-	•	-v  Invierte (muestra lo que no coincide).
-	•	-c  Cuenta coincidencias.
-	•	-l/-L  Muestra archivos que sí / no contienen el patrón.
-	•	-E  ER extendidas (|, +, ?, () sin escapes).
-	•	-F  Cadena fija (sin regex, más rápido).
-	•	-A N / -B N / -C N  Contexto después, antes, ambos.
-	•	--color=auto  Resalta coincidencias.
+- -i  Ignora mayúsculas.
+- -n  Muestra número de línea.
+- -r/-R  Recursivo.
+- -w  Coincidencia de palabra completa.
+- -v  Invierte (muestra lo que no coincide).
+- -c  Cuenta coincidencias.
+- -l/-L  Muestra archivos que sí / no contienen el patrón.
+- -E  ER extendidas (|, +, ?, () sin escapes).
+- -F  Cadena fija (sin regex, más rápido).
+- -A N / -B N / -C N  Contexto después, antes, ambos.
+- --color=auto  Resalta coincidencias.
 
 Ejemplos
 
@@ -821,11 +821,11 @@ tail [opciones] [archivo ...]
 
 Opciones
 
-	•	-n N  Muestra las N últimas líneas (por defecto 10).
-	•	-f    Sigue el crecimiento en tiempo real.
-	•	-F    Como -f, pero maneja logrotate.
-	•	-c N  Lee los últimos N bytes.
-	•	-q    Silencioso (no imprime cabeceras con múltiples archivos).
+- -n N  Muestra las N últimas líneas (por defecto 10).
+- -f    Sigue el crecimiento en tiempo real.
+- -F    Como -f, pero maneja logrotate.
+- -c N  Lee los últimos N bytes.
+- -q    Silencioso (no imprime cabeceras con múltiples archivos).
 
 Ejemplos
 
