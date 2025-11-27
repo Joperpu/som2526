@@ -1,14 +1,3 @@
-
-
-- Usuarios y grupos
-- Permisos de archivo
-- Dispositivos hardware y controladores
-- Instalación de aplicaciones
-- Red
-- Discos y particiones
-- Procesos
-- Administrador de impresión
-
 # Unidad 3 - Gestión de archivos en Lubuntu
 
 ## Introducción al almacenamiento en GNU/Linux (Lubuntu)
