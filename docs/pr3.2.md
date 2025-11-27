@@ -9,7 +9,7 @@ Haz una captura de pantalla para cada uno de los ejercicios.
     2. Todos los archivos que comiencen por “S” de /etc/rc2.d
     3. Todos los archivos de /usr/sbin
     4. Todos los archivos que terminen por “e” de /usr/share
-    5. El número de archivos de la carpeta /var/log/syslog
+    5. El número de archivos de la carpeta /var/log
     6. Todos los archivos que empiecen por "fi” de /usr/share/doc
     7. Todos los archivos que contengan la cadena “dhclient” en cualquier parte de su nombre de /etc/apparmor/init/network-interface-security
     8. Todos los archivos que terminen por “y” en su nombre /var/spool/anacron

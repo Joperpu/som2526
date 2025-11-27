@@ -242,18 +242,16 @@ En general, da igual usar ruta absoluta o relativa: elige la que sea más clara 
 
 Para operar sobre conjuntos de archivos sin listarlos uno a uno, la shell expande patrones (globbing) antes de ejecutar el comando. Los comodines más comunes son:
 
-- *  → coincide con cero o más caracteres.
-- *.log coincide con app.log, errores.log, etc.
+- \*  → coincide con cero o más caracteres.
+    - *.log coincide con app.log, errores.log, etc.
 - ?  → coincide con un solo carácter.
-- img_?.png coincide con img_1.png, no con img_10.png.
+    - img_?.png coincide con img_1.png, no con img_10.png.
 - [ ... ]  → clase de caracteres; uno de los listados.
-- foto_[abc].jpg coincide con foto_a.jpg, foto_b.jpg, foto_c.jpg.
-- [a-z]  → rango de caracteres.
-- capitulo_[0-9].txt para un dígito.
-- [! ... ]  → negación: cualquier carácter no listado.
-- archivo_[!a]* excluye los que empiezan por a tras el guion bajo.
-- {...}  → expansión por llaves (no es globbing, la hace bash): genera variantes literales.
-- cp informe.{odt,pdf} /destino/ expande a cp informe.odt informe.pdf /destino/
+    - foto_[abc].jpg coincide con foto_a.jpg, foto_b.jpg, foto_c.jpg.
+    - [a-z]  → rango de caracteres.
+    - capitulo_[0-9].txt para un dígito.
+    - [! ... ]  → negación: cualquier carácter no listado.
+    - archivo_[!a]* excluye los que empiezan por a tras el guion bajo.
 
 Recuerda que en GNU/Linux los nombres distinguen mayúsculas y minúsculas: foto.PNG y foto.png pueden ser distintos. Si el nombre contiene espacios o caracteres especiales, cítalo ("Mi archivo.txt") para que la shell no lo fragmente.
 
