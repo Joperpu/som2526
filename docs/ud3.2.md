@@ -772,7 +772,8 @@ Sintaxis
 grep [opciones] patrón [archivo ...]
 ```
 
-Opciones útiles
+Opciones útiles:
+
 - -i  Ignora mayúsculas.
 - -n  Muestra número de línea.
 - -r/-R  Recursivo.
@@ -810,7 +811,6 @@ Opciones
 
 - -n N  Muestra las N últimas líneas (por defecto 10).
 - -f    Sigue el crecimiento en tiempo real.
-- -F    Como -f, pero maneja logrotate.
 - -c N  Lee los últimos N bytes.
 - -q    Silencioso (no imprime cabeceras con múltiples archivos).
 
@@ -818,6 +818,5 @@ Ejemplos
 
 ```bash
 tail -n 50 /var/log/syslog
-tail -F /var/log/auth.log
 tail -f app.log | grep -i error
 ```
