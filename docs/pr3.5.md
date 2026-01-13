@@ -8,7 +8,7 @@ Realiza una captura de pantalla para cada uno de los ejercicios que lo requiera.
 
     -	/dev/sda3
     -	/dev/hda1
-    -	/dev/scd2 
+    -	/dev/sdc2 
     -	/dev/sdb2
 
  2.	Supongamos que un ordenador tiene dos discos duros SATA y conectado un pendrive USB. Si conectáramos un segundo pendrive cuya etiqueta es DATOS:
