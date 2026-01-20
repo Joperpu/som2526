@@ -704,64 +704,6 @@ touch -a -d "2025-01-01 12:00" informe.log     # solo atime
 touch -t 202512311159.59 cierre.log            # 2025-12-31 11:59:59
 ```
 
-### Permisos de archivos y directorios: chmod
-
-chmod cambia los permisos. En Linux hay tres clases (usuario, grupo, otros) y tres permisos (r lectura, w escritura, x ejecución). En directorios, x permite entrar/listar (con r).
-
-Sintaxis
-
-```bash
-chmod [opciones] modo archivo ...
-```
-
-Modos
-
-- Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).
-- Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).
-
-Opciones
-
-- -R  Recursivo.
-- -v  Verboroso.
-
-Bits especiales (avanzado)
-
-- setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.
-
-Ejemplos
-
-```bash
-chmod 644 documento.txt                        # rw-r--r--
-chmod u+x script.sh                            # añade ejecución al dueño
-chmod -R u=rwX,g=rX,o= proyecto/               # permisos limpios por árbol
-chmod 1777 /tmp                                # sticky bit (solo dueño borra)
-```
-
-### Propietario y grupo: chown (y chgrp)
-
-chown cambia propietario y/o grupo. En FS sin permisos POSIX (FAT/exFAT/NTFS montados sin mapeo) puede no tener efecto real.
-
-Sintaxis
-
-```bash
-chown [opciones] [--] usuario[:grupo] archivo ...
-chown [opciones] [--] :grupo archivo ...       # solo grupo
-```
-
-Opciones
-
-- -R  Recursivo.
-- -h  No seguir symlinks (actuar sobre el enlace).
-- --from=usr:grp  Solo si coincide el dueño/grupo actual.
-
-Ejemplos
-
-```bash
-sudo chown usuario:usuario ~/proyecto -R
-sudo chown :www-data /var/www/html -R
-sudo chgrp docentes /compartida
-```
-
 ### Buscar texto en archivos: grep
 
 grep busca patrones (expresiones regulares) en texto.

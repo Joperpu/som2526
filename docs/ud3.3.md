@@ -1,13 +1,4 @@
-
-
-- Dispositivos hardware y controladores
-- Instalación de aplicaciones
-- Red
-- Discos y particiones
-- Procesos
-- Administrador de impresión
-
-# Unidad 3 - Administración de Ubuntu
+# Unidad 3 - Administración de Lubuntu
 
 ## Introducción
 
@@ -121,7 +112,7 @@ sudo useradd -m -d /srv/apps/appuser -e 2026-12-31 -s /usr/sbin/nologin appuser
 
 # Especificar grupo principal existente y UID concreto
 sudo useradd -m -u 1501 -g docentes -G audio,video -s /bin/bash pserrano
-sudo passwd -l pserrano                  # bloquear contraseña (sin login)
+sudo passwd pserrano
 ```
 
 #### Modificar cuentas: usermod
@@ -197,7 +188,7 @@ Parámetros
 Opciones
 
 - -r, --remove
-Borra el HOME y el buzón del usuario (si existen).
+Borra el HOME del usuario (si existe).
 - -f, --force
 Fuerza el borrado aunque el usuario tenga sesión activa y elimina el HOME incluso si no es propiedad del usuario.
 
@@ -473,3 +464,510 @@ newgrp proyectos
 # Con entorno de login
 newgrp - docentes
 ```
+
+## Permisos de archivo
+
+En Unix/Linux (Lubuntu incluido) los permisos se basan en un modelo simple y eficiente: tres tipos de permiso —lectura (r), escritura (w) y ejecución (x)— aplicados a tres clases de sujetos: propietario, grupo y otros. Este esquema cubre la mayoría de necesidades con administración directa y bajo coste.
+Cuando se requiere granularidad adicional, pueden usarse ACL POSIX (permisos extendidos), aunque el modelo básico rwx suele bastar en entornos docentes y de laboratorio.
+
+### Propietario y grupo de un archivo
+
+En Linux todo archivo pertenece a un usuario y a un grupo. Cuando un usuario crea un archivo:
+
+- El propietario será ese usuario.
+- El grupo será su grupo principal en ese momento.
+
+Ejemplo: si el usuario maria (con grupo principal maria) crea un archivo, este pertenecerá a usuario maria y grupo maria.
+
+Para ver propietario y grupo, usa el listado largo de ls:
+
+```bash
+ls -l
+```
+
+Salida de ejemplo:
+
+```bash
+-rw-r--r-- 1 maria maria 4096 2026-01-14  informe.txt
+drwxr-xr-x 2 maria alumnos 4096 2026-01-10  ejercicios
+```
+
+Lectura rápida de columnas:
+
+- -rw-r--r-- / drwxr-xr-x → tipo y permisos (rwx para propietario, grupo y otros).
+- 1 → enlaces duros.
+- maria → usuario propietario.
+- maria / alumnos → grupo propietario.
+- 4096 → tamaño (bytes).
+- fecha → última modificación.
+- informe.txt / ejercicios → nombre (archivo / directorio).
+
+![Permisos](assets/images/ud3/img02.png){ width="600" }
+
+#### Permisos de lectura
+
+![Permisos](assets/images/ud3/img03.png){ width="600" }
+
+Archivos:
+
+- Con r puedes abrir y leer el contenido (p. ej., con cat, less, un editor).
+- No autoriza cambios: para modificar se requiere w (y para ejecutar, x).
+
+Directorios:
+
+- Con r puedes listar los nombres que contiene el directorio (p. ej., ls).
+- Para entrar en el directorio y acceder a metadatos o a los archivos que contiene, se necesita además x (traversal).
+- Casos típicos:
+- r + x: puedes listar con detalles (ls -l), acceder a subrutas y abrir ficheros (si sus permisos lo permiten).
+- Solo r (sin x): puedes ver los nombres, pero no “entrar” ni obtener detalles (ls -l dará Permission denied para cada entrada).
+- Solo x (sin r): no puedes listar; si conoces el nombre exacto y tienes permisos en el archivo, podrás abrirlo.
+
+Ejemplos:
+
+```bash
+# Archivo con lectura
+cat documento.txt            # muestra contenido si tienes 'r' sobre el archivo
+
+# Directorio con r sin x
+ls carpeta/                  # lista NOMBRES
+ls -l carpeta/               # falla al detallar: Permission denied
+
+# Directorio con x sin r
+ls carpeta/                  # no lista (Permission denied)
+cat carpeta/known.txt        # funciona si conoces el nombre y tienes 'r' en el archivo
+```
+
+#### Permisos de escritura
+
+![Permisos](assets/images/ud3/img05.png){ width="600" }
+
+Archivos:
+
+- Con w se puede modificar el contenido (editar, truncar, sobrescribir).
+- No otorga por sí mismo la posibilidad de borrar el archivo ni de cambiar sus permisos o propietarios:
+- Borrar un archivo depende de los permisos del directorio padre (ver abajo).
+- Cambiar permisos (chmod) requiere ser propietario (o tener privilegios).
+- Cambiar propietario/grupo (chown/chgrp) requiere privilegios (o condiciones específicas en chgrp).
+
+Directorios:
+
+- Con w puedes crear, eliminar y renombrar entradas dentro del directorio.
+- Para que tenga efecto práctico suele necesitarse también x (traversal) sobre el directorio.
+- Borrar un archivo requiere w + x en el directorio que lo contiene, no w en el propio archivo.
+
+Ejemplos:
+
+```bash
+# Editar (requiere 'w' en el archivo)
+echo "hola" >> notas.txt
+
+# Crear y borrar dentro de un directorio (requiere 'w' y 'x' en el directorio)
+touch carpeta/nuevo.txt
+rm carpeta/nuevo.txt
+
+# Caso típico: sin 'w' en el directorio no puedes borrar aunque el archivo tenga 'w'
+chmod 644 carpeta/archivo.txt   # rw- r-- r-- (el archivo es escribible por su dueño)
+chmod 555 carpeta               # r-x r-x r-x (sin 'w' en el directorio)
+rm carpeta/archivo.txt          # Permission denied
+```
+
+#### Permisos de ejecución
+
+![Permisos](assets/images/ud3/img04.png){ width="600" }
+
+Archivos:
+
+- Con x puedes ejecutar el archivo (binario ELF o script con shebang, p. ej. #!/bin/bash).
+- Sin x, aunque el archivo sea una aplicación o tenga contenido ejecutable, obtendrás Permission denied.
+- En scripts es habitual necesitar x y, según el caso, también r (el intérprete debe poder leer el fichero).
+- En Lubuntu (PCManFM-Qt) el permiso se gestiona desde las propiedades del archivo (“Permitir ejecutar el archivo como un programa”).
+
+Directorios:
+
+- Con x puedes entrar al directorio (cd) y acceder a objetos internos si conoces sus nombres.
+- Para listar nombres necesitas además r.
+- x sin r: no puedes listar, pero si sabes el nombre exacto y el archivo lo permite, podrás abrirlo.
+- r sin x: verás los nombres, pero no podrás “entrar” ni acceder a su contenido.
+
+Ejemplos:
+
+```bash
+# Hacer ejecutable un script y ejecutarlo
+chmod +x backup.sh
+./backup.sh
+
+# Directorio con x pero sin r: no lista, pero accede si conoces el nombre
+chmod 111 carpeta/
+ls carpeta/                # Permission denied
+cat carpeta/known.txt      # funciona si tienes permisos en el archivo
+
+# Directorio con r y x: listar y acceder
+chmod 755 proyectos/
+ls -l proyectos/
+```
+
+#### ¿A quién ortorgar permisos?
+
+En el modelo básico de permisos de Unix/Linux los permisos se asignan únicamente a tres clases:
+
+- u → propietario del archivo
+- g → grupo propietario
+- o → otros (todos los demás usuarios)
+
+A cada clase se le pueden conceder combinaciones de r (lectura), w (escritura) y x (ejecución).
+
+Ejemplo:
+
+Archivo documento.txt con propietario maria y grupo maria
+```bash
+ls -l documento.txt
+-rw-r----- 1 maria maria 2048 2026-01-15 documento.txt
+```
+
+Aquí:
+
+- u (maria) tiene rw-
+- g (maria) tiene r--
+- o no tiene permisos
+
+Para ajustar estos permisos con el modelo básico:
+
+```bash
+# Propietario lectura/escritura, grupo solo lectura, otros sin acceso
+chmod 640 documento.txt
+
+# Si quieres que “el grupo correcto” tenga acceso, cambia el grupo propietario
+chgrp alumnos documento.txt     # ahora 'g' aplica al grupo 'alumnos'
+```
+
+#### Permisos de archivos y directorios: chmod
+
+chmod cambia los permisos.
+
+Sintaxis
+
+```bash
+chmod [opciones] modo archivo ...
+```
+
+Modos
+
+- Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).
+- Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).
+
+Opciones
+
+- -R  Recursivo.
+- -v  Verboroso.
+
+Bits especiales (avanzado)
+
+- setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.
+
+Ejemplos
+
+```bash
+chmod 644 documento.txt                        # rw-r--r--
+chmod u+x script.sh                            # añade ejecución al dueño
+chmod -R u=rwX,g=rX,o= proyecto/               # permisos limpios por árbol
+chmod 1777 /tmp                                # sticky bit (solo dueño borra)
+```
+
+#### Propietario y grupo: chown (y chgrp)
+
+chown cambia propietario y/o grupo.
+
+Sintaxis
+
+```bash
+chown [opciones] [--] usuario[:grupo] archivo ...
+chown [opciones] [--] :grupo archivo ...       # solo grupo
+```
+
+Opciones
+
+- -R  Recursivo.
+- -h  No seguir symlinks (actuar sobre el enlace).
+- --from=usr:grp  Solo si coincide el dueño/grupo actual.
+
+Ejemplos
+
+```bash
+sudo chown usuario:usuario ~/proyecto -R
+sudo chown :www-data /var/www/html -R
+sudo chgrp docentes /compartida
+```
+<!--
+## Dispositivos hardware y controladores
+
+La mayoría de controladores vienen integrados en el kernel y se instalan automáticamente con Lubuntu, por lo que rara vez es necesario añadirlos manualmente. Estos módulos se actualizan junto con el resto del sistema desde los repositorios, asegurando que los dispositivos funcionen con normalidad.
+
+Cuando un dispositivo no queda bien soportado de forma automática, suele entrar en la categoría de controladores manuales, a menudo propietarios. Un controlador propietario es aquel cuyo código no es libre ni está disponible para su modificación. Muchos dispositivos funcionan correctamente con controladores libres (mantenidos por la comunidad y el proyecto Ubuntu), pero algunos fabricantes no publican suficiente información para desarrollar alternativas abiertas. En esos casos, el dispositivo puede ofrecer funcionalidad limitada o no funcionar hasta instalar el controlador propietario.
+
+Si existe un controlador propietario para tu hardware, puedes activarlo para mejorar compatibilidad o habilitar funciones (por ejemplo, ciertas GPU o adaptadores Wi-Fi). En Lubuntu, la vía recomendada es:
+
+- **Herramienta gráfica**: Software y actualizaciones → pestaña Controladores adicionales (interfaz de software-properties-qt). El sistema detecta el hardware y ofrece controladores alternativos (libres/propietarios) para seleccionarlos con un clic.
+- **Línea de comandos (opcional)**: ubuntu-drivers list para ver opciones y sudo ubuntu-drivers autoinstall para instalar lo recomendado.
+
+Ten en cuenta que algunos equipos no necesitan controladores propietarios (todo funciona con drivers libres) o no disponen de ellos. Los controladores propietarios son mantenidos por el fabricante y no pueden modificarse desde Lubuntu si presentan un problema. Además, si usas Secure Boot, la carga de módulos propietarios puede requerir inscribir una clave MOK o desactivar temporalmente Secure Boot para que el módulo del kernel se pueda cargar.
+
+## Instalación de aplicaciones
+
+En Linux —y por extensión en Lubuntu— gran parte del software es libre y de distribución gratuita. La comunidad de desarrolladores publica aplicaciones con su código fuente y se distribuyen principalmente por Internet; en menor medida siguen existiendo ediciones en soportes físicos.
+
+En Lubuntu hay varias vías habituales para instalar aplicaciones:
+
+- **Ejecutable del desarrollador**: Algunos proyectos ofrecen un instalador o script propio (por ejemplo, un .run, un script install.sh o un formato autocontenido). Basta con descargarlo del sitio oficial y seguir sus instrucciones. Es menos común, pero suele ser directo.
+- **Compilar desde código fuente**: Muchas aplicaciones publican su código. Compilar permite ajustar opciones y aplicar parches, pero exige dependencias de desarrollo y conocimientos. Es la vía más avanzada y no es la opción típica para el alumnado.
+- **Paquetes binarios**: La forma estándar en Lubuntu (base Ubuntu/Debian) son los paquetes .deb gestionados por el sistema de paquetes:
+- **apt / apt-get para instalar desde los repositorios**: `sudo apt update && sudo apt install nombre-paquete`
+- **dpkg -i** para instalar un .deb descargado; si faltan dependencias, se resuelven luego con sudo apt -f install.
+- **Gestor gráfico de software**: Lubuntu incluye un centro de software con interfaz gráfica desde el que buscar, instalar, actualizar y desinstalar aplicaciones de los repositorios oficiales de Ubuntu. Es la opción recomendada para usuarios que prefieren no usar la terminal.
+
+### Lista de repositorios
+
+En Lubuntu las aplicaciones se instalan desde repositorios: servidores (HTTP/HTTPS/FTP o locales) que publican paquetes organizados por versión de la distribución. Los repos son mantenidos, en su mayoría, por Ubuntu/Canonical y reflejados en espejos distribuidos por todo el mundo para acelerar las descargas.
+
+Hay dos grandes tipos:
+
+- **Oficiales**: mantenidos por Ubuntu/Canonical. Incluyen todo el software soportado y su seguridad/actualizaciones.
+- **No oficiales**: mantenidos por terceros (por ejemplo, PPA de Launchpad o repos de fabricantes). Se usan para software específico o más reciente que el de los repos oficiales.
+
+En sistemas derivados de Debian/Ubuntu (como Lubuntu), la lista de repos se define en:
+
+- /etc/apt/sources.list (archivo principal).
+- /etc/apt/sources.list.d/*.list (archivos adicionales, p. ej. PPAs o repos de terceros).
+
+## Red
+
+Desde sus inicios, GNU/Linux ha utilizado TCP/IP como pila de red. Todas las distribuciones, incluida Lubuntu, se configuran estableciendo los parámetros habituales de una red IP (direcciones, máscara/prefijo, puerta de enlace, DNS, etc.).
+
+### Interfaces de red
+Las interfaces se detectan y crean dinámicamente por los controladores durante el arranque. Hoy se emplea la nomenclatura Predictable Network Interface Names (systemd/udev), que evita nombres variables como eth0/eth1. Ejemplos habituales:
+
+- Dispositivos en placa: eno1 (Ethernet On-board 1).
+- Dispositivos en ranura: ens1 (Ethernet Slot 1).
+- Por localización en bus: enp2s0 (Ethernet bus 2, slot 0).
+- Por dirección MAC: enx78e7d1ea46da (la x indica que sigue la MAC).
+- Inalámbricas: wlp2s0, wlan0 (según hardware y reglas udev).
+- El clásico eth0 está en desuso.
+
+Para inspeccionar interfaces y direcciones usa preferentemente ip (la antigua ifconfig está obsoleta):
+
+```bash
+ip link          # lista interfaces
+ip addr          # direcciones asignadas
+nmcli dev status # estado según NetworkManager
+```
+
+### Configuración en Lubuntu: NetworkManager + Netplan
+
+En escritorios Lubuntu modernos, la red la gestiona NetworkManager (applet en el panel LXQt) y el sistema declara la gestión mediante Netplan. Por defecto encontrarás un YAML similar a:
+
+```yaml
+# /etc/netplan/01-network-manager-all.yaml
+network:
+  version: 2
+  renderer: NetworkManager
+```
+### Comando ifconfig
+
+ifconfig se usa para consultar y, de forma puntual, configurar interfaces de red desde terminal. Si no se indican parámetros, muestra el estado de las interfaces activas.
+
+Sintaxis
+
+```bash
+ifconfig [-v] [-a] [-s] [interfaz]
+ifconfig [-v] interfaz [aftype] opciones | dirección ...
+```
+
+Parámetros:
+
+- interfaz: nombre de la interfaz (p. ej. enp2s0, eno1, wlp2s0, eth0 en equipos antiguos).
+- aftype: familia de direcciones.
+- inet → IPv4 (por defecto si se omite)
+- inet6 → IPv6
+- (Otros tipos históricos existen pero son residuales.)
+- dirección: dirección IP para la interfaz (IPv4 en notación decimal punteada).
+
+Opciones habituales:
+
+- [-]promisc → habilita/deshabilita modo promiscuo (la interfaz recibe todo el tráfico).
+- netmask MÁSCARA → establece la máscara IPv4 (ej. 255.255.255.0).
+- broadcast DIRECCION → fija la dirección de broadcast.
+- up / down → activa o desactiva la interfaz.
+- -a → muestra todas las interfaces (aunque estén inactivas).
+- -s → salida resumida (estadísticas).
+- -v → salida verbosa.
+
+Ejemplos:
+
+```bash
+# Ver todas las interfaces (activas e inactivas)
+ifconfig -a
+
+# Asignar temporalmente una IPv4 y activar la interfaz
+sudo ifconfig enp2s0 192.168.1.50 netmask 255.255.255.0 up
+
+# Establecer también el broadcast (opcional)
+sudo ifconfig enp2s0 192.168.1.50 netmask 255.255.255.0 broadcast 192.168.1.255 up
+
+# Poner la interfaz en modo promiscuo (captura de tráfico)
+sudo ifconfig enp2s0 promisc
+# Quitar modo promiscuo
+sudo ifconfig enp2s0 -promisc
+
+# Desactivar/activar la interfaz
+sudo ifconfig enp2s0 down
+sudo ifconfig enp2s0 up
+```
+
+Notas y buenas prácticas:
+
+- Temporalidad: los cambios hechos con ifconfig son no persistentes; se pierden al reiniciar o al reconfigurar la red.
+- Convivencia con NetworkManager: en Lubuntu, NetworkManager puede sobrescribir ajustes en caliente. Para cambios duraderos usa:
+    - GUI (applet de red / nm-connection-editor) o nmcli en terminal.
+    - Netplan (YAML en /etc/netplan/, aplicar con sudo netplan apply) si el equipo se gestiona sin NetworkManager.
+- Alternativa moderna: comandos ip equivalentes:
+
+```bash
+ip a                # ver direcciones
+sudo ip addr add 192.168.1.50/24 dev enp2s0
+sudo ip link set enp2s0 up
+```
+
+Instalación de net-tools:
+
+```bash
+sudo apt update && sudo apt install net-tools
+```
+
+### El archivo /etc/network/interfaces
+
+El comando anterior permite ajustar la configuración de la tarjeta de red. Sin embargo, en la práctica, conviene que la red quede configurada ya al encender el equipo y durante el arranque del sistema. Para ello existe el servicio de red, que levanta y configura las interfaces automáticamente. Ese servicio necesita saber cómo asignar la IP, cuál es la puerta de enlace, y demás parámetros; dicha información debe estar disponible desde el inicio.
+
+El archivo clásico que contiene estos datos es /etc/network/interfaces. Lo utilizan los comandos ifup y ifdown para activar o desactivar interfaces tanto durante una sesión como en el arranque y apagado. Su formato divide la configuración en secciones; cada sección describe una interfaz concreta y su comportamiento al iniciar o detener el sistema. En red cableada, las interfaces se nombran con los identificadores del kernel/controlador vistos antes: eno1, ens1, enp2s0, eth0, etc. (históricamente eth0 para la primera NIC).
+
+- auto: indica que el script de arranque debe activar la interfaz con ifup. Se procesan en el orden declarado.
+- iface: declara una interfaz, su familia de protocolos y el método de asignación de dirección.
+
+Sintaxis
+
+```bash
+auto interfaz_de_red
+iface interfaz_de_red aftype metodo
+```
+
+Parámetros:
+
+- interfaz_de_red: nombre de la interfaz (p. ej., enp2s0, eno1, eth0).
+- aftype: familia de protocolos; lo habitual es inet (IPv4).
+- metodo: static para IP fija o dhcp para obtenerla dinámicamente mediante un servidor DHCP.
+
+Opciones (cuando metodo es static):
+
+- address dirección_IP: IP del equipo en la LAN (formato IPv4).
+- netmask máscara_red: por ejemplo, 255.255.255.0.
+- network dirección_red: parte común de la red, p. ej., 192.168.0.0.
+- broadcast dirección_difusión: p. ej., 192.168.0.255.
+- gateway puerta_de_enlace: IP del router/pasarela (suele ser la primera o última IP del rango).
+
+Si el método de asignación es dhcp, no es necesario declarar el resto de parámetros: el servidor los proporciona.
+
+#### Loopback
+
+Interfaz de red local (127.0.0.1). En  /etc/network/interfaces:
+
+```bash
+auto lo
+iface lo inet loopback
+```
+
+#### Ethernet
+
+Red cableada con IP estática (ejemplo):
+
+```bash
+auto enp2s0
+iface enp2s0 inet static
+  address 192.168.0.10
+  netmask 255.255.255.0
+  network 192.168.0.0
+  broadcast 192.168.0.255
+  gateway 192.168.0.1
+```
+
+Comentarios:
+
+- auto enp2s0 asegura que la interfaz se active durante el arranque.
+- iface enp2s0 inet static indica IPv4 (inet) con dirección fija.
+
+Por DHCP:
+
+```bash
+auto enp2s0
+iface enp2s0 inet dhcp
+```
+
+En este caso, el servidor DHCP suministra IP, máscara, puerta de enlace y DNS.
+
+### Activar y desactivar las interfaces de red
+
+Para activar o desactivar interfaces se utilizan los comandos ifup y ifdown. No es habitual desactivar una interfaz salvo para aplicar cambios de configuración y volver a activarla después. Estos comandos también los invoca el servicio de red al arrancar y apagar el sistema.
+
+Activar todas las interfaces marcadas como auto:
+
+```bash
+sudo ifup -a
+```
+
+Aplicar cambios en una interfaz concreta (ej., enp2s0):
+
+1.	Desactivar la interfaz:
+
+```bash
+sudo ifdown enp2s0
+```
+
+2. Editar la configuración en /etc/network/interfaces y guardar los cambios.
+3. Ractivar la interfaz.
+
+```bash
+sudo ifup enp2s0
+```
+
+### Comprobar la configuración de red
+
+Para revisar la configuración de las interfaces de red en Lubuntu usando la herramienta clásica:
+
+```bash
+# Mostrar todas las interfaces detectadas (activas o no)
+ifconfig -a
+
+# Ver solo una interfaz concreta (ej.: enp2s0)
+ifconfig enp2s0
+```
+
+En la salida típica verás (por interfaz) algo como enp2s0 (Ethernet por cable), wlp3s0 (Wi-Fi) y lo (bucle local). Para una interfaz Ethernet, ifconfig muestra:
+
+- Tipo de enlace: Ethernet.
+- Dirección MAC: identificada como ether xx:xx:xx:xx:xx:xx.
+- Dirección IP (IPv4): campo inet.
+- Dirección de broadcast: campo broadcast o Bcast.
+- Máscara de red: campo netmask o Mask.
+- Multicast: aparece la bandera MULTICAST si lo admite.
+- Métrica: metric (puede no mostrarse en todos los sistemas).
+- Contadores RX/TX: paquetes recibidos/enviados (RX packets / TX packets).
+- Errores RX/TX: paquetes con error, descartados u overruns.
+- Bytes RX/TX: volumen total recibido y transmitido.
+- (Según hardware/driver) Interrupt y Base address: campos clásicos que pueden no aparecer en equipos modernos.
+
+# restante
+- Dispositivos hardware y controladores
+- Instalación de aplicaciones
+- Red
+- Discos y particiones
+- Procesos
+- Administrador de impresión
+
+-->
