@@ -697,7 +697,7 @@ sudo chown usuario:usuario ~/proyecto -R
 sudo chown :www-data /var/www/html -R
 sudo chgrp docentes /compartida
 ```
-<!--
+
 ## Dispositivos hardware y controladores
 
 La mayoría de controladores vienen integrados en el kernel y se instalan automáticamente con Lubuntu, por lo que rara vez es necesario añadirlos manualmente. Estos módulos se actualizan junto con el resto del sistema desde los repositorios, asegurando que los dispositivos funcionen con normalidad.
@@ -962,11 +962,220 @@ En la salida típica verás (por interfaz) algo como enp2s0 (Ethernet por cable)
 - Bytes RX/TX: volumen total recibido y transmitido.
 - (Según hardware/driver) Interrupt y Base address: campos clásicos que pueden no aparecer en equipos modernos.
 
-# restante
-- Dispositivos hardware y controladores
-- Instalación de aplicaciones
-- Red
-- Discos y particiones
+## Discos y particiones
+
+La administración de discos comprende la creación y el mantenimiento de particiones, así como la aplicación de cuotas de disco para limitar el uso de espacio por usuario o grupo. En Lubuntu pueden emplearse tanto utilidades de línea de comandos como herramientas gráficas para realizar estas tareas.
+
+Cuando exista espacio sin asignar en el disco y se quiera habilitarlo para almacenar datos, deben completarse tres operaciones, en este orden:
+
+1.	Crear la partición con la herramienta seleccionada.
+2.	Crear un sistema de archivos sobre esa nueva partición.
+3.	Montar la partición en un directorio, ya sea manualmente o dejando configurado el montaje persistente en el archivo /etc/fstab.
+
+### Gestión de particiones: fdisk
+
+En todas las distribuciones GNU/Linux, incluida Lubuntu, está disponible fdisk, una utilidad en modo texto para gestionar particiones. Permite crear y eliminar particiones, cambiar su tipo, etc. Debe usarse con precaución: no es tan intuitiva como una herramienta gráfica y un error puede ser crítico.
+
+```bash
+fdisk [archivo_dispositivo]
+```
+El archivo de dispositivo será el disco a gestionar; en el caso más habitual, /dev/sda.
+
+La interfaz es menudriven por teclas:
+
+- m + Intro → muestra la ayuda (menú de acciones).
+- q + Intro → salir sin guardar cambios.
+
+Ver la tabla de particiones
+
+- p + Intro → imprime el estado actual de la tabla de particiones del disco seleccionado.
+
+El listado muestra, una línea por partición, los siguientes campos:
+
+- Dispositivo: archivo de dispositivo de la partición.
+- Inicio: un * marca la partición de arranque.
+- Comienzo: sector inicial.
+- Fin: sector final.
+- Bloques: tamaño en bloques.
+- Id: identificador del tipo de partición.
+- Sistema: sistema de archivos/tipo reconocido.
+
+Antes de la tabla, fdisk muestra información del disco: dispositivo, tamaño, geometría, tamaño de sector, etc.
+
+Crear una partición
+
+- n + Intro → inicia la creación. Se solicitará:
+- Tipo de partición: p primaria o l lógica.
+- Nº de partición:
+- Si existe una extendida: 1–3 para primarias disponibles.
+- Si no existe extendida: 1–4 para primarias.
+- Primer sector: por defecto, el primero del espacio libre.
+- Último sector: por defecto, el último del espacio libre. Es preferible indicar el tamaño con +númeroM o +númeroK (MB/KB).
+
+Cambiar el tipo de partición
+
+- t + Intro → permite asignar el tipo (Id) de la partición.
+- l + Intro → lista todos los tipos disponibles reconocidos por Linux.
+
+Guardar los cambios
+
+- w + Intro → escribe la nueva tabla de particiones en el disco (sector de inicio) y sale.
+Si no se escribe con w, los cambios no se aplican.
+
+### Manipulación de la tabla de particiones: sfdisk
+
+El comando sfdisk permite trabajar con tablas de particiones desde CLI. Si se ejecuta sin dispositivo, inicia un diálogo interactivo para crear una partición solicitando los datos necesarios.
+
+Sintaxis
+
+```bash
+sfdisk [opciones] [dispositivo]
+```
+
+Parámetros
+
+- dispositivo: archivo de dispositivo del disco (por ejemplo, /dev/sda). Si se omite, actúa sobre todos los discos cuando procede.
+
+Opciones
+
+- -s: muestra el tamaño (en bloques) de una partición.
+- -l: lista las particiones de un dispositivo.
+- -V: verifica (chequea) la tabla de particiones.
+
+### Crear sistema de archivos: mkfs
+
+mkfs crea un sistema de archivos sobre una partición o dispositivo.
+
+Sintaxis
+
+```bash
+mkfs [-t tipo] [opciones_fs] dispositivo
+```
+
+Parámetros
+
+- dispositivo: archivo de dispositivo de la partición (p. ej., /dev/sda1).
+
+Opciones
+
+- -t tipo: tipo de sistema de archivos. Habituales:
+- ext4 (actual en GNU/Linux).
+- ext3.
+- ext2 (por defecto si no se indica otro).
+- vfat (FAT).
+- msdos (FAT con nombres 8.3).
+- [opciones_fs]: opciones específicas del tipo. Comunes:
+- -c: comprueba bloques defectuosos antes de crear.
+- -v: salida detallada.
+
+Nota: mkfs es un front-end que invoca constructores concretos tipo mkfs.fstype (p. ej., mkfs.ext4, mkfs.vfat).
+
+**mkfs.ext4**
+
+Sintaxis
+
+```bash
+mkfs.ext4 [opciones] dispositivo
+```
+
+Opciones habituales
+
+- -b tamaño: tamaño de bloque (1024, 2048 o 4096).
+- -c: chequeo previo de bloques.
+
+**mkfs.vfat, mkfs.msdos, mkdosfs**
+
+Sintaxis
+
+```bash
+mkfs.vfat  [opciones] dispositivo
+mkfs.msdos [opciones] dispositivo
+mkdosfs    [opciones] dispositivo
+```
+
+Opciones habituales:
+
+- -F tamaño: tipo de FAT (12, 16 o 32).
+- -f copias: número de copias de la FAT (por defecto, 2).
+- -n nombre_volumen: etiqueta del volumen.
+- -c: chequeo de bloques defectuosos.
+- -s sectores_por_cluster: sectores por clúster (potencia de 2).
+
+### Información del espacio ocupado o libre
+
+Uso por archivos/directorios: du
+Informa del espacio que ocupan archivos y directorios.
+
+Sintaxis
+
+```bash
+du [opciones] [archivo ...]
+```
+
+Parámetros
+
+- archivo …: lista de rutas. Sin argumentos, mide el directorio activo.
+
+Opciones
+
+- -k: muestra en kilobytes (por defecto usa bloques de 512 B).
+- -m: muestra en megabytes.
+- -s: resumen (no recursivo; tamaño total de cada argumento).
+- -c, –total: añade una línea con el total.
+
+Si se pasa el archivo de dispositivo de una partición, mostrará el espacio asociado según corresponda. Sin argumentos, informa de la ocupación del directorio actual.
+
+Espacio por sistemas de archivos: df
+Muestra espacio usado y libre de los sistemas de archivos montados.
+
+Sintaxis
+
+```bash
+df [opciones] [archivo ...]
+```
+
+Parámetros
+
+- archivo …: si se indica, informa del sistema de archivos que contiene cada ruta; sin argumentos, de todos los montados.
+
+Opciones
+
+- -k: en kilobytes.
+- -h: formato “humano” (KB, MB, GB en potencias de 1024).
+- -H: similar a -h pero en múltiplos de 1000.
+- -t tipo: limita la salida a un tipo de sistema de archivos.
+
+Campos que muestra
+
+- Sistema de archivos (dispositivo).
+- Bloques totales (1 KiB).
+- Usados.
+- Disponibles.
+- % de uso.
+- Punto de montaje.
+
+Reparación de un sistema de archivos. fsck
+
+fsck comprueba y repara sistemas de archivos. Es recomendable ejecutarlo con el sistema de archivos desmontado.
+
+Sintaxis
+
+```bash
+fsck [opciones] [sistema_de_archivos]
+```
+
+Parámetros
+
+- sistema_de_archivos: dispositivo o punto de montaje (p. ej., /dev/sda1 o /home). Conviene que esté sin montar.
+
+Opciones
+
+- -a: repara automáticamente si es necesario (sin preguntar).
+
+Si no se especifica ningún sistema de archivos, fsck recorrerá los definidos en /etc/fstab en ese orden.
+
+<!--
+
 - Procesos
 - Administrador de impresión
 
