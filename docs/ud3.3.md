@@ -1174,9 +1174,487 @@ Opciones
 
 Si no se especifica ningún sistema de archivos, fsck recorrerá los definidos en /etc/fstab en ese orden.
 
-<!--
+## Procesos
 
-- Procesos
-- Administrador de impresión
+Un proceso es una instancia de un programa en ejecución. En su contexto se incluyen sus procesos hijos (si los hubiera), los recursos que consume, y sus atributos de seguridad (propietario, grupos, permisos, roles). Lubuntu es multitarea y multiusuario: múltiples procesos se ejecutan simultáneamente sin interferirse y cada uno “cree” tener el sistema para sí. Un mismo programa puede tener varias instancias a la vez; cada instancia es un proceso con su PID (Process ID) numérico y único. Casi todo lo que se ejecuta es un proceso (incluida la shell o el servidor gráfico); la excepción es el kernel, que reside en memoria y sirve llamadas del sistema.
 
--->
+###  Listado de procesos
+
+Para inspeccionar la actividad del sistema se usan, entre otros, los comandos ps y top. Aquí se describe ps.
+
+####  ps — Estado de procesos
+
+ps muestra el estado de los procesos. Admite tres estilos de opciones (y pueden mezclarse con cuidado):
+
+- Estilo UNIX: opciones con guion corto (ej. -e -f -u).
+- Estilo BSD: opciones sin guion (ej. aux).
+- Estilo GNU: opciones largas con doble guion (ej. --sort, --forest, --no-headers).
+
+Sintaxis (genérica)
+
+```bash
+ps [opciones]
+```
+
+Campos habituales en la salida
+
+- PID: identificador del proceso.
+- PPID: PID del proceso padre.
+- USER/UID: propietario.
+- TTY: terminal asociado (o ? si no tiene).
+- STAT: estado y banderas (R, S, D, T, Z; más +, <, N, l, etc.).
+- TIME: tiempo de CPU acumulado.
+- %CPU, %MEM: uso relativo de CPU y memoria.
+- VSZ (KiB) / RSS (KiB): memoria virtual / residente.
+- START/STIME: hora o fecha de inicio.
+- COMMAND/CMD: nombre y argumentos.
+
+Opciones útiles (UNIX/GNU)
+
+- -e o -A: todos los procesos.
+- -f: formato “completo” (muestra UID, PPID, C, STIME, TTY, TIME, CMD).
+- -u usuario: solo procesos de un usuario dado.
+- -p PID[,PID...]: selecciona uno o varios PIDs concretos.
+- -o formato: elige columnas (p. ej., -o pid,ppid,user,stat,pcpu,pmem,etime,cmd).
+- --sort=clave: ordena por campos (ej. --sort=-pcpu, --sort=pmem,pid).
+- --forest: dibuja el árbol de procesos (ASCII).
+- -x: incluye procesos sin TTY (demonios/servicios).
+- --no-headers: suprime cabeceras (útil en scripts).
+
+Atajos BSD frecuentes
+
+- ps aux: todos los procesos (usuario, sin TTY, etc.).
+- ps axo ...: todos con formato personalizado (equivalente a -e -o).
+
+Ejemplos
+
+```bash
+# Ver todos los procesos con formato amplio
+ps -ef
+
+# Listado “estilo BSD” con todo
+ps aux
+
+# Procesos de un usuario
+ps -u alumno
+
+# Seleccionar columnas y ordenar por CPU descendente
+ps -eo pid,ppid,user,stat,pcpu,pmem,etime,cmd --sort=-pcpu | head
+
+# Árbol de procesos con columnas clave
+ps -eo pid,ppid,user,stat,cmd --forest
+
+# Información detallada de un PID concreto
+ps -p 1234 -o pid,ppid,user,stat,etime,cmd
+
+# Filtrar por nombre de programa (dos variantes)
+ps -eo pid,user,pcpu,pmem,cmd | grep '[f]irefox'
+pgrep -af firefox    # muestra PID y comando (útil para localizar)
+```
+
+Notas sobre STAT (estado)
+
+- R: ejecutándose o runnable.
+- S: en espera interrumpible (sleep).
+- D: espera no interrumpible (E/S).
+- T: detenido/trazado.
+- Z: zombie (proceso terminado sin wait del padre).
+- Sufijos: + (en primer plano con TTY), < (alta prioridad), N (baja prioridad), etc.
+
+#### top — Monitorización interactiva
+
+top muestra en tiempo real los procesos y recursos del sistema. Es interactivo y, por defecto, refresca cada 3 segundos.
+
+Qué muestra
+
+- Cabecera: hora/uptime, usuarios conectados, load average.
+- Tareas: totales, en ejecución, en espera, detenidas, zombis.
+- CPU: porcentajes por estado (us, sy, ni, id, wa, hi, si, st).
+- Memoria y swap: total, usada, libre y buffers/cache.
+- Tabla de procesos: PID, usuario, prioridad/ni, estado, %CPU, %MEM, memoria (RES/VSZ), tiempo CPU y comando.
+
+Sintaxis
+
+```bash
+top [opciones]
+```
+
+Opciones útiles
+
+- -d SECS  Intervalo de refresco (segundos).
+- -u USR   Solo procesos de un usuario.
+- -p PID[,PID...]  Solo esos PIDs (se puede repetir).
+- -H       Muestra hilos.
+- -b       Modo batch (no interactivo), útil para scripts.
+- -n N     Número de iteraciones en batch.
+- -o CAMPO Orden inicial (ej. -o %CPU, -o %MEM, -o TIME+).
+
+Teclas interactivas más usadas
+
+- h  Ayuda integrada.
+- q  Salir.
+- P  Ordenar por %CPU.
+- M  Ordenar por %MEM.
+- T  Ordenar por tiempo de CPU.
+- N  Ordenar por PID.
+- c  Alterna nombre de comando ↔ línea completa.
+- 1  Muestra/oculta uso por cada CPU.
+- i  Oculta/mostrar procesos inactivos.
+- u  Filtra por usuario.
+- o  Añade filtro (ej. COMMAND=sshd); O borra filtros.
+- k  Enviar señal (kill) a un PID.
+- r  Cambiar nice (prioridad) a un PID.
+- f  Selección de campos; s (dentro) elige el de ordenación.
+- V  Vista en árbol (forest).
+- H  Alterna procesos ↔ hilos.
+- d  Cambiar delay (segundos).
+- z  Colores; b negrita/resaltado.
+- W  Guardar configuración en ~/.toprc.
+
+Ejemplos
+
+```bash
+# Vista clásica
+top
+
+# Ordenado por memoria y refresco cada 1 s
+top -d 1 -o %MEM
+
+# Solo procesos del usuario 'alumno'
+top -u alumno
+
+# Solo dos procesos concretos (útil para vigilar servicios)
+top -p 1234 -p 2222
+
+# Modo batch: una captura ordenada por CPU (para redirigir a fichero)
+top -b -n 1 -o %CPU > top-snapshot.txt
+```
+
+### Enviar señales a procesos
+
+kill — Enviar señales (terminar por defecto)
+Permite enviar señales a uno o varios procesos por PID. Si no se indica señal, se envía la de terminar (SIGTERM).
+
+Sintaxis
+
+```bash
+kill [opciones] pid ...
+```
+
+Parámetros
+- pid ...  Lista de PIDs destino.
+
+Opciones
+- -SEÑAL  Señal a enviar (por nombre o número), p. ej. -TERM, -9.
+- -L      Lista todas las señales disponibles.
+
+Notas
+- Los PIDs pueden obtenerse con ps o top.
+- Se usa habitualmente para finalizar procesos bloqueados sin reiniciar el sistema.
+
+Ejemplo
+
+```bash
+# Terminar dos procesos concretos
+kill 1234 2345
+
+# Enviar una señal específica
+kill -TERM 1234
+```
+
+killall — Señalar por nombre de programa
+
+Funciona como kill, pero el destino se indica por nombre de programa; afecta a todas las instancias con ese nombre.
+
+Sintaxis
+
+```bash
+killall [opciones] programa
+```
+
+Parámetros
+
+- programa  Nombre del proceso (comando) al que se señala.
+
+Opciones
+
+- -s SEÑAL        Señal a enviar (por nombre o número). Por defecto, SIGTERM.
+- -I              Ignora mayúsculas/minúsculas en el nombre.
+- -r, --regex   Interpreta el nombre como expresión regular.
+- -u USUARIO, --user USUARIO  Limita a procesos de ese usuario.
+
+Ejemplo
+
+```bash
+# Finalizar todas las instancias de 'squid'
+killall squid
+
+# Enviar SIGTERM a procesos de 'nginx' del usuario 'www-data'
+killall -s TERM -u www-data nginx
+```
+
+### Servicios
+
+Un servicio es un programa que se inicia con el arranque del sistema y se ejecuta en segundo plano, sin intervención del usuario. Proporciona funciones al propio sistema, a otras aplicaciones o a los usuarios (por ejemplo, red, impresión, registro, etc.).
+En GNU/Linux estos servicios se implementan como demonios (daemons): procesos especiales sin interfaz directa, con los que solo se interactúa mediante mecanismos del sistema.
+
+Scripts y niveles de ejecución (SysV)
+
+Cada servicio dispone de un script en /etc/init.d. La activación/parada en arranque o apagado se organiza por niveles de ejecución (runlevels), que son conjuntos de servicios preparados para un determinado estado del sistema:
+
+- Nivel 0: apagado.
+- Nivel 1: monousuario en modo texto.
+- Niveles 2–5: multiusuario (habitualmente con entorno gráfico).
+- Nivel 6: reinicio.
+
+Para cada nivel existe un directorio con los enlaces simbólicos a los scripts del servicio, siguiendo el patrón /etc/rc<nivel>.d/. Así, encontraremos:
+
+- /etc/rc0.d
+- /etc/rc1.d
+- /etc/rc2.d
+- /etc/rc3.d
+- /etc/rc4.d
+- /etc/rc5.d
+- /etc/rc6.d
+
+Además, /etc/rcS.d alberga los enlaces que deben ejecutarse en el arranque independientemente del nivel de ejecución (incluido el 1).
+
+Los enlaces dentro de cada /etc/rcX.d/ siguen una nomenclatura que indica acción y orden:
+
+- Los que empiezan por S se invocan con start (iniciar el servicio).
+- Los que empiezan por K se invocan con stop (detener el servicio).
+- A continuación llevan dos dígitos que marcan la prioridad/orden dentro del nivel.
+- Terminan con el nombre del servicio.
+
+Ejemplo:
+/etc/rc2.d/S80sendmail inicia el servicio sendmail en el nivel 2, después de /etc/rc2.d/S12syslog y antes de /etc/rc2.d/S90xfs.
+
+### Detección e inicio del sistema
+
+Disponemos de varios comandos para detener, reiniciar o programar el apagado del sistema.
+
+#### Comando shutdown
+
+Detiene o reinicia el sistema de forma inmediata o programada, avisando a los usuarios conectados.
+
+Sintaxis
+
+```bash
+shutdown [opciones] tiempo [mensaje]
+```
+
+Parámetros
+
+- tiempo
+  - now → acción inmediata
+  - +m → dentro de m minutos
+  - hh:mm → a la hora indicada (formato 24 h)
+- mensaje
+Texto opcional que se envía a los usuarios como aviso.
+
+Opciones
+
+- -r  Reinicia el sistema (reboot).
+- -h  Apaga el sistema (halt/poweroff).
+- -c  Cancela un apagado/reinicio previamente programado (no requiere tiempo; lo que siga se usa como mensaje).
+- -k  No apaga ni reinicia: solo envía el aviso y bloquea nuevos inicios de sesión.
+
+Ejemplos
+
+```bash
+# Apagado inmediato
+sudo shutdown -h now
+
+# Reinicio dentro de 5 minutos con mensaje
+sudo shutdown -r +5 "Reinicio en 5 minutos por mantenimiento"
+
+# Apagado hoy a las 23:30
+sudo shutdown -h 23:30 "Apagado programado a las 23:30"
+
+# Solo avisar, sin apagar
+sudo shutdown -k now "Mantenimiento inminente: guarde su trabajo"
+
+# Cancelar un apagado ya programado
+sudo shutdown -c "Apagado cancelado"
+```
+
+### Tareas programadas
+
+Todas las distribuciones GNU/Linux (Lubuntu incluido) permiten programar la ejecución de tareas: se puede indicar una fecha y hora concretas o una periodicidad.
+
+#### Comando at
+
+Ejecuta uno o varios comandos (leídos de la entrada estándar o de un fichero) a la hora indicada.
+
+Sintaxis
+
+```bash
+at [opciones] tiempo
+```
+
+Parámetros
+
+Tiempo (formatos admitidos):
+
+- hh:mm → hora y minutos en 24 h (si ya pasó, se asume el día siguiente).
+- hh:mm mmdd[yy]yy
+- hh:mm mm/dd/[yy]yy
+- hh:mm dd.mm.[yy]yy
+- hh:mm [yy]yy-mm-dd
+- hh:mm[am|pm] → 12 h con AM/PM
+- Palabras clave para horas: midnight, noon, now, teatime (16:00).
+- Palabras clave para fechas: today, tomorrow, nombre-mes día.
+- Desplazamientos relativos: +Nminutes | +Nhours | +Ndays | +Nweeks.
+
+Opciones
+
+- -f fichero
+Lee los comandos desde fichero (si se omite, se leen de la entrada estándar).
+- -l
+Lista los trabajos pendientes (si lo ejecuta root, muestra los de todos los usuarios).
+- -d nº
+Elimina el trabajo con el número indicado.
+- -m
+Envía un correo al usuario cuando finaliza la tarea.
+
+Ejemplos
+
+```bash
+# Programar un backup para hoy a las 23:45
+echo "/usr/local/bin/backup.sh" | at 23:45
+
+# Ejecutar un script dentro de 2 horas
+echo "sh /home/alumno/scripts/tarea.sh" | at now + 2 hours
+
+# Programar desde fichero
+at -f /home/alumno/scripts/rotar-logs.sh 02:30 tomorrow
+
+# Listar y borrar trabajos
+at -l
+at -d 7
+```
+
+#### cron y crontab
+
+cron es un servicio que ejecuta tareas periódicas en segundo plano. Cada usuario dispone de un fichero crontab propio y existe un crontab de sistema para tareas administrativas.
+
+Cada línea de un crontab define cuándo y qué ejecutar: cinco campos de tiempo seguidos del comando. En el crontab de sistema hay un campo adicional (el usuario que ejecutará la tarea) entre los campos de tiempo y el comando. Las líneas que comienzan por # son comentarios. cron revisa los crontabs cada minuto.
+
+Formato general
+
+```bash
+minuto hora día_mes mes día_semana comando
+```
+
+Rangos admitidos
+
+- Minuto: 0–59
+- Hora: 0–23
+- Día del mes: 1–31
+- Mes: 1–12 o nombre del mes
+- Día de la semana: 0–7 (0 y 7 = domingo)
+
+Comodines y abreviaturas
+
+- \* → cualquiera.
+- Rangos: 8-11 (inclusive).
+- Listas: 2,5,7,8.
+- Saltos: 12-23/2 (cada 2 h de 12 a 23) o */4 (cada 4 unidades del campo).
+- Cadenas especiales (sustituyen a los 5 campos):
+- @reboot → una vez al arrancar
+- @yearly / @annually → 0 0 1 1 *
+- @monthly → 0 0 1 * *
+- @weekly → 0 0 * * 0
+- @daily / @midnight → 0 0 * * *
+- @hourly → 0 * * * *
+
+Shell por defecto
+
+- Los comandos se ejecutan con /bin/sh. Para usar otra, declarar al inicio:
+
+```bash
+SHELL=/bin/bash
+```
+
+Ubicación de ficheros
+
+- Crontab de cada usuario: /var/spool/cron/crontabs/<login> (no se edita directamente).
+- Crontab de sistema (root): /etc/crontab (se edita como fichero de texto).
+
+Gestión con crontab
+
+```bash
+crontab [opciones]
+```
+
+- -u usuario → gestiona el crontab de usuario (root).
+- -l → lista el crontab actual.
+- -r → borra el crontab.
+- -e → edita el crontab con el editor por defecto (normalmente nano).
+
+Ejemplos
+
+```bash
+# Editar (crear/modificar) tu crontab
+crontab -e
+
+# Ejecutar un backup cada día a las 02:15
+# (en tu crontab; abrir con crontab -e y añadir)
+15 2 * * * /usr/local/bin/backup.sh
+
+# Rotar logs cada 15 minutos
+*/15 * * * * /usr/local/sbin/rotar-logs
+
+# Sincronizar a las 3:10 los lunes y jueves
+10 3 * * 1,4 /usr/local/bin/sync-datos
+
+# Tarea al arrancar el sistema
+@reboot /usr/local/bin/inicializa-servicio
+
+# Ver y borrar tu crontab
+crontab -l
+crontab -r
+```
+
+## Administración de la impresión
+
+La impresora es uno de los periféricos más usados. En Lubuntu (LXQt), la gestión se realiza mediante CUPS y la herramienta gráfica Impresoras (system-config-printer). A continuación se explica cómo instalar, ver la cola y ajustar las preferencias.
+
+### Instalar una impresora
+
+La mayoría de modelos USB son detectados automáticamente (muchos funcionan en modo “driverless” vía IPP). Si el sistema la reconoce, bastará con confirmar y, al finalizar, imprimir una página de prueba.
+
+Si no se detecta automáticamente, instalación manual:
+
+1.	Abrir Menú → Preferencias → Impresoras.
+2.	Pulsar Añadir. En el panel de Dispositivos elegir el origen:
+  - USB (local), Red (IPP/AirPrint/Bonjour), LPD/LPR, Samba/Windows o por dirección IP.
+3.	Seleccionar el controlador (PPD):
+  -	Elegir el modelo propuesto o uno genérico compatible (p. ej., “Generic PCL/PS”).
+  -	Si el fabricante proporciona un PPD, importarlo.
+4.	Asignar Nombre, Descripción y Ubicación. Pulsar Aplicar.
+5.	Imprimir Página de prueba para verificar.
+
+### La cola de impresión
+
+Para ver y gestionar los trabajos enviados a una impresora:
+
+1.	Abrir Preferencias → Impresoras.
+2.	Botón derecho sobre la impresora → Ver cola de impresión (o doble clic).
+3.	En la ventana de cola se muestra usuario, documento, tamaño, estado y fecha.
+4.	Seleccionar un trabajo y usar los controles para Pausar, Reanudar o Cancelar.
+
+También es posible pausar temporalmente la impresora completa y reanudarla después.
+
+### Propiedades y preferencias de la impresora
+
+Para ajustar opciones predeterminadas:
+	
+1.	Abrir Preferencias → Impresoras.
+2.	Botón derecho sobre la impresora → Propiedades.
+3.	En el panel izquierdo seleccionar la categoría; en la derecha se muestran las opciones:
+  - General: tamaño de papel (A4), orientación, bandeja, dúplex (si dispone), calidad.
+  - Políticas: aceptar/rechazar trabajos, comportamiento en errores.
+  - Conexión: dispositivo/URI.
+  - Compartir: publicar la impresora en la red (si procede).
+4.	Guardar cambios. Se recomienda imprimir otra Página de prueba tras modificar opciones clave.

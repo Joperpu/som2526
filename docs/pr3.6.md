@@ -69,7 +69,7 @@ Realiza una captura de pantalla para cada uno de los ejercicios que lo requiera.
 
 Crea un documento PDF, a partir de un Word o Google Docs, con las siguientes consideraciones:
 
-- El nombre del archivo a entregar en la plataforma Moodle Centros debe tener el siguiente formato: `Apellido1Apellido2_Nombre_SOM_UD3_P5.pdf`.
+- El nombre del archivo a entregar en la plataforma Moodle Centros debe tener el siguiente formato: `Apellido1Apellido2_Nombre_SOM_UD3_P6.pdf`.
 - Portada con imagen, nombre del alumno, título y curso.
 - Encabezado con nombre de la práctica y materia.
 - Pie de página con nombre, número de página insertado, curso, año escolar, instituto.
