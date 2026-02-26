@@ -1,0 +1,4134 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://joperpu.github.io/som2526/ud3.3/">
+      
+      
+        <link rel="prev" href="../ud3.2/">
+      
+      
+        <link rel="next" href="../pr3.1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Teoría UD3 - Administración de Lubuntu - Sistemas operativos monopuesto</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-3-administracion-de-lubuntu" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Sistemas operativos monopuesto" class="md-header__button md-logo" aria-label="Sistemas operativos monopuesto" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas operativos monopuesto
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teoría UD3 - Administración de Lubuntu
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sistemas operativos monopuesto" class="md-nav__button md-logo" aria-label="Sistemas operativos monopuesto" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Sistemas operativos monopuesto
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1 - Introducción a los sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 1 - Introducción a los sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 1.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2 - Instalación y máquinas virtuales con Windows y Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 2 - Instalación y máquinas virtuales con Windows y Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD2 - Sistemas operativos y VirtualBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD2 - Instalación de Windows 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD2 - Instalación de GNU/Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD2 - Instalación de Windows-Linux dual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD2 - Creación de un pendrive booteable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD3 - Creación y restauración de imágenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 3 - Configuración y administración de sistemas operativos basados en GNU/Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 3 - Configuración y administración de sistemas operativos basados en GNU/Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD3 - Introducción a Lubuntu y comandos iniciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD3 - Gestión de archivos en Lubuntu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD3 - Administración de Lubuntu
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD3 - Administración de Lubuntu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuario-y-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuario y grupos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuario y grupos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos-de-usuarios-y-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bases de datos de usuarios y grupos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-cuentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de cuentas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificadores-de-usuario-y-de-grupo-uidgid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificadores de usuario y de grupo (UID/GID)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivo-etcpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archivo /etc/passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de usuarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-usuarios-useradd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear usuarios: useradd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-cuentas-usermod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar cuentas: usermod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-cuentas-userdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar cuentas: userdel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alta-amigable-y-grupos-adduser-y-addgroup-debianubuntulubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alta “amigable” y grupos: adduser y addgroup (Debian/Ubuntu/Lubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administracion-de-contrasenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administración de contraseñas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración de contraseñas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-y-gestionar-contrasenas-passwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar y gestionar contraseñas: passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de grupos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de grupos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-grupos-groupadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear grupos: groupadd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-grupos-groupmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar grupos: groupmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-grupos-groupdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar grupos: groupdel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionar-membresiascontrasenas-gpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionar membresías/contraseñas: gpasswd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-grupo-principal-temporalmente-newgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar el grupo principal temporalmente: newgrp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permisos-de-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de archivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permisos de archivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propietario-y-grupo-de-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propietario y grupo de un archivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propietario y grupo de un archivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de lectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-escritura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de escritura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-quien-ortorgar-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿A quién ortorgar permisos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-archivos-y-directorios-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de archivos y directorios: chmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propietario-y-grupo-chown-y-chgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propietario y grupo: chown (y chgrp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dispositivos-hardware-y-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivos hardware y controladores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación de aplicaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de aplicaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lista de repositorios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-en-lubuntu-networkmanager-netplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración en Lubuntu: NetworkManager + Netplan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-ifconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando ifconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-archivo-etcnetworkinterfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El archivo /etc/network/interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El archivo /etc/network/interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loopback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loopback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activar-y-desactivar-las-interfaces-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activar y desactivar las interfaces de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobar-la-configuracion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar la configuración de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discos-y-particiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discos y particiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discos y particiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-particiones-fdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de particiones: fdisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulacion-de-la-tabla-de-particiones-sfdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulación de la tabla de particiones: sfdisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-sistema-de-archivos-mkfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear sistema de archivos: mkfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-del-espacio-ocupado-o-libre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información del espacio ocupado o libre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procesos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listado-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listado de procesos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listado de procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps-estado-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ps — Estado de procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-monitorizacion-interactiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        top — Monitorización interactiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-senales-a-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enviar señales a procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-e-inicio-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detección e inicio del sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detección e inicio del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-programadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tareas programadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tareas programadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando at
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron-y-crontab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cron y crontab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-de-la-impresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administración de la impresión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración de la impresión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-una-impresora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalar una impresora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-cola-de-impresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La cola de impresión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-y-preferencias-de-la-impresora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propiedades y preferencias de la impresora
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3.8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 4 - Configuración y administración de Windows 11
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidad 4 - Configuración y administración de Windows 11
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría UD4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 4.1 - Gestión de cuentas de usuario y dispositivos en Windows 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuario-y-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuario y grupos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuario y grupos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos-de-usuarios-y-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bases de datos de usuarios y grupos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-cuentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de cuentas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificadores-de-usuario-y-de-grupo-uidgid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificadores de usuario y de grupo (UID/GID)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivo-etcpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archivo /etc/passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de usuarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-usuarios-useradd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear usuarios: useradd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-cuentas-usermod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar cuentas: usermod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-cuentas-userdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar cuentas: userdel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alta-amigable-y-grupos-adduser-y-addgroup-debianubuntulubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alta “amigable” y grupos: adduser y addgroup (Debian/Ubuntu/Lubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administracion-de-contrasenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administración de contraseñas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración de contraseñas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-y-gestionar-contrasenas-passwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar y gestionar contraseñas: passwd
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de grupos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de grupos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-grupos-groupadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear grupos: groupadd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-grupos-groupmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar grupos: groupmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-grupos-groupdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar grupos: groupdel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionar-membresiascontrasenas-gpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionar membresías/contraseñas: gpasswd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-grupo-principal-temporalmente-newgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar el grupo principal temporalmente: newgrp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permisos-de-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de archivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permisos de archivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propietario-y-grupo-de-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propietario y grupo de un archivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propietario y grupo de un archivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de lectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-escritura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de escritura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-quien-ortorgar-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿A quién ortorgar permisos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-de-archivos-y-directorios-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos de archivos y directorios: chmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propietario-y-grupo-chown-y-chgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propietario y grupo: chown (y chgrp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dispositivos-hardware-y-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivos hardware y controladores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación de aplicaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación de aplicaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lista de repositorios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaces de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-en-lubuntu-networkmanager-netplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración en Lubuntu: NetworkManager + Netplan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-ifconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando ifconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-archivo-etcnetworkinterfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El archivo /etc/network/interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El archivo /etc/network/interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loopback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loopback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activar-y-desactivar-las-interfaces-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activar y desactivar las interfaces de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobar-la-configuracion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar la configuración de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discos-y-particiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discos y particiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discos y particiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-particiones-fdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de particiones: fdisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulacion-de-la-tabla-de-particiones-sfdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulación de la tabla de particiones: sfdisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-sistema-de-archivos-mkfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear sistema de archivos: mkfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-del-espacio-ocupado-o-libre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información del espacio ocupado o libre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procesos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listado-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listado de procesos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listado de procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps-estado-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ps — Estado de procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-monitorizacion-interactiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        top — Monitorización interactiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-senales-a-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enviar señales a procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-e-inicio-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detección e inicio del sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detección e inicio del sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-programadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tareas programadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tareas programadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comando at
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron-y-crontab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cron y crontab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-de-la-impresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administración de la impresión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración de la impresión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-una-impresora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalar una impresora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-cola-de-impresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La cola de impresión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-y-preferencias-de-la-impresora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propiedades y preferencias de la impresora
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-3-administracion-de-lubuntu">Unidad 3 - Administración de Lubuntu</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>La administración de un sistema GNU/Linux (Lubuntu) es amplia y no se centraliza en una sola herramienta. En la práctica se combinan comandos en terminal con utilidades gráficas. Mientras que las GUIs varían entre distribuciones y entornos (en Lubuntu, Centro de configuración de LXQt y herramientas afines), los comandos suelen ser comunes. De hecho, muchas GUIs actúan como front-end de utilidades CLI mediante PolicyKit (pkexec) para elevar privilegios cuando es necesario.</p>
+<p>Las tareas de administración requieren privilegios elevados. En Linux el superusuario es root, cuya sesión directa suele estar deshabilitada por defecto. En su lugar, la administración se realiza con sudo: cualquier usuario perteneciente al grupo sudo puede ejecutar acciones administrativas.</p>
+<p>Cuando una aplicación gráfica necesita permisos, el sistema mostrará un cuadro de autenticación (polkit) para introducir la contraseña del usuario autorizado. En terminal, se antepone sudo al comando que requiera privilegios. Tras autenticarse, sudo mantiene un “ticket” temporal (por defecto, unos 15 minutos) y no vuelve a pedir la contraseña hasta que caduque; este tiempo es configurable en /etc/sudoers (editar siempre con visudo).</p>
+<p>Ejemplo (listar particiones del sistema):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
+</span></code></pre></div>
+<h2 id="usuario-y-grupos">Usuario y grupos</h2>
+<p>Linux (y por extensión Lubuntu) es multiusuario: varias personas (o servicios) pueden iniciar sesión a la vez, localmente o por acceso remoto. Por eso, crear, mantener y auditar cuentas es una tarea habitual de administración. Además de personas, muchos servicios del sistema usan cuentas propias para acotar privilegios.</p>
+<h3 id="bases-de-datos-de-usuarios-y-grupos">Bases de datos de usuarios y grupos</h3>
+<p>La información de cuentas y grupos se almacena en ficheros de texto gestionados por la libc (consultables también con getent):</p>
+<ul>
+<li>/etc/passwd: usuarios (nombre, UID, GID principal, comentario, home, shell).</li>
+<li>/etc/shadow: contraseñas cifradas y políticas (solo legible por root).</li>
+<li>/etc/group: grupos y sus miembros.</li>
+<li>/etc/gshadow: contraseñas/administración de grupos (solo root).</li>
+</ul>
+<h3 id="tipos-de-cuentas">Tipos de cuentas</h3>
+<ul>
+<li>root: superusuario (UID 0). Tiene control total del sistema. No se recomienda usarlo para trabajo diario; se opera con sudo desde cuentas normales.</li>
+<li>Cuentas del sistema: usadas por servicios y demonios (p. ej., daemon, lp, www-data, _apt, systemd-timesync, etc.). Suelen tener contraseña bloqueada y shell no interactiva (/usr/sbin/nologin), de modo que no están pensadas para iniciar sesión.</li>
+<li>Usuarios estándar: cuentas de personas que sí inician sesión y trabajan en el sistema.</li>
+</ul>
+<h3 id="identificadores-de-usuario-y-de-grupo-uidgid">Identificadores de usuario y de grupo (UID/GID)</h3>
+<p>Cada cuenta tiene un UID único y cada grupo un GID. En Debian/Ubuntu/Lubuntu se emplean por defecto estos rangos (configurables en /etc/login.defs):</p>
+<ul>
+<li>UID 0 → root.</li>
+<li>1–999 → cuentas del sistema.</li>
+<li>≥ 1000 → usuarios estándar (valor por defecto de UID_MIN = 1000).</li>
+<li>El usuario nobody suele tener UID 65534 y el grupo nogroup GID 65534 (mínimos privilegios).</li>
+</ul>
+<p>Cuando creas un usuario nuevo, el sistema suele crear también su grupo privado con el mismo número (UID=GID), lo que facilita la gestión de permisos.</p>
+<h3 id="archivo-etcpasswd">Archivo /etc/passwd</h3>
+<p>Contiene las cuentas de usuario registradas. Es un fichero de texto donde cada línea es un usuario y los campos están separados por dos puntos :.</p>
+<p>Formato (7 campos):</p>
+<ol>
+<li>Login → nombre de la cuenta (único).</li>
+<li>Contraseña → normalmente x (la contraseña real está en /etc/shadow).</li>
+<li>UID → identificador numérico del usuario (único).</li>
+<li>GID → identificador del grupo principal del usuario.</li>
+<li>Comentario (GECOS) → suele incluir el nombre completo u otros datos.</li>
+<li>HOME → directorio personal.</li>
+<li>Shell → intérprete de comandos (p. ej., /bin/bash o /usr/sbin/nologin).</li>
+</ol>
+<h3 id="gestion-de-usuarios">Gestión de usuarios</h3>
+<h4 id="crear-usuarios-useradd">Crear usuarios: useradd</h4>
+<p>useradd añade una nueva cuenta al sistema. Requiere privilegios y, por seguridad, la cuenta recién creada queda sin contraseña (bloqueada para inicio de sesión) hasta que se le asigne una con passwd.
+En Debian/Ubuntu/Lubuntu suele recomendarse adduser (asistente interactivo). Aun así, useradd es la herramienta de bajo nivel estándar.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>useradd<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>login
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>login  Nombre (único) de la nueva cuenta.</li>
+</ul>
+<p>Opciones habituales</p>
+<ul>
+<li>-c, --comment "texto"
+Comentario/GECOS (p. ej., nombre completo). Si hay espacios, entre comillas.</li>
+<li>-d, --home <directorio>
+Ruta del HOME. Si no existe y usas -m, se crea y se puebla desde /etc/skel.</li>
+<li>-e, --expiredate <AAAA-MM-DD>
+Fecha en la que la cuenta expira (queda deshabilitada).</li>
+<li>-f, --inactive <días>
+Días de inactividad tras expirar la contraseña antes de desactivar la cuenta.</li>
+<li>-g, --gid <grupo|GID>
+Grupo principal. Debe existir. Si no se indica, suele crearse un grupo privado con el mismo nombre que el usuario (según configuración).</li>
+<li>-G, --groups <g1,g2,...>
+Grupos suplementarios a los que pertenecerá el usuario.</li>
+<li>-m, --create-home
+Crea el directorio HOME si no existe (copiando plantillas de /etc/skel).</li>
+<li>-M
+No crear el HOME (incluso si la configuración lo permitiría).</li>
+<li>-s, --shell <ruta_shell>
+Shell de inicio (p. ej., /bin/bash, /usr/sbin/nologin).</li>
+<li>-u, --uid <UID>
+UID explícito (único y no negativo).</li>
+<li>-r, --system
+Crea una cuenta del sistema (UID en rango de sistema, sin login interactivo).</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Alta básica con HOME y grupos suplementarios</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;María López&quot;</span><span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>-G<span class="w"> </span>sudo,lpadmin<span class="w"> </span>mlopez
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>mlopez<span class="w">                       </span><span class="c1"># establecer contraseña (habilita login)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Crear con HOME personalizado y caducidad de cuenta</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-d<span class="w"> </span>/srv/apps/appuser<span class="w"> </span>-e<span class="w"> </span><span class="m">2026</span>-12-31<span class="w"> </span>-s<span class="w"> </span>/usr/sbin/nologin<span class="w"> </span>appuser
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Especificar grupo principal existente y UID concreto</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-u<span class="w"> </span><span class="m">1501</span><span class="w"> </span>-g<span class="w"> </span>docentes<span class="w"> </span>-G<span class="w"> </span>audio,video<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>pserrano
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>pserrano
+</span></code></pre></div>
+<h4 id="modificar-cuentas-usermod">Modificar cuentas: usermod</h4>
+<p>usermod modifica propiedades de una cuenta existente (requiere privilegios). Úsalo para cambiar shell, grupos, HOME, caducidad, bloqueo, etc.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>usermod<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>login
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>login  Nombre actual de la cuenta a modificar.</li>
+</ul>
+<p>Opciones habituales</p>
+<ul>
+<li>-c, --comment "texto"  Cambia el campo GECOS (p. ej., nombre completo).</li>
+<li>-d, --home DIR        Establece nuevo HOME.</li>
+<li>-m, --move-home       Mueve el contenido del HOME actual a DIR (usar junto a -d).</li>
+<li>-e, --expiredate AAAA-MM-DD  Fecha en que la cuenta expira (queda deshabilitada).</li>
+<li>-f, --inactive DÍAS   Días de gracia tras caducar la contraseña antes de desactivar la cuenta.</li>
+<li>-g, --gid GRUPO|GID   Cambia el grupo principal (debe existir).</li>
+<li>-G, --groups g1,g2,... Sustituye los grupos suplementarios por la lista indicada.</li>
+<li>-a, --append          Añade a los grupos indicados en -G (sin reemplazar los existentes).</li>
+<li>-l, --login NUEVO     Renombra el login (no renombra el HOME salvo que uses -d -m).</li>
+<li>-s, --shell /ruta/shell Cambia la shell de inicio (p. ej., /bin/bash, /usr/sbin/nologin).</li>
+<li>-u, --uid UID         Cambia el UID (evita colisiones; revisa propiedad de archivos).</li>
+<li>-L, --lock            Bloquea la contraseña (añade ! al hash en /etc/shadow).</li>
+<li>-U, --unlock          Desbloquea la contraseña.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Añadir a grupos sin perder los actuales</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>audio,video<span class="w"> </span>mlopez
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Cambiar shell</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>alumno1
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Cambiar grupo principal</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-g<span class="w"> </span>docentes<span class="w"> </span>pserrano
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Mover HOME a nueva ruta</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/srv/users/mlopez<span class="w"> </span>-m<span class="w"> </span>mlopez
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Caducar cuenta en una fecha</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-e<span class="w"> </span><span class="m">2026</span>-06-30<span class="w"> </span>contratada
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># Bloquear / desbloquear inicio por contraseña</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-L<span class="w"> </span>temporal<span class="p">;</span><span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-U<span class="w"> </span>temporal
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># Renombrar login (y HOME a juego)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>marta.lopez<span class="w"> </span>mlopez
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/marta.lopez<span class="w"> </span>-m<span class="w"> </span>marta.lopez
+</span></code></pre></div>
+<h4 id="eliminar-cuentas-userdel">Eliminar cuentas: userdel</h4>
+<p>userdel elimina una cuenta de usuario. Requiere privilegios. Por defecto no borra el directorio HOME ni otros archivos del usuario repartidos por el sistema.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>userdel<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>login
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>login  Nombre de la cuenta a eliminar.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-r, --remove
+Borra el HOME del usuario (si existe).</li>
+<li>-f, --force
+Fuerza el borrado aunque el usuario tenga sesión activa y elimina el HOME incluso si no es propiedad del usuario.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Borrado seguro (sin sesiones activas), conservando HOME</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>userdel<span class="w"> </span>alumno1
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Borrar cuenta y su HOME</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>alumno1
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Si sigue con procesos abiertos, terminar y borrar</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>loginctl<span class="w"> </span>terminate-user<span class="w"> </span>alumno1<span class="w">   </span><span class="c1"># o pkill -u alumno1</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>alumno1
+</span></code></pre></div>
+<h4 id="alta-amigable-y-grupos-adduser-y-addgroup-debianubuntulubuntu">Alta “amigable” y grupos: adduser y addgroup (Debian/Ubuntu/Lubuntu)</h4>
+<p>En Debian/Ubuntu, adduser y addgroup son front-ends más interactivos y seguros que useradd/groupadd. Preguntan los datos necesarios y crean HOME con las plantillas de /etc/skel (salvo que se indique lo contrario).</p>
+<p>Modos de uso</p>
+<ul>
+<li>Crear usuario normal (interactivo):
+sudo adduser login</li>
+<li>Crear usuario de sistema (sin login interactivo, sin contraseña):
+sudo adduser --system [--no-create-home] [--home DIR] login</li>
+<li>Crear grupo:
+sudo addgroup grupo</li>
+<li>Crear grupo de sistema:
+sudo addgroup --system grupo</li>
+<li>Añadir usuario existente a grupo existente:
+sudo adduser login grupo</li>
+</ul>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>adduser<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>login
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>addgroup<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>grupo
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>adduser<span class="w"> </span>login<span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Opciones habituales</p>
+<ul>
+<li>--home DIR            Establece HOME (lo crea y copia /etc/skel, salvo --no-create-home).</li>
+<li>--no-create-home      No crear HOME.</li>
+<li>--shell SHELL         Shell de inicio (p. ej., /bin/bash).</li>
+<li>--ingroup GRUPO       Grupo principal (en vez de crear uno privado).</li>
+<li>--gid GID             GID del grupo creado / asignado.</li>
+<li>--uid UID             UID específico para el usuario.</li>
+<li>--system              Crear usuario/grupo de sistema.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Usuario normal con HOME, shell bash y grupo adicional &#39;lpadmin&#39;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>mlopez
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>mlopez<span class="w"> </span>lpadmin
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Usuario normal con grupo principal existente y HOME personalizado</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>--ingroup<span class="w"> </span>docentes<span class="w"> </span>--home<span class="w"> </span>/srv/users/mlopez<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>mlopez
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># Usuario de sistema para servicio, sin HOME ni login</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>--system<span class="w"> </span>--no-create-home<span class="w"> </span>--shell<span class="w"> </span>/usr/sbin/nologin<span class="w"> </span>appsvc
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>sudo<span class="w"> </span>addgroup<span class="w"> </span>--system<span class="w"> </span>appsvc
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>appsvc<span class="w"> </span>appsvc<span class="w">   </span><span class="c1"># asegurarlo en su grupo</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># Crear grupo y añadir varios usuarios</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>sudo<span class="w"> </span>addgroup<span class="w"> </span>proyectos
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>ana<span class="w"> </span>proyectos
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>juan<span class="w"> </span>proyectos
+</span></code></pre></div>
+<h3 id="administracion-de-contrasenas">Administración de contraseñas</h3>
+<h4 id="cambiar-y-gestionar-contrasenas-passwd">Cambiar y gestionar contraseñas: passwd</h4>
+<p>passwd permite cambiar la contraseña de un usuario y ajustar sus políticas de caducidad.
+Un usuario estándar solo puede cambiar su propia clave; root puede gestionar la de cualquier cuenta.</p>
+<p>Al ejecutarlo, si cambias tu propia clave, pide la contraseña actual y luego solicita la nueva dos veces. Si las entradas coinciden y cumplen la política de PAM (longitud, complejidad, historial…), se actualiza en /etc/shadow.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>passwd<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>login<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>login  Usuario cuyo secreto se gestiona. Si se omite, actúa sobre la cuenta en curso.</li>
+</ul>
+<p>Opciones principales</p>
+<ul>
+<li>-d, --delete
+Elimina la contraseña (deja la cuenta sin clave). Úsese con cautela.</li>
+<li>-e, --expire
+Expira ahora la contraseña para forzar el cambio en el próximo inicio de sesión.</li>
+<li>-i, --inactive DÍAS
+Días de gracia tras expirar la clave; después, la cuenta queda deshabilitada.</li>
+<li>-l, --lock
+Bloquea la contraseña (antepone ! al hash en /etc/shadow). Impide login por contraseña.</li>
+<li>-u, --unlock
+Desbloquea la contraseña (retira el bloqueo).</li>
+<li>-n, --mindays DÍAS
+Mínimo de días entre cambios.</li>
+<li>-x, --maxdays DÍAS
+Máximo de días que una contraseña puede permanecer sin cambiar.</li>
+<li>-w, --warndays DÍAS
+Días de aviso antes de la expiración.</li>
+<li>-S, --status
+Muestra el estado de la cuenta/clave de forma resumida.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Cambiar TU propia clave</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>passwd
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Forzar a un usuario a cambiar la contraseña en el próximo login</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-e<span class="w"> </span>alumno1
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Bloquear y desbloquear contraseña de una cuenta</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-l<span class="w"> </span>practicas
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-u<span class="w"> </span>practicas
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Dejar una cuenta sin contraseña (solo en entornos controlados)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-d<span class="w"> </span>laboratorio
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># Políticas de caducidad</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-x<span class="w"> </span><span class="m">90</span><span class="w"> </span>-w<span class="w"> </span><span class="m">7</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>profesor1<span class="w">   </span><span class="c1"># máx 90 días, aviso 7, mínimo 1 día</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># Ver estado</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>-S<span class="w"> </span>profesor1
+</span></code></pre></div>
+<h3 id="gestion-de-grupos">Gestión de grupos</h3>
+<h4 id="crear-grupos-groupadd">Crear grupos: groupadd</h4>
+<p>groupadd crea un nuevo grupo en el sistema.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>groupadd<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>grupo  Nombre del grupo a crear.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-g, --gid GID  Establece el GID del grupo.</li>
+<li>-r, --system   Crea un grupo del sistema.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>proyectos
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>-g<span class="w"> </span><span class="m">1500</span><span class="w"> </span>docentes
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>-r<span class="w"> </span>_backup
+</span></code></pre></div>
+<h4 id="modificar-grupos-groupmod">Modificar grupos: groupmod</h4>
+<p>groupmod modifica los atributos de un grupo existente.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>groupmod<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>grupo  Nombre actual del grupo.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-g, --gid GID               Cambia el GID.</li>
+<li>-n, --new-name nuevo_nombre Renombra el grupo.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>groupmod<span class="w"> </span>-n<span class="w"> </span>profesores<span class="w"> </span>docentes
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>groupmod<span class="w"> </span>-g<span class="w"> </span><span class="m">1600</span><span class="w"> </span>profesores
+</span></code></pre></div>
+<h4 id="eliminar-grupos-groupdel">Eliminar grupos: groupdel</h4>
+<p>groupdel borra un grupo.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>groupdel<span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>grupo  Nombre del grupo a eliminar.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>groupdel<span class="w"> </span>proyectos
+</span></code></pre></div>
+<h4 id="gestionar-membresiascontrasenas-gpasswd">Gestionar membresías/contraseñas: gpasswd</h4>
+<p>gpasswd administra grupos y sus contraseñas. Sin opciones, establece la contraseña del grupo (raro en estaciones de trabajo; se prefiere gestionar membresías).</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gpasswd<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>grupo  Grupo a gestionar.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-a, --add login        Añade el usuario al grupo.</li>
+<li>-d, --delete login     Quita el usuario del grupo.</li>
+<li>-r, --remove-password  Elimina la contraseña del grupo.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Añadir/quitar miembros</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-a<span class="w"> </span>ana<span class="w"> </span>proyectos
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-d<span class="w"> </span>ana<span class="w"> </span>proyectos
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Establecer/eliminar contraseña de grupo (uso poco común)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>sudo<span class="w"> </span>gpasswd<span class="w"> </span>proyectos
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-r<span class="w"> </span>proyectos
+</span></code></pre></div>
+<h4 id="cambiar-el-grupo-principal-temporalmente-newgrp">Cambiar el grupo principal temporalmente: newgrp</h4>
+<p>newgrp inicia una nueva sesión de shell cambiando el grupo por defecto del usuario al indicado.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>newgrp<span class="w"> </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>grupo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>grupo  Grupo al que unirse como principal.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>
+<ul>
+<li>Re-inicializa el entorno como si fuera un login shell.</li>
+</ul>
+</li>
+</ul>
+<p>Comportamiento</p>
+<ul>
+<li>Si el usuario no figura como miembro en /etc/gshadow, se pedirá la contraseña del grupo.</li>
+<li>Si ya es miembro (listado en /etc/gshadow), no se pedirá contraseña.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Cambiar grupo principal en una subshell</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>newgrp<span class="w"> </span>proyectos
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Con entorno de login</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>newgrp<span class="w"> </span>-<span class="w"> </span>docentes
+</span></code></pre></div>
+<h2 id="permisos-de-archivo">Permisos de archivo</h2>
+<p>En Unix/Linux (Lubuntu incluido) los permisos se basan en un modelo simple y eficiente: tres tipos de permiso —lectura (r), escritura (w) y ejecución (x)— aplicados a tres clases de sujetos: propietario, grupo y otros. Este esquema cubre la mayoría de necesidades con administración directa y bajo coste.
+Cuando se requiere granularidad adicional, pueden usarse ACL POSIX (permisos extendidos), aunque el modelo básico rwx suele bastar en entornos docentes y de laboratorio.</p>
+<h3 id="propietario-y-grupo-de-un-archivo">Propietario y grupo de un archivo</h3>
+<p>En Linux todo archivo pertenece a un usuario y a un grupo. Cuando un usuario crea un archivo:</p>
+<ul>
+<li>El propietario será ese usuario.</li>
+<li>El grupo será su grupo principal en ese momento.</li>
+</ul>
+<p>Ejemplo: si el usuario maria (con grupo principal maria) crea un archivo, este pertenecerá a usuario maria y grupo maria.</p>
+<p>Para ver propietario y grupo, usa el listado largo de ls:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ls<span class="w"> </span>-l
+</span></code></pre></div>
+<p>Salida de ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>maria<span class="w"> </span>maria<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">2026</span>-01-14<span class="w">  </span>informe.txt
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>maria<span class="w"> </span>alumnos<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="m">2026</span>-01-10<span class="w">  </span>ejercicios
+</span></code></pre></div>
+<p>Lectura rápida de columnas:</p>
+<ul>
+<li>-rw-r--r-- / drwxr-xr-x → tipo y permisos (rwx para propietario, grupo y otros).</li>
+<li>1 → enlaces duros.</li>
+<li>maria → usuario propietario.</li>
+<li>maria / alumnos → grupo propietario.</li>
+<li>4096 → tamaño (bytes).</li>
+<li>fecha → última modificación.</li>
+<li>informe.txt / ejercicios → nombre (archivo / directorio).</li>
+</ul>
+<p><img alt="Permisos" src="../assets/images/ud3/img02.png" width="600" /></p>
+<h4 id="permisos-de-lectura">Permisos de lectura</h4>
+<p><img alt="Permisos" src="../assets/images/ud3/img03.png" width="600" /></p>
+<p>Archivos:</p>
+<ul>
+<li>Con r puedes abrir y leer el contenido (p. ej., con cat, less, un editor).</li>
+<li>No autoriza cambios: para modificar se requiere w (y para ejecutar, x).</li>
+</ul>
+<p>Directorios:</p>
+<ul>
+<li>Con r puedes listar los nombres que contiene el directorio (p. ej., ls).</li>
+<li>Para entrar en el directorio y acceder a metadatos o a los archivos que contiene, se necesita además x (traversal).</li>
+<li>Casos típicos:</li>
+<li>r + x: puedes listar con detalles (ls -l), acceder a subrutas y abrir ficheros (si sus permisos lo permiten).</li>
+<li>Solo r (sin x): puedes ver los nombres, pero no “entrar” ni obtener detalles (ls -l dará Permission denied para cada entrada).</li>
+<li>Solo x (sin r): no puedes listar; si conoces el nombre exacto y tienes permisos en el archivo, podrás abrirlo.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Archivo con lectura</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>cat<span class="w"> </span>documento.txt<span class="w">            </span><span class="c1"># muestra contenido si tienes &#39;r&#39; sobre el archivo</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Directorio con r sin x</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>ls<span class="w"> </span>carpeta/<span class="w">                  </span><span class="c1"># lista NOMBRES</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>ls<span class="w"> </span>-l<span class="w"> </span>carpeta/<span class="w">               </span><span class="c1"># falla al detallar: Permission denied</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1"># Directorio con x sin r</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>ls<span class="w"> </span>carpeta/<span class="w">                  </span><span class="c1"># no lista (Permission denied)</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>cat<span class="w"> </span>carpeta/known.txt<span class="w">        </span><span class="c1"># funciona si conoces el nombre y tienes &#39;r&#39; en el archivo</span>
+</span></code></pre></div>
+<h4 id="permisos-de-escritura">Permisos de escritura</h4>
+<p><img alt="Permisos" src="../assets/images/ud3/img05.png" width="600" /></p>
+<p>Archivos:</p>
+<ul>
+<li>Con w se puede modificar el contenido (editar, truncar, sobrescribir).</li>
+<li>No otorga por sí mismo la posibilidad de borrar el archivo ni de cambiar sus permisos o propietarios:</li>
+<li>Borrar un archivo depende de los permisos del directorio padre (ver abajo).</li>
+<li>Cambiar permisos (chmod) requiere ser propietario (o tener privilegios).</li>
+<li>Cambiar propietario/grupo (chown/chgrp) requiere privilegios (o condiciones específicas en chgrp).</li>
+</ul>
+<p>Directorios:</p>
+<ul>
+<li>Con w puedes crear, eliminar y renombrar entradas dentro del directorio.</li>
+<li>Para que tenga efecto práctico suele necesitarse también x (traversal) sobre el directorio.</li>
+<li>Borrar un archivo requiere w + x en el directorio que lo contiene, no w en el propio archivo.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Editar (requiere &#39;w&#39; en el archivo)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hola&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>notas.txt
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Crear y borrar dentro de un directorio (requiere &#39;w&#39; y &#39;x&#39; en el directorio)</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>touch<span class="w"> </span>carpeta/nuevo.txt
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>rm<span class="w"> </span>carpeta/nuevo.txt
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="c1"># Caso típico: sin &#39;w&#39; en el directorio no puedes borrar aunque el archivo tenga &#39;w&#39;</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>carpeta/archivo.txt<span class="w">   </span><span class="c1"># rw- r-- r-- (el archivo es escribible por su dueño)</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>chmod<span class="w"> </span><span class="m">555</span><span class="w"> </span>carpeta<span class="w">               </span><span class="c1"># r-x r-x r-x (sin &#39;w&#39; en el directorio)</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>rm<span class="w"> </span>carpeta/archivo.txt<span class="w">          </span><span class="c1"># Permission denied</span>
+</span></code></pre></div>
+<h4 id="permisos-de-ejecucion">Permisos de ejecución</h4>
+<p><img alt="Permisos" src="../assets/images/ud3/img04.png" width="600" /></p>
+<p>Archivos:</p>
+<ul>
+<li>Con x puedes ejecutar el archivo (binario ELF o script con shebang, p. ej. #!/bin/bash).</li>
+<li>Sin x, aunque el archivo sea una aplicación o tenga contenido ejecutable, obtendrás Permission denied.</li>
+<li>En scripts es habitual necesitar x y, según el caso, también r (el intérprete debe poder leer el fichero).</li>
+<li>En Lubuntu (PCManFM-Qt) el permiso se gestiona desde las propiedades del archivo (“Permitir ejecutar el archivo como un programa”).</li>
+</ul>
+<p>Directorios:</p>
+<ul>
+<li>Con x puedes entrar al directorio (cd) y acceder a objetos internos si conoces sus nombres.</li>
+<li>Para listar nombres necesitas además r.</li>
+<li>x sin r: no puedes listar, pero si sabes el nombre exacto y el archivo lo permite, podrás abrirlo.</li>
+<li>r sin x: verás los nombres, pero no podrás “entrar” ni acceder a su contenido.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Hacer ejecutable un script y ejecutarlo</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>backup.sh
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>./backup.sh
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># Directorio con x pero sin r: no lista, pero accede si conoces el nombre</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>chmod<span class="w"> </span><span class="m">111</span><span class="w"> </span>carpeta/
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>ls<span class="w"> </span>carpeta/<span class="w">                </span><span class="c1"># Permission denied</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>cat<span class="w"> </span>carpeta/known.txt<span class="w">      </span><span class="c1"># funciona si tienes permisos en el archivo</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="c1"># Directorio con r y x: listar y acceder</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>proyectos/
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>ls<span class="w"> </span>-l<span class="w"> </span>proyectos/
+</span></code></pre></div>
+<h4 id="a-quien-ortorgar-permisos">¿A quién ortorgar permisos?</h4>
+<p>En el modelo básico de permisos de Unix/Linux los permisos se asignan únicamente a tres clases:</p>
+<ul>
+<li>u → propietario del archivo</li>
+<li>g → grupo propietario</li>
+<li>o → otros (todos los demás usuarios)</li>
+</ul>
+<p>A cada clase se le pueden conceder combinaciones de r (lectura), w (escritura) y x (ejecución).</p>
+<p>Ejemplo:</p>
+<p>Archivo documento.txt con propietario maria y grupo maria
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>documento.txt
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>-rw-r-----<span class="w"> </span><span class="m">1</span><span class="w"> </span>maria<span class="w"> </span>maria<span class="w"> </span><span class="m">2048</span><span class="w"> </span><span class="m">2026</span>-01-15<span class="w"> </span>documento.txt
+</span></code></pre></div></p>
+<p>Aquí:</p>
+<ul>
+<li>u (maria) tiene rw-</li>
+<li>g (maria) tiene r--</li>
+<li>o no tiene permisos</li>
+</ul>
+<p>Para ajustar estos permisos con el modelo básico:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Propietario lectura/escritura, grupo solo lectura, otros sin acceso</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>chmod<span class="w"> </span><span class="m">640</span><span class="w"> </span>documento.txt
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Si quieres que “el grupo correcto” tenga acceso, cambia el grupo propietario</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>chgrp<span class="w"> </span>alumnos<span class="w"> </span>documento.txt<span class="w">     </span><span class="c1"># ahora &#39;g&#39; aplica al grupo &#39;alumnos&#39;</span>
+</span></code></pre></div>
+<h4 id="permisos-de-archivos-y-directorios-chmod">Permisos de archivos y directorios: chmod</h4>
+<p>chmod cambia los permisos.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>chmod<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>modo<span class="w"> </span>archivo<span class="w"> </span>...
+</span></code></pre></div>
+<p>Modos</p>
+<ul>
+<li>Simbólico: u+rx, g-w, o=r, a-x, u=rwx,g=rx,o=rx, X (aplica x solo a directorios o archivos ya ejecutables).</li>
+<li>Octal: r=4, w=2, x=1 ⇒ 755 (= rwxr-xr-x), 644 (= rw-r--r--).</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-R  Recursivo.</li>
+<li>-v  Verboroso.</li>
+</ul>
+<p>Bits especiales (avanzado)</p>
+<ul>
+<li>setuid (4xxx), setgid (2xxx), sticky (1xxx). Ej.: /tmp suele ser 1777.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>documento.txt<span class="w">                        </span><span class="c1"># rw-r--r--</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>script.sh<span class="w">                            </span><span class="c1"># añade ejecución al dueño</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="nv">u</span><span class="o">=</span>rwX,g<span class="o">=</span>rX,o<span class="o">=</span><span class="w"> </span>proyecto/<span class="w">               </span><span class="c1"># permisos limpios por árbol</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>/tmp<span class="w">                                </span><span class="c1"># sticky bit (solo dueño borra)</span>
+</span></code></pre></div>
+<h4 id="propietario-y-grupo-chown-y-chgrp">Propietario y grupo: chown (y chgrp)</h4>
+<p>chown cambia propietario y/o grupo.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chown<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>--<span class="o">]</span><span class="w"> </span>usuario<span class="o">[</span>:grupo<span class="o">]</span><span class="w"> </span>archivo<span class="w"> </span>...
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>chown<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>--<span class="o">]</span><span class="w"> </span>:grupo<span class="w"> </span>archivo<span class="w"> </span>...<span class="w">       </span><span class="c1"># solo grupo</span>
+</span></code></pre></div>
+<p>Opciones</p>
+<ul>
+<li>-R  Recursivo.</li>
+<li>-h  No seguir symlinks (actuar sobre el enlace).</li>
+<li>--from=usr:grp  Solo si coincide el dueño/grupo actual.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>usuario:usuario<span class="w"> </span>~/proyecto<span class="w"> </span>-R
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>:www-data<span class="w"> </span>/var/www/html<span class="w"> </span>-R
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>sudo<span class="w"> </span>chgrp<span class="w"> </span>docentes<span class="w"> </span>/compartida
+</span></code></pre></div>
+<h2 id="dispositivos-hardware-y-controladores">Dispositivos hardware y controladores</h2>
+<p>La mayoría de controladores vienen integrados en el kernel y se instalan automáticamente con Lubuntu, por lo que rara vez es necesario añadirlos manualmente. Estos módulos se actualizan junto con el resto del sistema desde los repositorios, asegurando que los dispositivos funcionen con normalidad.</p>
+<p>Cuando un dispositivo no queda bien soportado de forma automática, suele entrar en la categoría de controladores manuales, a menudo propietarios. Un controlador propietario es aquel cuyo código no es libre ni está disponible para su modificación. Muchos dispositivos funcionan correctamente con controladores libres (mantenidos por la comunidad y el proyecto Ubuntu), pero algunos fabricantes no publican suficiente información para desarrollar alternativas abiertas. En esos casos, el dispositivo puede ofrecer funcionalidad limitada o no funcionar hasta instalar el controlador propietario.</p>
+<p>Si existe un controlador propietario para tu hardware, puedes activarlo para mejorar compatibilidad o habilitar funciones (por ejemplo, ciertas GPU o adaptadores Wi-Fi). En Lubuntu, la vía recomendada es:</p>
+<ul>
+<li><strong>Herramienta gráfica</strong>: Software y actualizaciones → pestaña Controladores adicionales (interfaz de software-properties-qt). El sistema detecta el hardware y ofrece controladores alternativos (libres/propietarios) para seleccionarlos con un clic.</li>
+<li><strong>Línea de comandos (opcional)</strong>: ubuntu-drivers list para ver opciones y sudo ubuntu-drivers autoinstall para instalar lo recomendado.</li>
+</ul>
+<p>Ten en cuenta que algunos equipos no necesitan controladores propietarios (todo funciona con drivers libres) o no disponen de ellos. Los controladores propietarios son mantenidos por el fabricante y no pueden modificarse desde Lubuntu si presentan un problema. Además, si usas Secure Boot, la carga de módulos propietarios puede requerir inscribir una clave MOK o desactivar temporalmente Secure Boot para que el módulo del kernel se pueda cargar.</p>
+<h2 id="instalacion-de-aplicaciones">Instalación de aplicaciones</h2>
+<p>En Linux —y por extensión en Lubuntu— gran parte del software es libre y de distribución gratuita. La comunidad de desarrolladores publica aplicaciones con su código fuente y se distribuyen principalmente por Internet; en menor medida siguen existiendo ediciones en soportes físicos.</p>
+<p>En Lubuntu hay varias vías habituales para instalar aplicaciones:</p>
+<ul>
+<li><strong>Ejecutable del desarrollador</strong>: Algunos proyectos ofrecen un instalador o script propio (por ejemplo, un .run, un script install.sh o un formato autocontenido). Basta con descargarlo del sitio oficial y seguir sus instrucciones. Es menos común, pero suele ser directo.</li>
+<li><strong>Compilar desde código fuente</strong>: Muchas aplicaciones publican su código. Compilar permite ajustar opciones y aplicar parches, pero exige dependencias de desarrollo y conocimientos. Es la vía más avanzada y no es la opción típica para el alumnado.</li>
+<li><strong>Paquetes binarios</strong>: La forma estándar en Lubuntu (base Ubuntu/Debian) son los paquetes .deb gestionados por el sistema de paquetes:</li>
+<li><strong>apt / apt-get para instalar desde los repositorios</strong>: <code>sudo apt update &amp;&amp; sudo apt install nombre-paquete</code></li>
+<li><strong>dpkg -i</strong> para instalar un .deb descargado; si faltan dependencias, se resuelven luego con sudo apt -f install.</li>
+<li><strong>Gestor gráfico de software</strong>: Lubuntu incluye un centro de software con interfaz gráfica desde el que buscar, instalar, actualizar y desinstalar aplicaciones de los repositorios oficiales de Ubuntu. Es la opción recomendada para usuarios que prefieren no usar la terminal.</li>
+</ul>
+<h3 id="lista-de-repositorios">Lista de repositorios</h3>
+<p>En Lubuntu las aplicaciones se instalan desde repositorios: servidores (HTTP/HTTPS/FTP o locales) que publican paquetes organizados por versión de la distribución. Los repos son mantenidos, en su mayoría, por Ubuntu/Canonical y reflejados en espejos distribuidos por todo el mundo para acelerar las descargas.</p>
+<p>Hay dos grandes tipos:</p>
+<ul>
+<li><strong>Oficiales</strong>: mantenidos por Ubuntu/Canonical. Incluyen todo el software soportado y su seguridad/actualizaciones.</li>
+<li><strong>No oficiales</strong>: mantenidos por terceros (por ejemplo, PPA de Launchpad o repos de fabricantes). Se usan para software específico o más reciente que el de los repos oficiales.</li>
+</ul>
+<p>En sistemas derivados de Debian/Ubuntu (como Lubuntu), la lista de repos se define en:</p>
+<ul>
+<li>/etc/apt/sources.list (archivo principal).</li>
+<li>/etc/apt/sources.list.d/*.list (archivos adicionales, p. ej. PPAs o repos de terceros).</li>
+</ul>
+<h2 id="red">Red</h2>
+<p>Desde sus inicios, GNU/Linux ha utilizado TCP/IP como pila de red. Todas las distribuciones, incluida Lubuntu, se configuran estableciendo los parámetros habituales de una red IP (direcciones, máscara/prefijo, puerta de enlace, DNS, etc.).</p>
+<h3 id="interfaces-de-red">Interfaces de red</h3>
+<p>Las interfaces se detectan y crean dinámicamente por los controladores durante el arranque. Hoy se emplea la nomenclatura Predictable Network Interface Names (systemd/udev), que evita nombres variables como eth0/eth1. Ejemplos habituales:</p>
+<ul>
+<li>Dispositivos en placa: eno1 (Ethernet On-board 1).</li>
+<li>Dispositivos en ranura: ens1 (Ethernet Slot 1).</li>
+<li>Por localización en bus: enp2s0 (Ethernet bus 2, slot 0).</li>
+<li>Por dirección MAC: enx78e7d1ea46da (la x indica que sigue la MAC).</li>
+<li>Inalámbricas: wlp2s0, wlan0 (según hardware y reglas udev).</li>
+<li>El clásico eth0 está en desuso.</li>
+</ul>
+<p>Para inspeccionar interfaces y direcciones usa preferentemente ip (la antigua ifconfig está obsoleta):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ip<span class="w"> </span>link<span class="w">          </span><span class="c1"># lista interfaces</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>ip<span class="w"> </span>addr<span class="w">          </span><span class="c1"># direcciones asignadas</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>nmcli<span class="w"> </span>dev<span class="w"> </span>status<span class="w"> </span><span class="c1"># estado según NetworkManager</span>
+</span></code></pre></div>
+<h3 id="configuracion-en-lubuntu-networkmanager-netplan">Configuración en Lubuntu: NetworkManager + Netplan</h3>
+<p>En escritorios Lubuntu modernos, la red la gestiona NetworkManager (applet en el panel LXQt) y el sistema declara la gestión mediante Netplan. Por defecto encontrarás un YAML similar a:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># /etc/netplan/01-network-manager-all.yaml</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkManager</span>
+</span></code></pre></div>
+<h3 id="comando-ifconfig">Comando ifconfig</h3>
+<p>ifconfig se usa para consultar y, de forma puntual, configurar interfaces de red desde terminal. Si no se indican parámetros, muestra el estado de las interfaces activas.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>ifconfig<span class="w"> </span><span class="o">[</span>-v<span class="o">]</span><span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>interfaz<span class="o">]</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>ifconfig<span class="w"> </span><span class="o">[</span>-v<span class="o">]</span><span class="w"> </span>interfaz<span class="w"> </span><span class="o">[</span>aftype<span class="o">]</span><span class="w"> </span>opciones<span class="w"> </span><span class="p">|</span><span class="w"> </span>dirección<span class="w"> </span>...
+</span></code></pre></div>
+<p>Parámetros:</p>
+<ul>
+<li>interfaz: nombre de la interfaz (p. ej. enp2s0, eno1, wlp2s0, eth0 en equipos antiguos).</li>
+<li>aftype: familia de direcciones.</li>
+<li>inet → IPv4 (por defecto si se omite)</li>
+<li>inet6 → IPv6</li>
+<li>(Otros tipos históricos existen pero son residuales.)</li>
+<li>dirección: dirección IP para la interfaz (IPv4 en notación decimal punteada).</li>
+</ul>
+<p>Opciones habituales:</p>
+<ul>
+<li>[-]promisc → habilita/deshabilita modo promiscuo (la interfaz recibe todo el tráfico).</li>
+<li>netmask MÁSCARA → establece la máscara IPv4 (ej. 255.255.255.0).</li>
+<li>broadcast DIRECCION → fija la dirección de broadcast.</li>
+<li>up / down → activa o desactiva la interfaz.</li>
+<li>-a → muestra todas las interfaces (aunque estén inactivas).</li>
+<li>-s → salida resumida (estadísticas).</li>
+<li>-v → salida verbosa.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Ver todas las interfaces (activas e inactivas)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>ifconfig<span class="w"> </span>-a
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Asignar temporalmente una IPv4 y activar la interfaz</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span><span class="m">192</span>.168.1.50<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>up
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="c1"># Establecer también el broadcast (opcional)</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span><span class="m">192</span>.168.1.50<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>broadcast<span class="w"> </span><span class="m">192</span>.168.1.255<span class="w"> </span>up
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="c1"># Poner la interfaz en modo promiscuo (captura de tráfico)</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span>promisc
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="c1"># Quitar modo promiscuo</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span>-promisc
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="c1"># Desactivar/activar la interfaz</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span>down
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp2s0<span class="w"> </span>up
+</span></code></pre></div>
+<p>Notas y buenas prácticas:</p>
+<ul>
+<li>Temporalidad: los cambios hechos con ifconfig son no persistentes; se pierden al reiniciar o al reconfigurar la red.</li>
+<li>Convivencia con NetworkManager: en Lubuntu, NetworkManager puede sobrescribir ajustes en caliente. Para cambios duraderos usa:<ul>
+<li>GUI (applet de red / nm-connection-editor) o nmcli en terminal.</li>
+<li>Netplan (YAML en /etc/netplan/, aplicar con sudo netplan apply) si el equipo se gestiona sin NetworkManager.</li>
+</ul>
+</li>
+<li>Alternativa moderna: comandos ip equivalentes:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>ip<span class="w"> </span>a<span class="w">                </span><span class="c1"># ver direcciones</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.1.50/24<span class="w"> </span>dev<span class="w"> </span>enp2s0
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>enp2s0<span class="w"> </span>up
+</span></code></pre></div>
+<p>Instalación de net-tools:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>net-tools
+</span></code></pre></div>
+<h3 id="el-archivo-etcnetworkinterfaces">El archivo /etc/network/interfaces</h3>
+<p>El comando anterior permite ajustar la configuración de la tarjeta de red. Sin embargo, en la práctica, conviene que la red quede configurada ya al encender el equipo y durante el arranque del sistema. Para ello existe el servicio de red, que levanta y configura las interfaces automáticamente. Ese servicio necesita saber cómo asignar la IP, cuál es la puerta de enlace, y demás parámetros; dicha información debe estar disponible desde el inicio.</p>
+<p>El archivo clásico que contiene estos datos es /etc/network/interfaces. Lo utilizan los comandos ifup y ifdown para activar o desactivar interfaces tanto durante una sesión como en el arranque y apagado. Su formato divide la configuración en secciones; cada sección describe una interfaz concreta y su comportamiento al iniciar o detener el sistema. En red cableada, las interfaces se nombran con los identificadores del kernel/controlador vistos antes: eno1, ens1, enp2s0, eth0, etc. (históricamente eth0 para la primera NIC).</p>
+<ul>
+<li>auto: indica que el script de arranque debe activar la interfaz con ifup. Se procesan en el orden declarado.</li>
+<li>iface: declara una interfaz, su familia de protocolos y el método de asignación de dirección.</li>
+</ul>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>auto<span class="w"> </span>interfaz_de_red
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>iface<span class="w"> </span>interfaz_de_red<span class="w"> </span>aftype<span class="w"> </span>metodo
+</span></code></pre></div>
+<p>Parámetros:</p>
+<ul>
+<li>interfaz_de_red: nombre de la interfaz (p. ej., enp2s0, eno1, eth0).</li>
+<li>aftype: familia de protocolos; lo habitual es inet (IPv4).</li>
+<li>metodo: static para IP fija o dhcp para obtenerla dinámicamente mediante un servidor DHCP.</li>
+</ul>
+<p>Opciones (cuando metodo es static):</p>
+<ul>
+<li>address dirección_IP: IP del equipo en la LAN (formato IPv4).</li>
+<li>netmask máscara_red: por ejemplo, 255.255.255.0.</li>
+<li>network dirección_red: parte común de la red, p. ej., 192.168.0.0.</li>
+<li>broadcast dirección_difusión: p. ej., 192.168.0.255.</li>
+<li>gateway puerta_de_enlace: IP del router/pasarela (suele ser la primera o última IP del rango).</li>
+</ul>
+<p>Si el método de asignación es dhcp, no es necesario declarar el resto de parámetros: el servidor los proporciona.</p>
+<h4 id="loopback">Loopback</h4>
+<p>Interfaz de red local (127.0.0.1). En  /etc/network/interfaces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>auto<span class="w"> </span>lo
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>iface<span class="w"> </span>lo<span class="w"> </span>inet<span class="w"> </span>loopback
+</span></code></pre></div>
+<h4 id="ethernet">Ethernet</h4>
+<p>Red cableada con IP estática (ejemplo):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>auto<span class="w"> </span>enp2s0
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>iface<span class="w"> </span>enp2s0<span class="w"> </span>inet<span class="w"> </span>static
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">  </span>address<span class="w"> </span><span class="m">192</span>.168.0.10
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">  </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">  </span>network<span class="w"> </span><span class="m">192</span>.168.0.0
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">  </span>broadcast<span class="w"> </span><span class="m">192</span>.168.0.255
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">  </span>gateway<span class="w"> </span><span class="m">192</span>.168.0.1
+</span></code></pre></div>
+<p>Comentarios:</p>
+<ul>
+<li>auto enp2s0 asegura que la interfaz se active durante el arranque.</li>
+<li>iface enp2s0 inet static indica IPv4 (inet) con dirección fija.</li>
+</ul>
+<p>Por DHCP:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>auto<span class="w"> </span>enp2s0
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>iface<span class="w"> </span>enp2s0<span class="w"> </span>inet<span class="w"> </span>dhcp
+</span></code></pre></div>
+<p>En este caso, el servidor DHCP suministra IP, máscara, puerta de enlace y DNS.</p>
+<h3 id="activar-y-desactivar-las-interfaces-de-red">Activar y desactivar las interfaces de red</h3>
+<p>Para activar o desactivar interfaces se utilizan los comandos ifup y ifdown. No es habitual desactivar una interfaz salvo para aplicar cambios de configuración y volver a activarla después. Estos comandos también los invoca el servicio de red al arrancar y apagar el sistema.</p>
+<p>Activar todas las interfaces marcadas como auto:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>sudo<span class="w"> </span>ifup<span class="w"> </span>-a
+</span></code></pre></div>
+<p>Aplicar cambios en una interfaz concreta (ej., enp2s0):</p>
+<ol>
+<li>Desactivar la interfaz:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>sudo<span class="w"> </span>ifdown<span class="w"> </span>enp2s0
+</span></code></pre></div>
+<ol>
+<li>Editar la configuración en /etc/network/interfaces y guardar los cambios.</li>
+<li>Ractivar la interfaz.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>sudo<span class="w"> </span>ifup<span class="w"> </span>enp2s0
+</span></code></pre></div>
+<h3 id="comprobar-la-configuracion-de-red">Comprobar la configuración de red</h3>
+<p>Para revisar la configuración de las interfaces de red en Lubuntu usando la herramienta clásica:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1"># Mostrar todas las interfaces detectadas (activas o no)</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>ifconfig<span class="w"> </span>-a
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="c1"># Ver solo una interfaz concreta (ej.: enp2s0)</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>ifconfig<span class="w"> </span>enp2s0
+</span></code></pre></div>
+<p>En la salida típica verás (por interfaz) algo como enp2s0 (Ethernet por cable), wlp3s0 (Wi-Fi) y lo (bucle local). Para una interfaz Ethernet, ifconfig muestra:</p>
+<ul>
+<li>Tipo de enlace: Ethernet.</li>
+<li>Dirección MAC: identificada como ether xx:xx:xx:xx:xx:xx.</li>
+<li>Dirección IP (IPv4): campo inet.</li>
+<li>Dirección de broadcast: campo broadcast o Bcast.</li>
+<li>Máscara de red: campo netmask o Mask.</li>
+<li>Multicast: aparece la bandera MULTICAST si lo admite.</li>
+<li>Métrica: metric (puede no mostrarse en todos los sistemas).</li>
+<li>Contadores RX/TX: paquetes recibidos/enviados (RX packets / TX packets).</li>
+<li>Errores RX/TX: paquetes con error, descartados u overruns.</li>
+<li>Bytes RX/TX: volumen total recibido y transmitido.</li>
+<li>(Según hardware/driver) Interrupt y Base address: campos clásicos que pueden no aparecer en equipos modernos.</li>
+</ul>
+<h2 id="discos-y-particiones">Discos y particiones</h2>
+<p>La administración de discos comprende la creación y el mantenimiento de particiones, así como la aplicación de cuotas de disco para limitar el uso de espacio por usuario o grupo. En Lubuntu pueden emplearse tanto utilidades de línea de comandos como herramientas gráficas para realizar estas tareas.</p>
+<p>Cuando exista espacio sin asignar en el disco y se quiera habilitarlo para almacenar datos, deben completarse tres operaciones, en este orden:</p>
+<ol>
+<li>Crear la partición con la herramienta seleccionada.</li>
+<li>Crear un sistema de archivos sobre esa nueva partición.</li>
+<li>Montar la partición en un directorio, ya sea manualmente o dejando configurado el montaje persistente en el archivo /etc/fstab.</li>
+</ol>
+<h3 id="gestion-de-particiones-fdisk">Gestión de particiones: fdisk</h3>
+<p>En todas las distribuciones GNU/Linux, incluida Lubuntu, está disponible fdisk, una utilidad en modo texto para gestionar particiones. Permite crear y eliminar particiones, cambiar su tipo, etc. Debe usarse con precaución: no es tan intuitiva como una herramienta gráfica y un error puede ser crítico.</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>fdisk<span class="w"> </span><span class="o">[</span>archivo_dispositivo<span class="o">]</span>
+</span></code></pre></div>
+El archivo de dispositivo será el disco a gestionar; en el caso más habitual, /dev/sda.</p>
+<p>La interfaz es menudriven por teclas:</p>
+<ul>
+<li>m + Intro → muestra la ayuda (menú de acciones).</li>
+<li>q + Intro → salir sin guardar cambios.</li>
+</ul>
+<p>Ver la tabla de particiones</p>
+<ul>
+<li>p + Intro → imprime el estado actual de la tabla de particiones del disco seleccionado.</li>
+</ul>
+<p>El listado muestra, una línea por partición, los siguientes campos:</p>
+<ul>
+<li>Dispositivo: archivo de dispositivo de la partición.</li>
+<li>Inicio: un * marca la partición de arranque.</li>
+<li>Comienzo: sector inicial.</li>
+<li>Fin: sector final.</li>
+<li>Bloques: tamaño en bloques.</li>
+<li>Id: identificador del tipo de partición.</li>
+<li>Sistema: sistema de archivos/tipo reconocido.</li>
+</ul>
+<p>Antes de la tabla, fdisk muestra información del disco: dispositivo, tamaño, geometría, tamaño de sector, etc.</p>
+<p>Crear una partición</p>
+<ul>
+<li>n + Intro → inicia la creación. Se solicitará:</li>
+<li>Tipo de partición: p primaria o l lógica.</li>
+<li>Nº de partición:</li>
+<li>Si existe una extendida: 1–3 para primarias disponibles.</li>
+<li>Si no existe extendida: 1–4 para primarias.</li>
+<li>Primer sector: por defecto, el primero del espacio libre.</li>
+<li>Último sector: por defecto, el último del espacio libre. Es preferible indicar el tamaño con +númeroM o +númeroK (MB/KB).</li>
+</ul>
+<p>Cambiar el tipo de partición</p>
+<ul>
+<li>t + Intro → permite asignar el tipo (Id) de la partición.</li>
+<li>l + Intro → lista todos los tipos disponibles reconocidos por Linux.</li>
+</ul>
+<p>Guardar los cambios</p>
+<ul>
+<li>w + Intro → escribe la nueva tabla de particiones en el disco (sector de inicio) y sale.
+Si no se escribe con w, los cambios no se aplican.</li>
+</ul>
+<h3 id="manipulacion-de-la-tabla-de-particiones-sfdisk">Manipulación de la tabla de particiones: sfdisk</h3>
+<p>El comando sfdisk permite trabajar con tablas de particiones desde CLI. Si se ejecuta sin dispositivo, inicia un diálogo interactivo para crear una partición solicitando los datos necesarios.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>sfdisk<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>dispositivo<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>dispositivo: archivo de dispositivo del disco (por ejemplo, /dev/sda). Si se omite, actúa sobre todos los discos cuando procede.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-s: muestra el tamaño (en bloques) de una partición.</li>
+<li>-l: lista las particiones de un dispositivo.</li>
+<li>-V: verifica (chequea) la tabla de particiones.</li>
+</ul>
+<h3 id="crear-sistema-de-archivos-mkfs">Crear sistema de archivos: mkfs</h3>
+<p>mkfs crea un sistema de archivos sobre una partición o dispositivo.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>mkfs<span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>tipo<span class="o">]</span><span class="w"> </span><span class="o">[</span>opciones_fs<span class="o">]</span><span class="w"> </span>dispositivo
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>dispositivo: archivo de dispositivo de la partición (p. ej., /dev/sda1).</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-t tipo: tipo de sistema de archivos. Habituales:</li>
+<li>ext4 (actual en GNU/Linux).</li>
+<li>ext3.</li>
+<li>ext2 (por defecto si no se indica otro).</li>
+<li>vfat (FAT).</li>
+<li>msdos (FAT con nombres 8.3).</li>
+<li>[opciones_fs]: opciones específicas del tipo. Comunes:</li>
+<li>-c: comprueba bloques defectuosos antes de crear.</li>
+<li>-v: salida detallada.</li>
+</ul>
+<p>Nota: mkfs es un front-end que invoca constructores concretos tipo mkfs.fstype (p. ej., mkfs.ext4, mkfs.vfat).</p>
+<p><strong>mkfs.ext4</strong></p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>mkfs.ext4<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>dispositivo
+</span></code></pre></div>
+<p>Opciones habituales</p>
+<ul>
+<li>-b tamaño: tamaño de bloque (1024, 2048 o 4096).</li>
+<li>-c: chequeo previo de bloques.</li>
+</ul>
+<p><strong>mkfs.vfat, mkfs.msdos, mkdosfs</strong></p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>mkfs.vfat<span class="w">  </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>dispositivo
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>mkfs.msdos<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>dispositivo
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>mkdosfs<span class="w">    </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>dispositivo
+</span></code></pre></div>
+<p>Opciones habituales:</p>
+<ul>
+<li>-F tamaño: tipo de FAT (12, 16 o 32).</li>
+<li>-f copias: número de copias de la FAT (por defecto, 2).</li>
+<li>-n nombre_volumen: etiqueta del volumen.</li>
+<li>-c: chequeo de bloques defectuosos.</li>
+<li>-s sectores_por_cluster: sectores por clúster (potencia de 2).</li>
+</ul>
+<h3 id="informacion-del-espacio-ocupado-o-libre">Información del espacio ocupado o libre</h3>
+<p>Uso por archivos/directorios: du
+Informa del espacio que ocupan archivos y directorios.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>du<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>archivo<span class="w"> </span>...<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>archivo …: lista de rutas. Sin argumentos, mide el directorio activo.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-k: muestra en kilobytes (por defecto usa bloques de 512 B).</li>
+<li>-m: muestra en megabytes.</li>
+<li>-s: resumen (no recursivo; tamaño total de cada argumento).</li>
+<li>-c, –total: añade una línea con el total.</li>
+</ul>
+<p>Si se pasa el archivo de dispositivo de una partición, mostrará el espacio asociado según corresponda. Sin argumentos, informa de la ocupación del directorio actual.</p>
+<p>Espacio por sistemas de archivos: df
+Muestra espacio usado y libre de los sistemas de archivos montados.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>df<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>archivo<span class="w"> </span>...<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>archivo …: si se indica, informa del sistema de archivos que contiene cada ruta; sin argumentos, de todos los montados.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-k: en kilobytes.</li>
+<li>-h: formato “humano” (KB, MB, GB en potencias de 1024).</li>
+<li>-H: similar a -h pero en múltiplos de 1000.</li>
+<li>-t tipo: limita la salida a un tipo de sistema de archivos.</li>
+</ul>
+<p>Campos que muestra</p>
+<ul>
+<li>Sistema de archivos (dispositivo).</li>
+<li>Bloques totales (1 KiB).</li>
+<li>Usados.</li>
+<li>Disponibles.</li>
+<li>% de uso.</li>
+<li>Punto de montaje.</li>
+</ul>
+<p>Reparación de un sistema de archivos. fsck</p>
+<p>fsck comprueba y repara sistemas de archivos. Es recomendable ejecutarlo con el sistema de archivos desmontado.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>fsck<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span><span class="o">[</span>sistema_de_archivos<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>sistema_de_archivos: dispositivo o punto de montaje (p. ej., /dev/sda1 o /home). Conviene que esté sin montar.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-a: repara automáticamente si es necesario (sin preguntar).</li>
+</ul>
+<p>Si no se especifica ningún sistema de archivos, fsck recorrerá los definidos en /etc/fstab en ese orden.</p>
+<h2 id="procesos">Procesos</h2>
+<p>Un proceso es una instancia de un programa en ejecución. En su contexto se incluyen sus procesos hijos (si los hubiera), los recursos que consume, y sus atributos de seguridad (propietario, grupos, permisos, roles). Lubuntu es multitarea y multiusuario: múltiples procesos se ejecutan simultáneamente sin interferirse y cada uno “cree” tener el sistema para sí. Un mismo programa puede tener varias instancias a la vez; cada instancia es un proceso con su PID (Process ID) numérico y único. Casi todo lo que se ejecuta es un proceso (incluida la shell o el servidor gráfico); la excepción es el kernel, que reside en memoria y sirve llamadas del sistema.</p>
+<h3 id="listado-de-procesos">Listado de procesos</h3>
+<p>Para inspeccionar la actividad del sistema se usan, entre otros, los comandos ps y top. Aquí se describe ps.</p>
+<h4 id="ps-estado-de-procesos">ps — Estado de procesos</h4>
+<p>ps muestra el estado de los procesos. Admite tres estilos de opciones (y pueden mezclarse con cuidado):</p>
+<ul>
+<li>Estilo UNIX: opciones con guion corto (ej. -e -f -u).</li>
+<li>Estilo BSD: opciones sin guion (ej. aux).</li>
+<li>Estilo GNU: opciones largas con doble guion (ej. --sort, --forest, --no-headers).</li>
+</ul>
+<p>Sintaxis (genérica)</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>ps<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span>
+</span></code></pre></div>
+<p>Campos habituales en la salida</p>
+<ul>
+<li>PID: identificador del proceso.</li>
+<li>PPID: PID del proceso padre.</li>
+<li>USER/UID: propietario.</li>
+<li>TTY: terminal asociado (o ? si no tiene).</li>
+<li>STAT: estado y banderas (R, S, D, T, Z; más +, &lt;, N, l, etc.).</li>
+<li>TIME: tiempo de CPU acumulado.</li>
+<li>%CPU, %MEM: uso relativo de CPU y memoria.</li>
+<li>VSZ (KiB) / RSS (KiB): memoria virtual / residente.</li>
+<li>START/STIME: hora o fecha de inicio.</li>
+<li>COMMAND/CMD: nombre y argumentos.</li>
+</ul>
+<p>Opciones útiles (UNIX/GNU)</p>
+<ul>
+<li>-e o -A: todos los procesos.</li>
+<li>-f: formato “completo” (muestra UID, PPID, C, STIME, TTY, TIME, CMD).</li>
+<li>-u usuario: solo procesos de un usuario dado.</li>
+<li>-p PID[,PID...]: selecciona uno o varios PIDs concretos.</li>
+<li>-o formato: elige columnas (p. ej., -o pid,ppid,user,stat,pcpu,pmem,etime,cmd).</li>
+<li>--sort=clave: ordena por campos (ej. --sort=-pcpu, --sort=pmem,pid).</li>
+<li>--forest: dibuja el árbol de procesos (ASCII).</li>
+<li>-x: incluye procesos sin TTY (demonios/servicios).</li>
+<li>--no-headers: suprime cabeceras (útil en scripts).</li>
+</ul>
+<p>Atajos BSD frecuentes</p>
+<ul>
+<li>ps aux: todos los procesos (usuario, sin TTY, etc.).</li>
+<li>ps axo ...: todos con formato personalizado (equivalente a -e -o).</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="c1"># Ver todos los procesos con formato amplio</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>ps<span class="w"> </span>-ef
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="c1"># Listado “estilo BSD” con todo</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>ps<span class="w"> </span>aux
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="c1"># Procesos de un usuario</span>
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>ps<span class="w"> </span>-u<span class="w"> </span>alumno
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>
+</span><span id="__span-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="c1"># Seleccionar columnas y ordenar por CPU descendente</span>
+</span><span id="__span-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a>ps<span class="w"> </span>-eo<span class="w"> </span>pid,ppid,user,stat,pcpu,pmem,etime,cmd<span class="w"> </span>--sort<span class="o">=</span>-pcpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</span><span id="__span-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a>
+</span><span id="__span-55-13"><a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="c1"># Árbol de procesos con columnas clave</span>
+</span><span id="__span-55-14"><a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a>ps<span class="w"> </span>-eo<span class="w"> </span>pid,ppid,user,stat,cmd<span class="w"> </span>--forest
+</span><span id="__span-55-15"><a id="__codelineno-55-15" name="__codelineno-55-15" href="#__codelineno-55-15"></a>
+</span><span id="__span-55-16"><a id="__codelineno-55-16" name="__codelineno-55-16" href="#__codelineno-55-16"></a><span class="c1"># Información detallada de un PID concreto</span>
+</span><span id="__span-55-17"><a id="__codelineno-55-17" name="__codelineno-55-17" href="#__codelineno-55-17"></a>ps<span class="w"> </span>-p<span class="w"> </span><span class="m">1234</span><span class="w"> </span>-o<span class="w"> </span>pid,ppid,user,stat,etime,cmd
+</span><span id="__span-55-18"><a id="__codelineno-55-18" name="__codelineno-55-18" href="#__codelineno-55-18"></a>
+</span><span id="__span-55-19"><a id="__codelineno-55-19" name="__codelineno-55-19" href="#__codelineno-55-19"></a><span class="c1"># Filtrar por nombre de programa (dos variantes)</span>
+</span><span id="__span-55-20"><a id="__codelineno-55-20" name="__codelineno-55-20" href="#__codelineno-55-20"></a>ps<span class="w"> </span>-eo<span class="w"> </span>pid,user,pcpu,pmem,cmd<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;[f]irefox&#39;</span>
+</span><span id="__span-55-21"><a id="__codelineno-55-21" name="__codelineno-55-21" href="#__codelineno-55-21"></a>pgrep<span class="w"> </span>-af<span class="w"> </span>firefox<span class="w">    </span><span class="c1"># muestra PID y comando (útil para localizar)</span>
+</span></code></pre></div>
+<p>Notas sobre STAT (estado)</p>
+<ul>
+<li>R: ejecutándose o runnable.</li>
+<li>S: en espera interrumpible (sleep).</li>
+<li>D: espera no interrumpible (E/S).</li>
+<li>T: detenido/trazado.</li>
+<li>Z: zombie (proceso terminado sin wait del padre).</li>
+<li>Sufijos: + (en primer plano con TTY), &lt; (alta prioridad), N (baja prioridad), etc.</li>
+</ul>
+<h4 id="top-monitorizacion-interactiva">top — Monitorización interactiva</h4>
+<p>top muestra en tiempo real los procesos y recursos del sistema. Es interactivo y, por defecto, refresca cada 3 segundos.</p>
+<p>Qué muestra</p>
+<ul>
+<li>Cabecera: hora/uptime, usuarios conectados, load average.</li>
+<li>Tareas: totales, en ejecución, en espera, detenidas, zombis.</li>
+<li>CPU: porcentajes por estado (us, sy, ni, id, wa, hi, si, st).</li>
+<li>Memoria y swap: total, usada, libre y buffers/cache.</li>
+<li>Tabla de procesos: PID, usuario, prioridad/ni, estado, %CPU, %MEM, memoria (RES/VSZ), tiempo CPU y comando.</li>
+</ul>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>top<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span>
+</span></code></pre></div>
+<p>Opciones útiles</p>
+<ul>
+<li>-d SECS  Intervalo de refresco (segundos).</li>
+<li>-u USR   Solo procesos de un usuario.</li>
+<li>-p PID[,PID...]  Solo esos PIDs (se puede repetir).</li>
+<li>-H       Muestra hilos.</li>
+<li>-b       Modo batch (no interactivo), útil para scripts.</li>
+<li>-n N     Número de iteraciones en batch.</li>
+<li>-o CAMPO Orden inicial (ej. -o %CPU, -o %MEM, -o TIME+).</li>
+</ul>
+<p>Teclas interactivas más usadas</p>
+<ul>
+<li>h  Ayuda integrada.</li>
+<li>q  Salir.</li>
+<li>P  Ordenar por %CPU.</li>
+<li>M  Ordenar por %MEM.</li>
+<li>T  Ordenar por tiempo de CPU.</li>
+<li>N  Ordenar por PID.</li>
+<li>c  Alterna nombre de comando ↔ línea completa.</li>
+<li>1  Muestra/oculta uso por cada CPU.</li>
+<li>i  Oculta/mostrar procesos inactivos.</li>
+<li>u  Filtra por usuario.</li>
+<li>o  Añade filtro (ej. COMMAND=sshd); O borra filtros.</li>
+<li>k  Enviar señal (kill) a un PID.</li>
+<li>r  Cambiar nice (prioridad) a un PID.</li>
+<li>f  Selección de campos; s (dentro) elige el de ordenación.</li>
+<li>V  Vista en árbol (forest).</li>
+<li>H  Alterna procesos ↔ hilos.</li>
+<li>d  Cambiar delay (segundos).</li>
+<li>z  Colores; b negrita/resaltado.</li>
+<li>W  Guardar configuración en ~/.toprc.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="c1"># Vista clásica</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>top
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="c1"># Ordenado por memoria y refresco cada 1 s</span>
+</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>top<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>%MEM
+</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>
+</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="c1"># Solo procesos del usuario &#39;alumno&#39;</span>
+</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>top<span class="w"> </span>-u<span class="w"> </span>alumno
+</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>
+</span><span id="__span-57-10"><a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a><span class="c1"># Solo dos procesos concretos (útil para vigilar servicios)</span>
+</span><span id="__span-57-11"><a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a>top<span class="w"> </span>-p<span class="w"> </span><span class="m">1234</span><span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span>
+</span><span id="__span-57-12"><a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a>
+</span><span id="__span-57-13"><a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a><span class="c1"># Modo batch: una captura ordenada por CPU (para redirigir a fichero)</span>
+</span><span id="__span-57-14"><a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a>top<span class="w"> </span>-b<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span>%CPU<span class="w"> </span>&gt;<span class="w"> </span>top-snapshot.txt
+</span></code></pre></div>
+<h3 id="enviar-senales-a-procesos">Enviar señales a procesos</h3>
+<p>kill — Enviar señales (terminar por defecto)
+Permite enviar señales a uno o varios procesos por PID. Si no se indica señal, se envía la de terminar (SIGTERM).</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">kill</span><span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>pid<span class="w"> </span>...
+</span></code></pre></div>
+<p>Parámetros
+- pid ...  Lista de PIDs destino.</p>
+<p>Opciones
+- -SEÑAL  Señal a enviar (por nombre o número), p. ej. -TERM, -9.
+- -L      Lista todas las señales disponibles.</p>
+<p>Notas
+- Los PIDs pueden obtenerse con ps o top.
+- Se usa habitualmente para finalizar procesos bloqueados sin reiniciar el sistema.</p>
+<p>Ejemplo</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1"># Terminar dos procesos concretos</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="nb">kill</span><span class="w"> </span><span class="m">1234</span><span class="w"> </span><span class="m">2345</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="c1"># Enviar una señal específica</span>
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="nb">kill</span><span class="w"> </span>-TERM<span class="w"> </span><span class="m">1234</span>
+</span></code></pre></div>
+<p>killall — Señalar por nombre de programa</p>
+<p>Funciona como kill, pero el destino se indica por nombre de programa; afecta a todas las instancias con ese nombre.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>killall<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>programa
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>programa  Nombre del proceso (comando) al que se señala.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-s SEÑAL        Señal a enviar (por nombre o número). Por defecto, SIGTERM.</li>
+<li>-I              Ignora mayúsculas/minúsculas en el nombre.</li>
+<li>-r, --regex   Interpreta el nombre como expresión regular.</li>
+<li>-u USUARIO, --user USUARIO  Limita a procesos de ese usuario.</li>
+</ul>
+<p>Ejemplo</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c1"># Finalizar todas las instancias de &#39;squid&#39;</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>killall<span class="w"> </span>squid
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="c1"># Enviar SIGTERM a procesos de &#39;nginx&#39; del usuario &#39;www-data&#39;</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>killall<span class="w"> </span>-s<span class="w"> </span>TERM<span class="w"> </span>-u<span class="w"> </span>www-data<span class="w"> </span>nginx
+</span></code></pre></div>
+<h3 id="servicios">Servicios</h3>
+<p>Un servicio es un programa que se inicia con el arranque del sistema y se ejecuta en segundo plano, sin intervención del usuario. Proporciona funciones al propio sistema, a otras aplicaciones o a los usuarios (por ejemplo, red, impresión, registro, etc.).
+En GNU/Linux estos servicios se implementan como demonios (daemons): procesos especiales sin interfaz directa, con los que solo se interactúa mediante mecanismos del sistema.</p>
+<p>Scripts y niveles de ejecución (SysV)</p>
+<p>Cada servicio dispone de un script en /etc/init.d. La activación/parada en arranque o apagado se organiza por niveles de ejecución (runlevels), que son conjuntos de servicios preparados para un determinado estado del sistema:</p>
+<ul>
+<li>Nivel 0: apagado.</li>
+<li>Nivel 1: monousuario en modo texto.</li>
+<li>Niveles 2–5: multiusuario (habitualmente con entorno gráfico).</li>
+<li>Nivel 6: reinicio.</li>
+</ul>
+<p>Para cada nivel existe un directorio con los enlaces simbólicos a los scripts del servicio, siguiendo el patrón /etc/rc<nivel>.d/. Así, encontraremos:</p>
+<ul>
+<li>/etc/rc0.d</li>
+<li>/etc/rc1.d</li>
+<li>/etc/rc2.d</li>
+<li>/etc/rc3.d</li>
+<li>/etc/rc4.d</li>
+<li>/etc/rc5.d</li>
+<li>/etc/rc6.d</li>
+</ul>
+<p>Además, /etc/rcS.d alberga los enlaces que deben ejecutarse en el arranque independientemente del nivel de ejecución (incluido el 1).</p>
+<p>Los enlaces dentro de cada /etc/rcX.d/ siguen una nomenclatura que indica acción y orden:</p>
+<ul>
+<li>Los que empiezan por S se invocan con start (iniciar el servicio).</li>
+<li>Los que empiezan por K se invocan con stop (detener el servicio).</li>
+<li>A continuación llevan dos dígitos que marcan la prioridad/orden dentro del nivel.</li>
+<li>Terminan con el nombre del servicio.</li>
+</ul>
+<p>Ejemplo:
+/etc/rc2.d/S80sendmail inicia el servicio sendmail en el nivel 2, después de /etc/rc2.d/S12syslog y antes de /etc/rc2.d/S90xfs.</p>
+<h3 id="deteccion-e-inicio-del-sistema">Detección e inicio del sistema</h3>
+<p>Disponemos de varios comandos para detener, reiniciar o programar el apagado del sistema.</p>
+<h4 id="comando-shutdown">Comando shutdown</h4>
+<p>Detiene o reinicia el sistema de forma inmediata o programada, avisando a los usuarios conectados.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>shutdown<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>tiempo<span class="w"> </span><span class="o">[</span>mensaje<span class="o">]</span>
+</span></code></pre></div>
+<p>Parámetros</p>
+<ul>
+<li>tiempo</li>
+<li>now → acción inmediata</li>
+<li>+m → dentro de m minutos</li>
+<li>hh:mm → a la hora indicada (formato 24 h)</li>
+<li>mensaje
+Texto opcional que se envía a los usuarios como aviso.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-r  Reinicia el sistema (reboot).</li>
+<li>-h  Apaga el sistema (halt/poweroff).</li>
+<li>-c  Cancela un apagado/reinicio previamente programado (no requiere tiempo; lo que siga se usa como mensaje).</li>
+<li>-k  No apaga ni reinicia: solo envía el aviso y bloquea nuevos inicios de sesión.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="c1"># Apagado inmediato</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>sudo<span class="w"> </span>shutdown<span class="w"> </span>-h<span class="w"> </span>now
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>
+</span><span id="__span-63-4"><a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="c1"># Reinicio dentro de 5 minutos con mensaje</span>
+</span><span id="__span-63-5"><a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a>sudo<span class="w"> </span>shutdown<span class="w"> </span>-r<span class="w"> </span>+5<span class="w"> </span><span class="s2">&quot;Reinicio en 5 minutos por mantenimiento&quot;</span>
+</span><span id="__span-63-6"><a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a>
+</span><span id="__span-63-7"><a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a><span class="c1"># Apagado hoy a las 23:30</span>
+</span><span id="__span-63-8"><a id="__codelineno-63-8" name="__codelineno-63-8" href="#__codelineno-63-8"></a>sudo<span class="w"> </span>shutdown<span class="w"> </span>-h<span class="w"> </span><span class="m">23</span>:30<span class="w"> </span><span class="s2">&quot;Apagado programado a las 23:30&quot;</span>
+</span><span id="__span-63-9"><a id="__codelineno-63-9" name="__codelineno-63-9" href="#__codelineno-63-9"></a>
+</span><span id="__span-63-10"><a id="__codelineno-63-10" name="__codelineno-63-10" href="#__codelineno-63-10"></a><span class="c1"># Solo avisar, sin apagar</span>
+</span><span id="__span-63-11"><a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a>sudo<span class="w"> </span>shutdown<span class="w"> </span>-k<span class="w"> </span>now<span class="w"> </span><span class="s2">&quot;Mantenimiento inminente: guarde su trabajo&quot;</span>
+</span><span id="__span-63-12"><a id="__codelineno-63-12" name="__codelineno-63-12" href="#__codelineno-63-12"></a>
+</span><span id="__span-63-13"><a id="__codelineno-63-13" name="__codelineno-63-13" href="#__codelineno-63-13"></a><span class="c1"># Cancelar un apagado ya programado</span>
+</span><span id="__span-63-14"><a id="__codelineno-63-14" name="__codelineno-63-14" href="#__codelineno-63-14"></a>sudo<span class="w"> </span>shutdown<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;Apagado cancelado&quot;</span>
+</span></code></pre></div>
+<h3 id="tareas-programadas">Tareas programadas</h3>
+<p>Todas las distribuciones GNU/Linux (Lubuntu incluido) permiten programar la ejecución de tareas: se puede indicar una fecha y hora concretas o una periodicidad.</p>
+<h4 id="comando-at">Comando at</h4>
+<p>Ejecuta uno o varios comandos (leídos de la entrada estándar o de un fichero) a la hora indicada.</p>
+<p>Sintaxis</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>at<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>tiempo
+</span></code></pre></div>
+<p>Parámetros</p>
+<p>Tiempo (formatos admitidos):</p>
+<ul>
+<li>hh:mm → hora y minutos en 24 h (si ya pasó, se asume el día siguiente).</li>
+<li>hh:mm mmdd[yy]yy</li>
+<li>hh:mm mm/dd/[yy]yy</li>
+<li>hh:mm dd.mm.[yy]yy</li>
+<li>hh:mm [yy]yy-mm-dd</li>
+<li>hh:mm[am|pm] → 12 h con AM/PM</li>
+<li>Palabras clave para horas: midnight, noon, now, teatime (16:00).</li>
+<li>Palabras clave para fechas: today, tomorrow, nombre-mes día.</li>
+<li>Desplazamientos relativos: +Nminutes | +Nhours | +Ndays | +Nweeks.</li>
+</ul>
+<p>Opciones</p>
+<ul>
+<li>-f fichero
+Lee los comandos desde fichero (si se omite, se leen de la entrada estándar).</li>
+<li>-l
+Lista los trabajos pendientes (si lo ejecuta root, muestra los de todos los usuarios).</li>
+<li>-d nº
+Elimina el trabajo con el número indicado.</li>
+<li>-m
+Envía un correo al usuario cuando finaliza la tarea.</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="c1"># Programar un backup para hoy a las 23:45</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;/usr/local/bin/backup.sh&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>at<span class="w"> </span><span class="m">23</span>:45
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="c1"># Ejecutar un script dentro de 2 horas</span>
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;sh /home/alumno/scripts/tarea.sh&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>at<span class="w"> </span>now<span class="w"> </span>+<span class="w"> </span><span class="m">2</span><span class="w"> </span>hours
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a><span class="c1"># Programar desde fichero</span>
+</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>at<span class="w"> </span>-f<span class="w"> </span>/home/alumno/scripts/rotar-logs.sh<span class="w"> </span><span class="m">02</span>:30<span class="w"> </span>tomorrow
+</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>
+</span><span id="__span-65-10"><a id="__codelineno-65-10" name="__codelineno-65-10" href="#__codelineno-65-10"></a><span class="c1"># Listar y borrar trabajos</span>
+</span><span id="__span-65-11"><a id="__codelineno-65-11" name="__codelineno-65-11" href="#__codelineno-65-11"></a>at<span class="w"> </span>-l
+</span><span id="__span-65-12"><a id="__codelineno-65-12" name="__codelineno-65-12" href="#__codelineno-65-12"></a>at<span class="w"> </span>-d<span class="w"> </span><span class="m">7</span>
+</span></code></pre></div>
+<h4 id="cron-y-crontab">cron y crontab</h4>
+<p>cron es un servicio que ejecuta tareas periódicas en segundo plano. Cada usuario dispone de un fichero crontab propio y existe un crontab de sistema para tareas administrativas.</p>
+<p>Cada línea de un crontab define cuándo y qué ejecutar: cinco campos de tiempo seguidos del comando. En el crontab de sistema hay un campo adicional (el usuario que ejecutará la tarea) entre los campos de tiempo y el comando. Las líneas que comienzan por # son comentarios. cron revisa los crontabs cada minuto.</p>
+<p>Formato general</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>minuto<span class="w"> </span>hora<span class="w"> </span>día_mes<span class="w"> </span>mes<span class="w"> </span>día_semana<span class="w"> </span>comando
+</span></code></pre></div>
+<p>Rangos admitidos</p>
+<ul>
+<li>Minuto: 0–59</li>
+<li>Hora: 0–23</li>
+<li>Día del mes: 1–31</li>
+<li>Mes: 1–12 o nombre del mes</li>
+<li>Día de la semana: 0–7 (0 y 7 = domingo)</li>
+</ul>
+<p>Comodines y abreviaturas</p>
+<ul>
+<li>* → cualquiera.</li>
+<li>Rangos: 8-11 (inclusive).</li>
+<li>Listas: 2,5,7,8.</li>
+<li>Saltos: 12-23/2 (cada 2 h de 12 a 23) o */4 (cada 4 unidades del campo).</li>
+<li>Cadenas especiales (sustituyen a los 5 campos):</li>
+<li>@reboot → una vez al arrancar</li>
+<li>@yearly / @annually → 0 0 1 1 *</li>
+<li>@monthly → 0 0 1 * *</li>
+<li>@weekly → 0 0 * * 0</li>
+<li>@daily / @midnight → 0 0 * * *</li>
+<li>@hourly → 0 * * * *</li>
+</ul>
+<p>Shell por defecto</p>
+<ul>
+<li>Los comandos se ejecutan con /bin/sh. Para usar otra, declarar al inicio:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="nv">SHELL</span><span class="o">=</span>/bin/bash
+</span></code></pre></div>
+<p>Ubicación de ficheros</p>
+<ul>
+<li>Crontab de cada usuario: /var/spool/cron/crontabs/<login> (no se edita directamente).</li>
+<li>Crontab de sistema (root): /etc/crontab (se edita como fichero de texto).</li>
+</ul>
+<p>Gestión con crontab</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>crontab<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span>
+</span></code></pre></div>
+<ul>
+<li>-u usuario → gestiona el crontab de usuario (root).</li>
+<li>-l → lista el crontab actual.</li>
+<li>-r → borra el crontab.</li>
+<li>-e → edita el crontab con el editor por defecto (normalmente nano).</li>
+</ul>
+<p>Ejemplos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="c1"># Editar (crear/modificar) tu crontab</span>
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>crontab<span class="w"> </span>-e
+</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>
+</span><span id="__span-69-4"><a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="c1"># Ejecutar un backup cada día a las 02:15</span>
+</span><span id="__span-69-5"><a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a><span class="c1"># (en tu crontab; abrir con crontab -e y añadir)</span>
+</span><span id="__span-69-6"><a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a><span class="m">15</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/local/bin/backup.sh
+</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>
+</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a><span class="c1"># Rotar logs cada 15 minutos</span>
+</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a>*/15<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/local/sbin/rotar-logs
+</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>
+</span><span id="__span-69-11"><a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a><span class="c1"># Sincronizar a las 3:10 los lunes y jueves</span>
+</span><span id="__span-69-12"><a id="__codelineno-69-12" name="__codelineno-69-12" href="#__codelineno-69-12"></a><span class="m">10</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>/usr/local/bin/sync-datos
+</span><span id="__span-69-13"><a id="__codelineno-69-13" name="__codelineno-69-13" href="#__codelineno-69-13"></a>
+</span><span id="__span-69-14"><a id="__codelineno-69-14" name="__codelineno-69-14" href="#__codelineno-69-14"></a><span class="c1"># Tarea al arrancar el sistema</span>
+</span><span id="__span-69-15"><a id="__codelineno-69-15" name="__codelineno-69-15" href="#__codelineno-69-15"></a>@reboot<span class="w"> </span>/usr/local/bin/inicializa-servicio
+</span><span id="__span-69-16"><a id="__codelineno-69-16" name="__codelineno-69-16" href="#__codelineno-69-16"></a>
+</span><span id="__span-69-17"><a id="__codelineno-69-17" name="__codelineno-69-17" href="#__codelineno-69-17"></a><span class="c1"># Ver y borrar tu crontab</span>
+</span><span id="__span-69-18"><a id="__codelineno-69-18" name="__codelineno-69-18" href="#__codelineno-69-18"></a>crontab<span class="w"> </span>-l
+</span><span id="__span-69-19"><a id="__codelineno-69-19" name="__codelineno-69-19" href="#__codelineno-69-19"></a>crontab<span class="w"> </span>-r
+</span></code></pre></div>
+<h2 id="administracion-de-la-impresion">Administración de la impresión</h2>
+<p>La impresora es uno de los periféricos más usados. En Lubuntu (LXQt), la gestión se realiza mediante CUPS y la herramienta gráfica Impresoras (system-config-printer). A continuación se explica cómo instalar, ver la cola y ajustar las preferencias.</p>
+<h3 id="instalar-una-impresora">Instalar una impresora</h3>
+<p>La mayoría de modelos USB son detectados automáticamente (muchos funcionan en modo “driverless” vía IPP). Si el sistema la reconoce, bastará con confirmar y, al finalizar, imprimir una página de prueba.</p>
+<p>Si no se detecta automáticamente, instalación manual:</p>
+<ol>
+<li>Abrir Menú → Preferencias → Impresoras.</li>
+<li>Pulsar Añadir. En el panel de Dispositivos elegir el origen:</li>
+<li>USB (local), Red (IPP/AirPrint/Bonjour), LPD/LPR, Samba/Windows o por dirección IP.</li>
+<li>Seleccionar el controlador (PPD):</li>
+<li>Elegir el modelo propuesto o uno genérico compatible (p. ej., “Generic PCL/PS”).</li>
+<li>Si el fabricante proporciona un PPD, importarlo.</li>
+<li>Asignar Nombre, Descripción y Ubicación. Pulsar Aplicar.</li>
+<li>Imprimir Página de prueba para verificar.</li>
+</ol>
+<h3 id="la-cola-de-impresion">La cola de impresión</h3>
+<p>Para ver y gestionar los trabajos enviados a una impresora:</p>
+<ol>
+<li>Abrir Preferencias → Impresoras.</li>
+<li>Botón derecho sobre la impresora → Ver cola de impresión (o doble clic).</li>
+<li>En la ventana de cola se muestra usuario, documento, tamaño, estado y fecha.</li>
+<li>Seleccionar un trabajo y usar los controles para Pausar, Reanudar o Cancelar.</li>
+</ol>
+<p>También es posible pausar temporalmente la impresora completa y reanudarla después.</p>
+<h3 id="propiedades-y-preferencias-de-la-impresora">Propiedades y preferencias de la impresora</h3>
+<p>Para ajustar opciones predeterminadas:</p>
+<ol>
+<li>Abrir Preferencias → Impresoras.</li>
+<li>Botón derecho sobre la impresora → Propiedades.</li>
+<li>En el panel izquierdo seleccionar la categoría; en la derecha se muestran las opciones:</li>
+<li>General: tamaño de papel (A4), orientación, bandeja, dúplex (si dispone), calidad.</li>
+<li>Políticas: aceptar/rechazar trabajos, comportamiento en errores.</li>
+<li>Conexión: dispositivo/URI.</li>
+<li>Compartir: publicar la impresora en la red (si procede).</li>
+<li>Guardar cambios. Se recomienda imprimir otra Página de prueba tras modificar opciones clave.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
