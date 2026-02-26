@@ -259,6 +259,8 @@ En Windows 11, la gestión principal de hardware desde Configuración se encuent
 
 Inicio → Configuración → Bluetooth y dispositivos
 
+![Dispositivos](assets/images/ud4/img16.png){ width="700" }
+
 Dentro de este apartado se incluyen, entre otros, los siguientes elementos:
 
 - **Impresoras y escáneres**: muestra las impresoras conectadas al equipo y permite agregar una nueva. En muchos casos Windows detecta la impresora automáticamente, aunque algunos fabricantes proporcionan su propio instalador. Más adelante se dedica un apartado a la impresión.
@@ -275,6 +277,8 @@ La ventana Dispositivos e impresoras sigue existiendo en Windows 11 dentro del P
 Ruta habitual:
 
 - Panel de control → Hardware y sonido → Dispositivos e impresoras
+
+![Dispositivos](assets/images/ud4/img17.png){ width="700" }
 
 En esta ventana se muestran principalmente dispositivos externos que se conectan y desconectan por USB, Bluetooth o red, además del propio equipo.
 
@@ -319,6 +323,8 @@ En Windows 11 puede abrirse de varias formas:
 - Buscar “Administrador de dispositivos” desde el menú Inicio.
 - Panel de control → Hardware y sonido → Administrador de dispositivos.
 
+![Dispositivos](assets/images/ud4/img18.png){ width="700" }
+
 El Administrador de dispositivos proporciona una vista del hardware instalado en el equipo. Se utiliza principalmente para instalar y actualizar controladores, modificar opciones de dispositivos y solucionar problemas.
 
 Con el Administrador de dispositivos se puede:
@@ -344,6 +350,8 @@ Para ver el estado de un dispositivo, seguir estos pasos:
 2.	Hacer doble clic en la categoría del dispositivo (por ejemplo, Adaptadores de red).
 3.	Hacer clic con el botón derecho sobre el dispositivo y seleccionar Propiedades.
 4.	En la pestaña General, el apartado Estado del dispositivo muestra la descripción del estado actual.
+
+![Dispositivos](assets/images/ud4/img19.png){ width="700" }
 
 ### Añadir un nuevo dispositivo
 
@@ -414,4 +422,3 @@ Si Windows Update no encuentra un controlador adecuado:
 
 - Buscarlo en el sitio web del fabricante del dispositivo (modelo exacto).
 - Si el dispositivo incluye un instalador (USB/DVD o descarga), puede contener el software necesario, aunque es recomendable usar siempre la versión más reciente del fabricante.
-
