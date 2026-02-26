@@ -54,7 +54,7 @@ Desde Administración de equipos → Usuarios y grupos locales:
 **Ejercicio 6. Redirección de carpeta**
 
 1.	Inicia sesión con una cuenta estándar.
-2.	Cambia la ubicación de la carpeta Documentos a otra unidad (por ejemplo, D:\Documentos_Practica).
+2.	Cambia la ubicación de la carpeta Documentos a otra ubicación (por ejemplo, una carpera en el escritorio).
 3.	Comprueba que los archivos existentes se han movido.
 4.	Explica por qué esta técnica es más segura que mover completamente C:\Users desde el registro.
 

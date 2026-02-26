@@ -422,3 +422,162 @@ Si Windows Update no encuentra un controlador adecuado:
 
 - Buscarlo en el sitio web del fabricante del dispositivo (modelo exacto).
 - Si el dispositivo incluye un instalador (USB/DVD o descarga), puede contener el software necesario, aunque es recomendable usar siempre la versión más reciente del fabricante.
+
+## Gestión de discos y cuotas
+
+La gestión de discos incluye la creación y administración de discos duros y sus particiones. Además, es posible establecer cuotas de disco para que los usuarios tengan un límite de uso de espacio.
+
+### Administración de discos
+
+Administración de discos es una utilidad del sistema que permite administrar discos duros y los volúmenes (particiones) que contienen. Con esta herramienta se pueden:
+
+- Inicializar discos nuevos.
+- Crear volúmenes (particiones).
+- Formatear volúmenes con FAT, FAT32 o NTFS.
+- Realizar la mayoría de tareas relacionadas con discos sin reiniciar el sistema, aplicándose la mayoría de cambios de forma inmediata.
+
+En Windows 11, Administración de discos mantiene las características clásicas de versiones anteriores y permite realizar, entre otras, estas operaciones habituales:
+
+- Crear y eliminar volúmenes (particiones).
+- Formatear y asignar letra de unidad.
+- Extender o reducir volúmenes desde la propia interfaz.
+- Trabajar con distintos estilos de particionado según el tipo de disco.
+
+El Administrador de discos se abre desde la consola Administración de equipos y muestra los volúmenes:
+
+- En forma de lista en la parte superior.
+- En forma gráfica en la parte inferior.
+
+Las unidades de disco se numeran comenzando por Disco 0, Disco 1, etc. Dentro de cada disco se muestran las particiones con su tamaño y sistema de archivos.
+
+**Inicializar un disco nuevo: MBR o GPT**
+
+Si se añade un disco duro nuevo al equipo, Windows puede detectar que el disco no tiene tabla de particiones. En ese caso, al abrir Administración de discos aparecerá un cuadro de diálogo solicitando el estilo de partición:
+
+- MBR (Master Boot Record)
+- GPT (GUID Partition Table)
+
+Al elegir una opción, Windows crea la tabla de particiones y el disco queda listo para crear volúmenes.
+
+#### Crear una partición (nuevo volumen)
+
+Si en un disco existe espacio sin asignar, se puede crear una nueva partición para disponer de más espacio de almacenamiento. Para crear una partición nueva, seguir estos pasos:
+
+1.	Abrir Administración de discos.
+2.	Hacer clic con el botón derecho sobre el espacio sin asignar y seleccionar Nuevo volumen simple….
+3.	En el asistente, hacer clic en Siguiente.
+4.	Indicar el tamaño de la nueva partición y hacer clic en Siguiente. Por defecto se usa todo el espacio disponible.
+5.	Indicar la letra de unidad que se le asignará o la carpeta donde se montará y hacer clic en Siguiente.
+6.	Escribir la etiqueta del volumen y activar la opción de formatear el volumen:
+    - Se recomienda seleccionar NTFS como sistema de archivos.
+    - Se recomienda activar Formato rápido para que el proceso sea más rápido. Hacer clic en Siguiente.
+7.	En la pantalla de resumen, hacer clic en Finalizar.
+
+Al terminar, se dispondrá de un nuevo volumen listo para almacenar información.
+
+#### Formatear una partición
+
+Formatear una partición consiste en crear un sistema de archivos. Hasta que una partición no se formatea, no puede utilizarse. Normalmente, al crear una partición el asistente ya permite formatearla, pero en algunos casos es necesario formatear de nuevo una partición (por ejemplo, en un disco, una partición existente o una memoria USB).
+
+Formatear implica perder la información que hubiera guardada en esa partición, ya que se reemplaza el sistema de archivos anterior.
+
+Para formatear una partición, seguir los siguientes pasos:
+
+1.	Abrir Administración de discos.
+2.	Hacer clic con el botón derecho sobre la partición a formatear y seleccionar Formatear….
+3.	En el cuadro de diálogo, indicar:
+    - Etiqueta: por defecto aparece la que tuviera el volumen.
+    - Sistema de archivos: Windows trabaja principalmente con NTFS y FAT32.
+        - En particiones de disco duro suele usarse NTFS.
+        - En unidades extraíbles (por ejemplo, memorias USB) suele usarse FAT32.
+    -  Tamaño de unidad de asignación: se recomienda dejar Predeterminado.
+    -  Mantener activada la opción Formato rápido: el formato rápido crea la estructura del sistema de archivos sin comprobar sectores, por lo que es mucho más rápido.
+4.	Para comenzar el proceso, hacer clic en Aceptar.
+
+#### Extender una partición
+
+Se puede aumentar el tamaño de una partición extendiéndola sobre el espacio sin asignar adyacente del mismo disco.
+
+Para extender una partición, el volumen debe estar sin formatear o formateado en NTFS. En general, la ampliación se realiza sobre espacio contiguo. En algunos escenarios, para extender sobre espacio no contiguo, Windows puede solicitar convertir el disco en disco dinámico.
+
+Para extender una partición, seguir los siguientes pasos:
+
+1.	En Administración de discos, hacer clic con el botón derecho sobre el volumen que se desea extender.
+2.	Seleccionar Extender volumen….
+3.	Indicar el tamaño a extender en Seleccione la cantidad de espacio (MB) y hacer clic en Siguiente.
+4.	Hacer clic en Finalizar.
+
+#### Reducir el tamaño de una partición
+
+Es posible disminuir el tamaño de una partición reduciéndola para generar espacio sin asignar al final del volumen. Esto es útil, por ejemplo, si se necesita crear una nueva partición y no hay espacio libre sin asignar.
+
+Al reducir una partición, Windows reubica automáticamente los archivos para liberar espacio. No es necesario volver a formatear. La reducción solo puede realizarse sobre particiones sin formatear o con sistema de archivos NTFS.
+
+Para reducir una partición, seguir estos pasos:
+
+1.	En Administración de discos, hacer clic con el botón derecho sobre el volumen que se desea reducir.
+2.	Seleccionar Reducir volumen….
+3.	Rellenar el campo Tamaño del espacio que desea reducir en MB.
+4.	Hacer clic en Reducir.
+
+### Liberador de espacio en disco
+
+Si la unidad donde está instalado Windows se queda muy llena, el rendimiento del equipo puede empeorar notablemente. En ese caso conviene liberar espacio eliminando información innecesaria. Windows 11 permite hacerlo desde Configuración (Almacenamiento) y también desde el Liberador de espacio en disco (herramienta clásica), que elimina archivos temporales, vacía la Papelera y limpia otros elementos que ya no se necesitan.
+
+Esta limpieza puede aplicarse solo a archivos prescindibles del usuario (útil si hay cuotas) o incluir archivos del sistema si el espacio disponible es muy bajo.
+
+Para liberar espacio en disco en Windows 11 (método clásico del Liberador):
+
+1.	Abrir el Explorador de archivos.
+2.	En Este equipo, hacer clic con el botón derecho sobre la unidad (por ejemplo C:).
+3.	Seleccionar Propiedades.
+4.	En la pestaña General, hacer clic en Liberador de espacio en disco.
+5.	En Archivos que se pueden eliminar, marcar los elementos que se desean borrar.
+6.	Hacer clic en Aceptar y confirmar.
+
+Si además se quieren eliminar archivos del sistema, hacer clic en Limpiar archivos del sistema y volver a seleccionar los elementos a eliminar.
+
+### Optimización y desfragmentación de unidades
+
+Con el paso del tiempo, algunos discos (especialmente HDD) pueden fragmentarse, haciendo que los archivos queden repartidos en distintas zonas del disco. Esto puede ralentizar el acceso a los datos. La herramienta Optimizar unidades reorganiza los datos cuando procede para mejorar el rendimiento.
+
+En unidades SSD, Windows 11 no “desfragmenta” como en un HDD, sino que realiza optimización (por ejemplo, operaciones de mantenimiento como TRIM). Por eso, la herramienta se sigue usando, pero el comportamiento depende del tipo de unidad.
+
+Para optimizar una unidad:
+
+1.	Abrir el Explorador de archivos.
+2.	En Este equipo, clic derecho sobre la unidad que se quiere optimizar → Propiedades.
+3.	Abrir la pestaña Herramientas.
+4.	En Optimizar y desfragmentar unidad, hacer clic en Optimizar.
+5.	En la lista, seleccionar la unidad.
+6.	Para comprobar el estado, hacer clic en Analizar (si aparece disponible).
+7.	Si procede, hacer clic en Optimizar.
+
+El proceso puede tardar desde minutos a horas según el tamaño y el estado del disco. Durante la optimización se puede seguir usando el equipo, aunque puede ir más lento.
+
+### Cuotas de disco para usuarios (NTFS)
+
+Si el espacio disponible es limitado, se pueden aplicar cuotas de disco para restringir cuánto puede almacenar cada usuario en una unidad. Las cuotas se aplican a volúmenes NTFS y se pueden definir:
+
+- Un límite general para todos los usuarios.
+- Límites específicos para usuarios o grupos concretos.
+
+Para configurar cuotas en Windows 11:
+
+1.	Abrir el Explorador de archivos.
+2.	En Este equipo, clic derecho sobre la unidad donde se aplicarán cuotas → Propiedades.
+3.	Abrir la pestaña Cuota.
+4.	Activar Habilitar administración de cuota.
+5.	Activar Limitar el espacio en disco a y establecer el límite general para los usuarios.
+6.	Establecer el nivel de advertencia (debe ser inferior al límite).
+7.	Si se desea registrar incidencias, activar:
+    - Registrar un evento cuando algún usuario supere su límite de cuota.
+    - Registrar un evento cuando algún usuario supere su nivel de advertencia.
+8.	Si se quiere impedir que superen el límite, activar:
+    - Denegar espacio en disco a usuarios que superen el límite de cuota.
+9.	Para cuotas personalizadas por usuario/grupo, hacer clic en Valores de cuota… y:
+    - Crear una nueva entrada.
+    - Seleccionar el usuario o grupo.
+    - Definir su límite y nivel de advertencia.
+
+Con esto, cada usuario quedará limitado según el valor general o el valor específico que tenga asignado.
