@@ -436,6 +436,8 @@ Administración de discos es una utilidad del sistema que permite administrar di
 - Formatear volúmenes con FAT, FAT32 o NTFS.
 - Realizar la mayoría de tareas relacionadas con discos sin reiniciar el sistema, aplicándose la mayoría de cambios de forma inmediata.
 
+![Administrador de discos](assets/images/ud4/img20.png){ width="700" }
+
 En Windows 11, Administración de discos mantiene las características clásicas de versiones anteriores y permite realizar, entre otras, estas operaciones habituales:
 
 - Crear y eliminar volúmenes (particiones).
@@ -524,6 +526,8 @@ Para reducir una partición, seguir estos pasos:
 
 Si la unidad donde está instalado Windows se queda muy llena, el rendimiento del equipo puede empeorar notablemente. En ese caso conviene liberar espacio eliminando información innecesaria. Windows 11 permite hacerlo desde Configuración (Almacenamiento) y también desde el Liberador de espacio en disco (herramienta clásica), que elimina archivos temporales, vacía la Papelera y limpia otros elementos que ya no se necesitan.
 
+![Liberador de espacio en disco](assets/images/ud4/img21.png){ width="500" }
+
 Esta limpieza puede aplicarse solo a archivos prescindibles del usuario (útil si hay cuotas) o incluir archivos del sistema si el espacio disponible es muy bajo.
 
 Para liberar espacio en disco en Windows 11 (método clásico del Liberador):
@@ -540,6 +544,8 @@ Si además se quieren eliminar archivos del sistema, hacer clic en Limpiar archi
 ### Optimización y desfragmentación de unidades
 
 Con el paso del tiempo, algunos discos (especialmente HDD) pueden fragmentarse, haciendo que los archivos queden repartidos en distintas zonas del disco. Esto puede ralentizar el acceso a los datos. La herramienta Optimizar unidades reorganiza los datos cuando procede para mejorar el rendimiento.
+
+![Optimización y desfragmentación de unidades](assets/images/ud4/img22.png){ width="700" }
 
 En unidades SSD, Windows 11 no “desfragmenta” como en un HDD, sino que realiza optimización (por ejemplo, operaciones de mantenimiento como TRIM). Por eso, la herramienta se sigue usando, pero el comportamiento depende del tipo de unidad.
 
@@ -561,6 +567,8 @@ Si el espacio disponible es limitado, se pueden aplicar cuotas de disco para res
 
 - Un límite general para todos los usuarios.
 - Límites específicos para usuarios o grupos concretos.
+
+![Cuotas de disco](assets/images/ud4/img23.png){ width="500" }
 
 Para configurar cuotas en Windows 11:
 
