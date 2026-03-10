@@ -589,3 +589,264 @@ Para configurar cuotas en Windows 11:
     - Definir su límite y nivel de advertencia.
 
 Con esto, cada usuario quedará limitado según el valor general o el valor específico que tenga asignado.
+
+## Tareas de mantenimiento
+
+A continuación se describen algunas herramientas y técnicas para realizar un mantenimiento adecuado de Windows 11, con el objetivo de mantener un rendimiento correcto del equipo.
+
+### Programas
+
+Prácticamente cualquier tarea en el equipo requiere el uso de un programa. Windows incluye aplicaciones básicas (navegación, edición de texto, utilidades, etc.), pero con el tiempo es habitual instalar programas adicionales.
+
+La forma de instalar un programa depende de dónde estén sus archivos de instalación: puede ser un instalador descargado de Internet o de una red, un paquete distribuido por el fabricante, o una aplicación instalada desde Microsoft Store. Una vez instalado, el programa suele aparecer en la lista de aplicaciones instaladas, donde normalmente se indica la fecha de instalación, el tamaño aproximado y la versión. El tamaño mostrado no incluye los datos que maneje el programa (documentos, bases de datos, proyectos, etc.).
+
+Según el programa, desde esa lista pueden aparecer hasta tres opciones:
+
+- Desinstalar: elimina el programa del equipo.
+- Cambiar / Modificar: permite agregar o quitar componentes del programa.
+- Reparar: vuelve a ejecutar parte de la instalación para corregir fallos.
+
+No todos los programas ofrecen todas estas opciones. En muchos casos Windows simplemente ejecuta el desinstalador o el asistente del propio fabricante.
+
+En Windows 11, la gestión principal se realiza desde:
+
+- Inicio → Configuración → Aplicaciones → Aplicaciones instaladas.
+
+![Programas](assets/images/ud4/img24.png){ width="700" }
+
+- Panel de control → Programas → Programas y características (herramienta clásica).
+
+![Programas](assets/images/ud4/img25.png){ width="700" }
+
+Para desinstalar un programa desde Configuración:
+
+1.	Abrir Configuración.
+2.	Entrar en Aplicaciones → Aplicaciones instaladas.
+3.	Buscar el programa.
+4.	Abrir el menú de tres puntos y seleccionar Desinstalar.
+
+#### Características de Windows
+
+Además de programas “normales”, Windows incluye características del sistema que se pueden activar o desactivar según se necesiten. Algunas vienen activadas por defecto y otras no.
+
+En Windows 11, al desactivar una característica normalmente no se elimina por completo del disco, sino que queda disponible para volver a activarla cuando haga falta. Por tanto, desactivar una característica no equivale a liberar mucho espacio de disco, pero sí evita que se use o que cargue componentes asociados.
+
+
+Para activar o desactivar características de Windows (método clásico):
+
+1.	Abrir el Panel de control.
+2.	Entrar en Programas.
+3.	Hacer clic en Activar o desactivar las características de Windows.
+4.	Marcar una casilla para activar una característica.
+5.	Desmarcar una casilla para desactivar una característica.
+6.	Hacer clic en Aceptar.
+
+![Características](assets/images/ud4/img26.png){ width="700" }
+
+Algunas características están agrupadas en carpetas. Si una casilla aparece parcialmente marcada, significa que dentro de ese grupo hay componentes activados y otros desactivados. Para ver el detalle, se despliega el grupo.
+
+### Visor de eventos
+
+Los registros de eventos son archivos del sistema que guardan información sobre sucesos importantes: inicios de sesión, errores de aplicaciones, fallos de controladores, cambios del sistema, etc. Esta información se consulta con el Visor de eventos, una herramienta especialmente útil para usuarios avanzados y para tareas de diagnóstico.
+
+En el Visor de eventos, los registros de Windows incluyen:
+
+- Aplicación: eventos de programas (errores, advertencias e información).
+- Seguridad: auditorías de seguridad (correctas o con error), por ejemplo, inicios de sesión.
+- Configuración: eventos relacionados con la configuración del sistema (más amplio en entornos de dominio).
+- Sistema: eventos del propio Windows y de sus servicios.
+- Eventos reenviados: eventos recopilados desde otros equipos.
+
+Además, existen registros adicionales en Aplicaciones y servicios, que dependen de programas instalados o de componentes concretos de Windows.
+
+![Visor de eventos](assets/images/ud4/img27.png){ width="700" }
+
+En Windows 11 se puede abrir el Visor de eventos desde:
+
+- Inicio → buscar “Visor de eventos”, o
+- Herramientas de Windows → Visor de eventos (según la organización del menú).
+
+### Actualizaciones automáticas
+
+Windows 11 gestiona las actualizaciones mediante Windows Update. Estas actualizaciones incluyen parches de seguridad, correcciones y, en ocasiones, nuevas funciones. La configuración se gestiona desde:
+
+- Inicio → Configuración → Windows Update
+
+![Actualizaciones automáticas](assets/images/ud4/img28.png){ width="700" }
+
+Opciones habituales:
+
+- **Buscar actualizaciones**: fuerza una comprobación inmediata con los servidores de Microsoft.
+- **Opciones avanzadas**: permite ajustar comportamientos como reinicios, notificaciones y otras preferencias.
+
+Windows 11 suele descargar e instalar actualizaciones de forma automática, pudiendo requerir reinicio. Si el equipo está en uso, normalmente se intenta programar el reinicio fuera del horario activo o se solicita al usuario que elija el momento.
+
+Algunos usuarios intentan limitar el impacto (por ejemplo, por rendimiento o por evitar reinicios no deseados). Una forma clásica es gestionar el comportamiento del sistema y, en casos concretos, revisar la configuración relacionada con Windows Update y los servicios asociados, que se verá más adelante junto con la administración de servicios.
+
+### Programador de tareas
+
+Si se usa un programa con una frecuencia determinada, puede utilizarse el Programador de tareas para crear una tarea que lo ejecute automáticamente según la programación elegida. Por ejemplo, se puede programar una optimización del disco cada cierto tiempo o un apagado automático a una hora concreta. Este tipo de tareas, por lo general, se ejecutan sin interacción con el usuario.
+
+![Programador de tareas](assets/images/ud4/img29.png){ width="700" }
+
+Para crear una tarea básica:
+
+1.	Abrir Programador de tareas.
+    - Inicio → buscar Programador de tareas y abrirlo.
+    - Alternativa: Herramientas de Windows → Programador de tareas.
+2.	En el panel derecho, hacer clic en Crear tarea básica….
+3.	Escribir un Nombre para la tarea y, si se desea, una Descripción. Hacer clic en Siguiente.
+4.	Elegir el tipo de desencadenador (cuándo se ejecutará):
+    - Programación por calendario: seleccionar Diariamente, Semanalmente, Mensualmente o Una vez → Siguiente → indicar fecha/hora y frecuencia → Siguiente.
+    - Eventos repetitivos: seleccionar Al iniciarse el equipo o Al iniciar sesión → Siguiente.
+    - Evento del sistema: seleccionar Cuando se registre un evento → Siguiente → indicar el registro, origen e Id. del evento → Siguiente.
+5.	En Acción, seleccionar Iniciar un programa y hacer clic en Siguiente.
+6.	Pulsar Examinar para seleccionar el programa (o escribir directamente la ruta del ejecutable si se conoce).
+    - Si el programa necesita parámetros, rellenar Agregar argumentos (opcional).
+    - Si se requiere, completar también Iniciar en (opcional) con la carpeta de trabajo.
+7.	Hacer clic en Siguiente y luego en Finalizar.
+
+Ejemplo típico: apagado automático diario mediante el comando shutdown a una hora concreta (definiendo como programa shutdown.exe y usando argumentos adecuados).
+
+Una vez creada, la tarea aparecerá en la biblioteca del Programador de tareas. Para modificarla en cualquier momento:
+
+- Seleccionar la tarea y abrir Propiedades (doble clic o clic derecho). Desde ahí se puede cambiar el desencadenador, la hora, el usuario que la ejecuta, condiciones, etc. Al terminar, hacer clic en Aceptar.
+
+### Administrador de tareas
+
+Cada programa en ejecución tiene uno o varios procesos asociados. Con el Administrador de tareas se pueden ver los procesos activos y su consumo de recursos.
+
+![Administrador de tareas](assets/images/ud4/img30.png){ width="700" }
+
+Para ver procesos en ejecución:
+	
+1.	Abrir el Administrador de tareas con alguno de estos métodos:
+    - Ctrl + Shift + Esc (método directo), o
+    - Ctrl + Alt + Supr → seleccionar Administrador de tareas, o
+    - Inicio → buscar Administrador de tareas.
+2.	Si aparece la vista simplificada, hacer clic en Más detalles.
+3.	En la pestaña Procesos se muestra la lista, normalmente agrupada en:
+    - Aplicaciones: programas abiertos por el usuario.
+    - Procesos en segundo plano: procesos que funcionan sin ventana (muchos son componentes y servicios).
+    - Procesos de Windows: procesos propios del sistema operativo.
+
+En la lista se ve el nombre del proceso, su estado y el consumo de CPU, Memoria, Disco y Red.
+
+Para obtener información ampliada:
+
+1.	Abrir la pestaña Detalles para ver información más técnica, incluido el PID (identificador del proceso). En algunos casos será necesario tener permisos de administrador para ver ciertos detalles.
+2.	Para ver datos de un proceso concreto, hacer clic derecho sobre él y seleccionar Propiedades. En la ventana se puede consultar la ubicación del ejecutable, tamaño, versión, etc.
+
+Servicios asociados a un proceso:
+
+- Clic derecho sobre un proceso → Ir al servicio. Los servicios relacionados quedarán resaltados en la pestaña Servicios.
+
+Finalizar un programa que no responde:
+
+1.	Abrir el Administrador de tareas → Más detalles.
+2.	Seleccionar el proceso o la aplicación que no responde.
+3.	Hacer clic en Finalizar tarea.
+
+Esta acción puede provocar pérdida de cambios no guardados.
+
+#### Inicio de programas
+
+Desde el Administrador de tareas se pueden ver y gestionar los programas que se cargan al iniciar Windows, lo que puede mejorar el tiempo de arranque.
+
+![Inicio de programas](assets/images/ud4/img31.png){ width="700" }
+
+1.	Abrir el Administrador de tareas.
+2.	Ir a la pestaña Inicio (en algunas versiones aparece como Aplicaciones de inicio).
+3.	Revisar la columna Impacto de inicio y localizar los que aparecen como Alto o Medio.
+4.	Para desactivar un elemento de arranque:
+    - Clic derecho sobre la aplicación → Deshabilitar, o
+    - Seleccionar la aplicación y pulsar Deshabilitar.
+
+Deshabilitar aquí no desinstala el programa: simplemente evita que se ejecute automáticamente al arrancar.
+
+### Monitorizar el rendimiento
+
+En Windows 11 se puede monitorizar el uso de recursos desde el Administrador de tareas, en la pestaña Rendimiento, para comprobar cómo el sistema y los programas están utilizando la CPU, memoria, disco y red.
+
+![Rendimiento](assets/images/ud4/img32.png){ width="700" }
+
+En la pestaña Rendimiento aparecen gráficos y datos de los principales recursos del equipo:
+
+- CPU
+- Memoria
+- Disco
+- Red
+
+(Además, en muchos equipos también se muestran GPU y otros adaptadores).
+
+Cada recurso aparece como un elemento en el panel izquierdo. Al hacer clic sobre uno, se muestra su información y su gráfico correspondiente.
+
+Si el gráfico de Historial de uso de CPU aparece dividido, significa que el equipo dispone de varios núcleos y/o procesadores lógicos, y Windows representa el uso de forma separada.
+
+Un porcentaje de CPU elevado indica que los procesos en ejecución requieren muchos recursos y el equipo puede volverse más lento. Si el uso se mantiene en valores muy altos (por ejemplo, cerca del 100%) durante un periodo prolongado, puede deberse a una carga real de trabajo o a un programa que está bloqueado.
+
+Para ver información más detallada, desde la parte inferior de la pestaña Rendimiento se puede abrir el Monitor de recursos, que ofrece un nivel de detalle superior (procesos, actividad de disco, red, memoria, etc.). Si se solicita confirmación o credenciales, habrá que autorizarlas con permisos de administrador.
+
+Además de lo anterior, Windows 11 incluye herramientas específicas de monitorización:
+
+**Monitor de rendimiento**
+
+El Monitor de rendimiento (Performance Monitor) permite visualizar contadores del sistema con mucho detalle. Se abre desde las herramientas del sistema (buscando “Monitor de rendimiento” en Inicio).
+
+Al iniciarlo, en el panel izquierdo se selecciona Monitor de rendimiento para ver el gráfico. De forma predeterminada suele mostrarse un contador relacionado con la CPU, pero pueden añadirse otros contadores del sistema (memoria, disco, red, etc.).
+
+Para añadir un contador:
+
+1.	Hacer clic en el botón + (Agregar).
+2.	En Agregar contadores, elegir una categoría y seleccionar un contador concreto (o varios).
+3.	Si se desea ver una explicación, activar Mostrar descripción.
+4.	Hacer clic en Agregar.
+5.	Hacer clic en Aceptar.
+
+Después de añadir contadores, se pueden modificar sus propiedades (por ejemplo, escala o estilo de visualización) desde la configuración del gráfico.
+
+### Servicios
+
+Un servicio es una aplicación que se ejecuta en segundo plano, normalmente sin interacción directa con el usuario. Los servicios proporcionan funciones al sistema y a los usuarios (red, impresión, Bluetooth, registro de eventos, etc.).
+
+![Servicios](assets/images/ud4/img33.png){ width="700" }
+
+En Windows 11, la administración de servicios se realiza con la consola Servicios (services.msc). Desde ella se puede:
+
+- Iniciar, detener, pausar o reanudar servicios.
+- Configurar el tipo de inicio (Automático, Automático (inicio retrasado), Manual, Deshabilitado).
+- Definir acciones de recuperación si el servicio falla.
+- Ejecutar el servicio con una cuenta concreta (según el caso).
+- Consultar descripción, estado y dependencias del servicio.
+
+#### Iniciar o detener un servicio
+
+A veces es necesario iniciar un servicio que está en inicio manual (por ejemplo, servicios relacionados con Bluetooth, si se van a conectar dispositivos).
+
+Para iniciar un servicio:
+
+1.	Abrir Servicios (buscar “Servicios” en Inicio o ejecutar services.msc).
+2.	Hacer doble clic sobre el servicio para abrir sus Propiedades.
+3.	Hacer clic en Iniciar.
+4.	Si se quiere que el servicio arranque siempre con el sistema, en Tipo de inicio seleccionar:
+    - Automático, o
+    - Automático (inicio retrasado) (cuando conviene que arranque después de otros servicios).
+5.	Hacer clic en Aceptar.
+
+Para detener o deshabilitar un servicio:
+
+1.	Abrir Propiedades del servicio.
+2.	Hacer clic en Detener.
+3.	En Tipo de inicio, elegir:
+    - Manual (se podrá iniciar cuando se necesite), o
+    - Deshabilitado (no se iniciará).
+4.	Confirmar con Aceptar.
+
+Es importante actuar con precaución al detener o deshabilitar servicios, porque pueden existir dependencias: un servicio puede necesitar que otro esté activo para poder iniciarse.
+
+En la pestaña Dependencias de las propiedades del servicio se muestran:
+
+- Servicios de los que depende el servicio seleccionado.
+- Servicios que dependen de él.
+
+Un ejemplo habitual es el servicio Servidor, relacionado con la compartición de recursos en red (archivos e impresoras), que puede depender de otros servicios y, a la vez, ser necesario para funcionalidades de red.
